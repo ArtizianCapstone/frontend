@@ -98,6 +98,40 @@ class ArtisanTableViewController: UITableViewController {
 
     //MARK: Private Methods
     private func loadSampleArtisans() {
+        
+        /* following tutorial at
+                http://mrgott.com/swift-programing/33-rest-api-in-swift-4-using-urlsession-and-jsondecode
+         */
+        
+        //Make HTTP Request
+        let urlString = "http://localhost:3000/users"
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            
+            guard let data = data else { return }
+         
+            // JSON decoding and parsing
+            do {
+                let userResponse = try JSONDecoder().decode(UserResponse.self, from: data)
+            
+                //Get back to the main queue
+                DispatchQueue.main.async {
+                    print(userResponse)
+                    self.artisans = userResponse.artisans
+                    self.tableView?.reloadData()
+                    
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+            
+        }.resume()
+        /*
+        
         let artisan1 = Artisan(name: "Sean")
         let artisan2 = Artisan(name: "Rebecca")
         let artisan3 = Artisan(name: "Vernon")
@@ -105,5 +139,6 @@ class ArtisanTableViewController: UITableViewController {
         let artisan5 = Artisan(name: "Jackson")
         
         artisans += [artisan1, artisan2, artisan3, artisan4, artisan5]
+        */
     }
 }
