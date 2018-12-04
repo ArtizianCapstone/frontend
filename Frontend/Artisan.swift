@@ -8,12 +8,6 @@
 
 import UIKit
 
-//temporary data structure which models the {{url}}/users JSON response
-struct UserResponse : Codable {
-    let count: Int
-    let artisans: [Artisan]
-}
-
 struct Artisan : Codable {
     
     //MARK: Properties
