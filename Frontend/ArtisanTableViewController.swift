@@ -41,6 +41,7 @@ class ArtisanTableViewController: UITableViewController {
             do {
                 let oneUser = try JSONDecoder().decode(GetOneUser.self, from: data)
                 
+                
                 //Get back to the main queue
                 DispatchQueue.main.async {
                     self.user = oneUser.user
@@ -51,31 +52,33 @@ class ArtisanTableViewController: UITableViewController {
                 print(jsonError)
             }
             
+            url = URL(string: urlString + "/artisans")!
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
+                
+                guard let data = data else { return }
+                
+                // JSON decoding and parsing
+                do {
+                    let artisans = try JSONDecoder().decode([Artisan].self, from: data)
+                    
+                    //Get back to the main queue
+                    DispatchQueue.main.async {
+                        self.user.artisans = artisans
+                        print(self.user)
+                        self.tableView?.reloadData()
+                    }
+                } catch let jsonError {
+                    print(jsonError)
+                }
+                
+                }.resume()
+            
         }.resume()
 
-        url = URL(string: urlString + "/artisans")!
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            
-            guard let data = data else { return }
-            
-            // JSON decoding and parsing
-            do {
-                let artisans = try JSONDecoder().decode([Artisan].self, from: data)
-                
-                //Get back to the main queue
-                DispatchQueue.main.async {
-                    self.user.artisans = artisans
-                    print(self.user)
-                    self.tableView?.reloadData()
-                }
-            } catch let jsonError {
-                print(jsonError)
-            }
-            
-            }.resume()
+        
     }
 
     // MARK: - Table view data source
@@ -95,7 +98,7 @@ class ArtisanTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "ArtisanTableViewCell"
-        
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ArtisanTableViewCell else {
             fatalError("The dequeued cell is not an instance of ArtisanTableViewCell.")
         }
@@ -105,7 +108,8 @@ class ArtisanTableViewController: UITableViewController {
             cell.nameLabel.text = artisan.name
 
         } else {
-            cell.nameLabel.text = ""
+            cell.nameLabel.text = "loading"
+
         }
         // Configure the cell...
 
