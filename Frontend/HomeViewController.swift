@@ -18,7 +18,6 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var bannerLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var fakeGraphHolder: UIImageView!
-    //carousel.scrollDirection = .horizontal
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
