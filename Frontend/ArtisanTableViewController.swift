@@ -9,20 +9,76 @@
 import UIKit
 
 class ArtisanTableViewController: UITableViewController {
-
     //MARK: Properties
+    var user = User()
     var artisans = [Artisan]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadSampleArtisans()
+        getUser(id: "5c00776e2f1dfe588f33138c")
+        //loadSampleArtisans()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    private func getUser(id: String) {
+        let urlString = "http://localhost:3000/users/" + id
+        
+        var url = URL(string: urlString)!
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            
+            guard let data = data else { return }
+            
+            // JSON decoding and parsing
+            do {
+                let oneUser = try JSONDecoder().decode(GetOneUser.self, from: data)
+                
+                
+                //Get back to the main queue
+                DispatchQueue.main.async {
+                    self.user = oneUser.user
+                    //print(user)
+                    self.tableView?.reloadData()
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+            
+            url = URL(string: urlString + "/artisans")!
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
+                
+                guard let data = data else { return }
+                
+                // JSON decoding and parsing
+                do {
+                    let artisans = try JSONDecoder().decode([Artisan].self, from: data)
+                    
+                    //Get back to the main queue
+                    DispatchQueue.main.async {
+                        self.user.artisans = artisans
+                        print(self.user)
+                        self.tableView?.reloadData()
+                    }
+                } catch let jsonError {
+                    print(jsonError)
+                }
+                
+                }.resume()
+            
+        }.resume()
+
+        
     }
 
     // MARK: - Table view data source
@@ -32,19 +88,29 @@ class ArtisanTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return artisans.count
+        if user.artisans != nil { 
+            return user.artisans.count
+        } else {
+            return 20
+
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "ArtisanTableViewCell"
-        
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ArtisanTableViewCell else {
             fatalError("The dequeued cell is not an instance of ArtisanTableViewCell.")
         }
-
-        let artisan = artisans[indexPath.row]
         
-        cell.nameLabel.text = artisan.name
+        if self.user.artisans != nil {
+            let artisan = self.user.artisans[indexPath.row]
+            cell.nameLabel.text = artisan.name
+
+        } else {
+            cell.nameLabel.text = "loading"
+
+        }
         // Configure the cell...
 
         return cell
@@ -98,12 +164,36 @@ class ArtisanTableViewController: UITableViewController {
 
     //MARK: Private Methods
     private func loadSampleArtisans() {
-        let artisan1 = Artisan(name: "Sean")
-        let artisan2 = Artisan(name: "Rebecca")
-        let artisan3 = Artisan(name: "Vernon")
-        let artisan4 = Artisan(name: "Zane")
-        let artisan5 = Artisan(name: "Jackson")
         
-        artisans += [artisan1, artisan2, artisan3, artisan4, artisan5]
+        /* following tutorial at
+                http://mrgott.com/swift-programing/33-rest-api-in-swift-4-using-urlsession-and-jsondecode
+         */
+        
+        //Make HTTP Request
+        let urlString = "http://localhost:3000/users"
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            
+            guard let data = data else { return }
+         
+            // JSON decoding and parsing
+            do {
+                let allUsers = try JSONDecoder().decode(GetAllUsers.self, from: data)
+            
+                //Get back to the main queue
+                DispatchQueue.main.async {
+                    self.user.artisans = allUsers.artisans
+                    self.tableView?.reloadData()
+                    
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+            
+        }.resume()
     }
 }

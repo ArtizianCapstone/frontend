@@ -11,6 +11,7 @@
 		B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */; };
 		B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */; };
 		B4B9585321B477F600B07578 /* Artisan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585221B477F600B07578 /* Artisan.swift */; };
+		B4B9585521B6169E00B07578 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585421B6169E00B07578 /* User.swift */; };
 		B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D47CA721ADF569005CA50E /* AppDelegate.swift */; };
 		B4D47CAA21ADF569005CA50E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D47CA921ADF569005CA50E /* FirstViewController.swift */; };
 		B4D47CAF21ADF569005CA50E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D47CAD21ADF569005CA50E /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewCell.swift; sourceTree = "<group>"; };
 		B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewController.swift; sourceTree = "<group>"; };
 		B4B9585221B477F600B07578 /* Artisan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artisan.swift; sourceTree = "<group>"; };
+		B4B9585421B6169E00B07578 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B4D47CA421ADF569005CA50E /* Frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D47CA721ADF569005CA50E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4D47CA921ADF569005CA50E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				B4B9585221B477F600B07578 /* Artisan.swift */,
+				B4B9585421B6169E00B07578 /* User.swift */,
 				B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */,
 				B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */,
 				B4D47CA721ADF569005CA50E /* AppDelegate.swift */,
@@ -150,6 +153,7 @@
 				3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */,
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
+				B4B9585521B6169E00B07578 /* User.swift in Sources */,
 				B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */,
 				B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */,
 				B4D47CAA21ADF569005CA50E /* FirstViewController.swift in Sources */,
