@@ -26,7 +26,9 @@ class ArtisanFormViewController: UIViewController {
         bioText.layer.borderWidth = 1.0
         bioText.layer.cornerRadius = 5.0
         bioText.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
-        
+        submitButton.layer.borderWidth = 1.0
+        submitButton.layer.cornerRadius = 5.0
+        submitButton.layer.borderColor = UIColor(red:0, green: 0, blue: 0, alpha: 1.0).cgColor
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
@@ -67,7 +69,7 @@ class ArtisanFormViewController: UIViewController {
                 name = firstName.text! + " " + lastName.text!
             }
             //currently this userID is hard coded in, but in the future we should have a global userID maybe?
-            let json: [String: Any] = ["userID": "5c00776e2f1dfe588f33138c", "name": name,"bio": bioText.text!, "phone_number": phoneNumNoHyphens]
+            let json: [String: Any] = ["userId": "5c00776e2f1dfe588f33138c", "name": name,"bio": bioText.text!, "phone_number": phoneNumNoHyphens]
             
             let jsonData = try? JSONSerialization.data(withJSONObject: json)
             
