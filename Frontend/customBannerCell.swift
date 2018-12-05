@@ -16,11 +16,11 @@ class customBannerCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func setSelected(_ selected: Bool, animated: Bool) {
+  /*  func setSelected(_ selected: Bool, animated: Bool) {
         setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
-    }
+    }*/
 
     /*
     // MARK: - Navigation
