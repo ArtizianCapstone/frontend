@@ -18,10 +18,12 @@ class BannerViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = banner.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! customBannerCell
         // Do any custom modifications you your cell, referencing the outlets you defined in the Custom cell file.
-        cell.messageLabel.backgroundColor = bannerQuotes[indexPath.row].backgroundColor
-        cell.messageLabel.textColor = bannerQuotes[indexPath.row].textColor
-        //print(bannerQuotes[indexPath.row].message)
-        cell.messageLabel.text = bannerQuotes[indexPath.row].message
+       // cell.messageLabel.backgroundColor = bannerQuotes[indexPath.row].backgroundColor
+        //cell.messageLabel.textColor = bannerQuotes[indexPath.row].textColor
+        cell.messageLabel.textColor = UIColor.white
+        cell.messageLabel.text = "hello"
+        print(bannerQuotes[indexPath.row].message)
+       // cell.messageLabel.text = bannerQuotes[indexPath.row].message
        
         return cell
         

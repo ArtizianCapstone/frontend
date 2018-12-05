@@ -11,6 +11,7 @@ import UIKit
 class customBannerCell: UICollectionViewCell {
     
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var cellView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
