@@ -9,7 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    var users = ["jcurtz": "5c00776e2f1dfe588f33138c",
+    var users = ["jkurtz": "5c00776e2f1dfe588f33138c",
                  "bfoote":  "5c01b47607170f9377b207bc"]
     //"we will have a master password for now"
     
