@@ -19,6 +19,9 @@ class ArtisanFormViewController: UIViewController {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var middleName: UITextField!
     
+    var name:String = ""
+    var number:String = ""
+
     override func viewDidLoad() {
         bioText.layer.borderWidth = 1.0
         bioText.layer.cornerRadius = 5.0
@@ -33,7 +36,6 @@ class ArtisanFormViewController: UIViewController {
         //TODO add support for country codes longer than 1 digit
         var phoneNumNoHyphens = phoneNumber.text!
         phoneNumNoHyphens = String(phoneNumber.text!.filter { "01234567890.".contains($0) })
-        print(phoneNumNoHyphens)
         
         //TODO implement some sort of checking system for each of the fields
         //concatonating the names since the database only supports one name for now
@@ -57,12 +59,12 @@ class ArtisanFormViewController: UIViewController {
             }
         }else{
             print(phoneNumber.text!)
+            number = phoneNumber.text!
             //middle name is optional
-            var name = ""
             if (middleName.text! != ""){
                 name = firstName.text! + " " + middleName.text! + " " + lastName.text!
             }else{
-                name = firstName.text! + lastName.text!
+                name = firstName.text! + " " + lastName.text!
             }
             //currently this userID is hard coded in, but in the future we should have a global userID maybe?
             let json: [String: Any] = ["userID": "5c00776e2f1dfe588f33138c", "name": name,"bio": bioText.text!, "phone_number": phoneNumNoHyphens]
@@ -89,9 +91,18 @@ class ArtisanFormViewController: UIViewController {
             }
             
             task.resume()
+            performSegue(withIdentifier: "CreatedArtisanSegue", sender: submitAction)
             
         }
         
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if(segue.destination is ArtisanCreatedViewController){
+            let vc = segue.destination as? ArtisanCreatedViewController
+            vc?.username = name
+            vc?.number = number
+        }
     }
     
     /*

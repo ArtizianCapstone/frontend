@@ -32,9 +32,6 @@ class LoginViewController: UIViewController {
             performSegue(withIdentifier: "loginSegue", sender: loginButton)
         }
     }
-    func shouldPerformSegueWithIdentifier(_ identifier: String!,sender: UIButton!) -> Bool {
-        return authenticated
-    }
     /*
     // MARK: - Navigation
 
