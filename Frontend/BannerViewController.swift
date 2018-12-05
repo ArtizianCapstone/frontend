@@ -26,17 +26,7 @@ class BannerViewController: UICollectionViewController, UICollectionViewDelegate
         return cell
         
     }
-   /* var myCollectionViewHeight: CGFloat = 0.0 {
-        didSet {
-            if myCollectionViewHeight != oldValue {
-                banner.collectionViewLayout.invalidateLayout()
-                banner.collectionViewLayout.prepare()
-            }
-        }
-    }*/
-    /*override func viewDidLayoutSubviews() {
-        myCollectionViewHeight = banner.bounds.size.height
-    }*/
+
     @IBOutlet var banner: UICollectionView!
     
     @IBOutlet weak var bannerLayout: UICollectionViewFlowLayout!

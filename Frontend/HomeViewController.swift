@@ -13,7 +13,10 @@ class FirstViewController: UIViewController {
 
   //  @IBOutlet weak var carousel: UICollectionView!
     
+    @IBOutlet weak var welcomeMessage: UILabel!
     @IBOutlet weak var bannerContainer: UIView!
+    
+    @IBOutlet weak var fakeGraphHolder: UIImageView!
     //carousel.scrollDirection = .horizontal
     override func viewDidLoad() {
         super.viewDidLoad()
