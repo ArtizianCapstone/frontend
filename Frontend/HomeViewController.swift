@@ -9,8 +9,10 @@
 
 import UIKit
 //home screen
-class FirstViewController: UIViewController {
-
+class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    let bannerQuotes = [bannerQuote(message: "Listings with photos get 30% higher interation", textColor: UIColor.blue, backgroundColor: UIColor.green), bannerQuote(message: "Incorperate keywords in listings "),
+                        bannerQuote(message: "Artisans make up the core of the community")
+    ]
 
     @IBOutlet weak var welcomeMessage: UILabel!
     //@IBOutlet weak var bannerContainer: UIView!
@@ -20,14 +22,17 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var fakeGraphHolder: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+      //  banner.register(customBannerCell.self, forCellWithReuseIdentifier: "customCell")
+        banner.delegate = self
+        banner.dataSource = self
+        bannerLayout.itemSize = CGSize(width: view.frame.width, height: view.frame.height)
+        bannerLayout.scrollDirection = .horizontal
         // Do any additional setup after loading the view, typically from a nib.
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bannerQuotes.count
     }
-    let bannerQuotes = [bannerQuote(message: "Listings with photos get 30% higher interation", textColor: UIColor.blue, backgroundColor: UIColor.green), bannerQuote(message: "Incorperate keywords in listings "),
-                        bannerQuote(message: "Artisans make up the core of the community")
-    ]
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = banner.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! customBannerCell
         // Do any custom modifications you your cell, referencing the outlets you defined in the Custom cell file.
