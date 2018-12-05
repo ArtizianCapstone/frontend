@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r9l-OX-5fX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r9l-OX-5fX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +189,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Nl4-y8-kPF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Orders" id="S2Q-BI-FRa"/>
+                    <tabBarItem key="tabBarItem" title="Orders" image="products" selectedImage="products" id="S2Q-BI-FRa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJe-bZ-FSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,7 +219,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CVE-vB-OSs"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Payments" id="vfg-c5-wWn"/>
+                    <tabBarItem key="tabBarItem" title="Payments" image="payments" selectedImage="payments" id="vfg-c5-wWn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFo-B7-4jN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,7 +229,7 @@
         <scene sceneID="wS3-dw-XDK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O9g-iU-51q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Artisans" id="2QG-XH-giB"/>
+                    <tabBarItem key="tabBarItem" title="Artisans" image="artisans" selectedImage="artisans" id="2QG-XH-giB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kce-ai-Xoz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -246,6 +246,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="artisans" width="19.5" height="19.5"/>
+        <image name="home" width="18" height="18"/>
+        <image name="payments" width="18" height="18"/>
+        <image name="products" width="18" height="18"/>
     </resources>
 </document>
