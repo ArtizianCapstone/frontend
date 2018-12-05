@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Artisan Table View Controller-->
+        <!--Artisans-->
         <scene sceneID="H1W-aL-B9m">
             <objects>
                 <tableViewController id="eFo-9t-Dnm" customClass="ArtisanTableViewController" customModule="Frontend" customModuleProvider="target" sceneMemberID="viewController">
@@ -75,7 +75,9 @@
                             <outlet property="delegate" destination="eFo-9t-Dnm" id="Fnr-hp-9QN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3eV-tX-0IW"/>
+                    <navigationItem key="navigationItem" title="Artisans" id="3eV-tX-0IW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aRy-NN-aZo"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbq-X9-rOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
