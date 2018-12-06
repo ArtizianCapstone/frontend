@@ -71,17 +71,32 @@ class ArtisanFormViewController: UIViewController {
             //currently this userID is hard coded in, but in the future we should have a global userID maybe?
             let json: [String: Any] = ["userId": "5c00776e2f1dfe588f33138c", "name": name,"bio": bioText.text!, "phone_number": phoneNumNoHyphens]
             
-            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: json) else {return}
             
             // create post request
-            let url = URL(string: "http://localhost:3000/artisans")!
+            guard let url = URL(string: "http://localhost:3000/artisans") else {return}
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
-            
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             // insert json data to the request
             request.httpBody = jsonData
             
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            let task = URLSession.shared
+            task.dataTask(with: request) { (data, response, error) in
+                if let response = response {
+                    print( response )
+                }
+                if let data = data {
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data, options: [])
+                        print( json )
+                    }
+                    catch{
+                        print(error)
+                    }
+                }
+            }.resume()
+            /*
                 guard let data = data, error == nil else {
                     print(error?.localizedDescription ?? "No data")
                     return
@@ -92,12 +107,14 @@ class ArtisanFormViewController: UIViewController {
                 }
             }
             
-            task.resume()
+            task.resume()*/
             performSegue(withIdentifier: "CreatedArtisanSegue", sender: submitAction)
-            
-        }
+ 
         
+        
+        }
     }
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if(segue.destination is ArtisanCreatedViewController){
