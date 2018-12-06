@@ -152,17 +152,28 @@ class ArtisanTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showArtisanDetail" {
+            let destVC = segue.destination as? ArtisanDetailViewController
+            let index = (tableView.indexPathForSelectedRow?.row)!
+            
+            print (user.artisans[index])
+            destVC?.bio = user.artisans[index].bio
+            destVC?.name = user.artisans[index].name
+            destVC?.number = user.artisans[index].phone_number
+            
+        }
     }
-    */
+    
 
     //MARK: Private Methods
+    
     private func loadSampleArtisans() {
         
         /* following tutorial at
