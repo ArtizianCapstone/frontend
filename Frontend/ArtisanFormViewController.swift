@@ -56,7 +56,8 @@ class ArtisanFormViewController: UIViewController {
             }
             if (phoneNumber.text! == ""){
                 errorLabel.text!.append("\nPhone number is a required field")
-            }else if (phoneNumNoHyphens.count != 11){
+            }
+            if (phoneNumNoHyphens.count < 11){
                 errorLabel.text!.append("\nInvalid phone number entered")
             }
         }else{
