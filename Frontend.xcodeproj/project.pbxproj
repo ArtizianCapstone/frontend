@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3B4D50D21B64AAF001D374C /* customBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4D50C21B64AAF001D374C /* customBannerCell.swift */; };
+		B3304E7021B90FCE0033B880 /* customBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3304E6F21B90FCE0033B880 /* customBannerCell.swift */; };
 		B3B4D50F21B70DE8001D374C /* bannerQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4D50E21B70DE8001D374C /* bannerQuote.swift */; };
 		B3B4D51121B781CC001D374C /* fakegraph.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B4D51021B781CC001D374C /* fakegraph.png */; };
 		B3F6429221B5E4C700370940 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F6429121B5E4C700370940 /* BannerViewController.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B3B4D50C21B64AAF001D374C /* customBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customBannerCell.swift; sourceTree = "<group>"; };
+		B3304E6F21B90FCE0033B880 /* customBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customBannerCell.swift; sourceTree = "<group>"; };
 		B3B4D50E21B70DE8001D374C /* bannerQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerQuote.swift; sourceTree = "<group>"; };
 		B3B4D51021B781CC001D374C /* fakegraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fakegraph.png; sourceTree = "<group>"; };
 		B3F6429121B5E4C700370940 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
@@ -64,13 +64,13 @@
 		B4D47CA621ADF569005CA50E /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				B3304E6F21B90FCE0033B880 /* customBannerCell.swift */,
 				B4D47CA721ADF569005CA50E /* AppDelegate.swift */,
 				B4D47CA921ADF569005CA50E /* FirstViewController.swift */,
 				B3F6429121B5E4C700370940 /* BannerViewController.swift */,
 				B4D47CAB21ADF569005CA50E /* SecondViewController.swift */,
 				B4D47CAD21ADF569005CA50E /* Main.storyboard */,
 				B3B4D50E21B70DE8001D374C /* bannerQuote.swift */,
-				B3B4D50C21B64AAF001D374C /* customBannerCell.swift */,
 				B3B4D51021B781CC001D374C /* fakegraph.png */,
 				B4D47CB021ADF56B005CA50E /* Assets.xcassets */,
 				B4D47CB221ADF56B005CA50E /* LaunchScreen.storyboard */,
@@ -152,8 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4D47CAC21ADF569005CA50E /* SecondViewController.swift in Sources */,
-				B3B4D50D21B64AAF001D374C /* customBannerCell.swift in Sources */,
 				B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */,
+				B3304E7021B90FCE0033B880 /* customBannerCell.swift in Sources */,
 				B3F6429221B5E4C700370940 /* BannerViewController.swift in Sources */,
 				B3B4D50F21B70DE8001D374C /* bannerQuote.swift in Sources */,
 				B4D47CAA21ADF569005CA50E /* FirstViewController.swift in Sources */,

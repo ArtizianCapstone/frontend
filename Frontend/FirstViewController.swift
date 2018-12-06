@@ -12,8 +12,16 @@ import UIKit
 //UICollectionViewDelegateFlowLayout,
 //firstViewController
 class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    let bannerQuotes = [bannerQuote(message: "Listings with photos get 30% higher interation", textColor: UIColor.blue, backgroundColor: UIColor.green), bannerQuote(message: "Incorperate keywords in listings "),
-                        bannerQuote(message: "Artisans make up the core of the community")
+    let bannerQuotes = [
+        bannerQuote(message: "Artisans make up the core of the community", textColor: UIColor.white, backgroundColor: UIColor(patternImage: UIImage(named: "stockImage1.jpg")!)),
+        bannerQuote(message: "Listings with photos get 30% higher interation", textColor: UIColor.white, backgroundColor: UIColor(patternImage: UIImage(named: "stockImage2.jpg")!)),
+        //bannerQuote(message: "Listings with photos get 30% higher interation", textColor: UIColor.black, cellImage: UIImage(named: "stockImage2.jpg")!),
+        bannerQuote(message: "Incorperate keywords in listings "),
+        bannerQuote(message: "Artisans make up the core of the community"),
+        bannerQuote(message: "Listings with photos get 30% higher interation", textColor: UIColor.blue, backgroundColor: UIColor.yellow),
+        bannerQuote(message: "Incorperate keywords in listings "),
+        
+        bannerQuote(message: "Artisans make up the core of the community")
     ]
 
     @IBOutlet weak var welcomeMessage: UILabel!
@@ -39,7 +47,15 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         NSLog("drew a cell")
         let cell = banner.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! customBannerCell
         // Do any custom modifications you your cell, referencing the outlets you defined in the Custom cell file.
-        cell.messageLabel.backgroundColor = bannerQuotes[indexPath.row].backgroundColor
+        
+        if bannerQuotes[indexPath.row].cellImage == nil{
+            cell.messageLabel.backgroundColor = bannerQuotes[indexPath.row].backgroundColor
+        }
+        else {
+            cell.cellBackgroundImage.image = bannerQuotes[indexPath.row].cellImage
+            print("reached")
+        }
+        
         cell.messageLabel.textColor = bannerQuotes[indexPath.row].textColor
         //print(bannerQuotes[indexPath.row].message)
         cell.messageLabel.text = bannerQuotes[indexPath.row].message
