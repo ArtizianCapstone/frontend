@@ -118,11 +118,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Incorrect username or password." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umO-Ze-1sa">
+                                <rect key="frame" x="70" y="386" width="251" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lHH-F8-76S"/>
                     </view>
                     <connections>
+                        <outlet property="incorrectUsernameOrPass" destination="umO-Ze-1sa" id="EAy-s6-Pi5"/>
                         <outlet property="loginButton" destination="Nax-fD-Vsa" id="uak-qv-a0U"/>
                         <outlet property="password" destination="Rch-Hw-V8R" id="6rD-hJ-FjC"/>
                         <outlet property="username" destination="Nds-dl-q5Z" id="m9Q-yV-R7a"/>
@@ -131,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aid-YI-sj8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-769" y="-42"/>
+            <point key="canvasLocation" x="-769.56521739130437" y="-42.1875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
