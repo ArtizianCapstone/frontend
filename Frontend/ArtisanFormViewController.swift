@@ -26,9 +26,9 @@ class ArtisanFormViewController: UIViewController {
         bioText.layer.borderWidth = 1.0
         bioText.layer.cornerRadius = 5.0
         bioText.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
-        submitButton.layer.borderWidth = 1.0
+        /*submitButton.layer.borderWidth = 1.0
         submitButton.layer.cornerRadius = 5.0
-        submitButton.layer.borderColor = UIColor(red:0, green: 0, blue: 0, alpha: 1.0).cgColor
+        submitButton.layer.borderColor = UIColor(red:0, green: 0, blue: 0, alpha: 1.0).cgColor*/
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
