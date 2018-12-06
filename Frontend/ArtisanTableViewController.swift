@@ -12,6 +12,8 @@ class ArtisanTableViewController: UITableViewController {
     //MARK: Properties
     var user = User()
     var artisans = [Artisan]()
+    @IBOutlet weak var addArtisanButton: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,12 @@ class ArtisanTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+  
+    @IBAction func addArtisanAction(_ sender: Any) {
+        print("here")
+        performSegue(withIdentifier: "addArtisanSegue", sender: addArtisanButton)
+
+    }
     private func getUser(id: String) {
         let urlString = "http://localhost:3000/users/" + id
         

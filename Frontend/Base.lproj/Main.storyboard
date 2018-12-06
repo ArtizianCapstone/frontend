@@ -77,8 +77,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Artisans" id="3eV-tX-0IW">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aRy-NN-aZo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aRy-NN-aZo">
+                            <connections>
+                                <action selector="addArtisanAction:" destination="eFo-9t-Dnm" id="XuD-fk-YkT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addArtisanButton" destination="aRy-NN-aZo" id="Dsx-JZ-nVu"/>
+                        <segue destination="Jha-FV-L4Z" kind="show" identifier="addArtisanSegue" id="PtP-hQ-u1z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbq-X9-rOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,10 +213,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="1035"/>
         </scene>
-        <!--ArtisanForm-->
+        <!--Add an Artisan-->
         <scene sceneID="lig-Nr-aBW">
             <objects>
-                <viewController title="ArtisanForm" id="Jha-FV-L4Z" customClass="ArtisanFormViewController" customModule="Frontend" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add an Artisan" id="Jha-FV-L4Z" customClass="ArtisanFormViewController" customModule="Frontend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wjl-Of-2Nc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -270,21 +278,6 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWX-6d-Zfi">
-                                <rect key="frame" x="11" y="611" width="160" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit Form "/>
-                                <connections>
-                                    <action selector="submitAction:" destination="Jha-FV-L4Z" eventType="touchUpInside" id="UMl-Sa-qEl"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add an Artisan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qT-XZ-2AR">
-                                <rect key="frame" x="111" y="43" width="152" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error:" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoj-qe-tan">
                                 <rect key="frame" x="16" y="80" width="343" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -292,6 +285,21 @@
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Vi-cO-o9c">
+                                <rect key="frame" x="302" y="42" width="58" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWX-6d-Zfi">
+                                <rect key="frame" x="-1" y="535" width="160" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit Form "/>
+                                <connections>
+                                    <action selector="submitAction:" destination="Jha-FV-L4Z" eventType="touchUpInside" id="UMl-Sa-qEl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sVm-6e-M6I"/>
@@ -309,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RoT-En-Erh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525.5999999999999" y="1030.4347826086957"/>
+            <point key="canvasLocation" x="1794" y="1853"/>
         </scene>
         <!--Artisan Created View Controller-->
         <scene sceneID="52w-aA-bKb">
@@ -394,7 +402,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IaO-Yw-hvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2246" y="1030"/>
+            <point key="canvasLocation" x="3046" y="1145"/>
         </scene>
         <!--Payments-->
         <scene sceneID="Y5e-ip-cm7">
@@ -502,6 +510,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JDL-fY-Zzp"/>
+        <segue reference="68a-1h-Nhn"/>
         <segue reference="yCY-0r-9Xo"/>
     </inferredMetricsTieBreakers>
 </document>
