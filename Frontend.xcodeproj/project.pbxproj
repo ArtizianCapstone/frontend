@@ -20,6 +20,10 @@
 		B4D47CAF21ADF569005CA50E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D47CAD21ADF569005CA50E /* Main.storyboard */; };
 		B4D47CB121ADF56B005CA50E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4D47CB021ADF56B005CA50E /* Assets.xcassets */; };
 		B4D47CB421ADF56B005CA50E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D47CB221ADF56B005CA50E /* LaunchScreen.storyboard */; };
+		DC0AE63821B9A1C800D8C597 /* customBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63721B9A1C800D8C597 /* customBannerCell.swift */; };
+		DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63921B9A25400D8C597 /* bannerQuote.swift */; };
+		DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */; };
+		DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		B4D47CB021ADF56B005CA50E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4D47CB321ADF56B005CA50E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4D47CB521ADF56B005CA50E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC0AE63721B9A1C800D8C597 /* customBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customBannerCell.swift; sourceTree = "<group>"; };
+		DC0AE63921B9A25400D8C597 /* bannerQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerQuote.swift; sourceTree = "<group>"; };
+		DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fakegraph.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +84,17 @@
 				B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */,
 				B4B9585621B787DB00B07578 /* ArtisanDetailViewController.swift */,
 				B4D47CA721ADF569005CA50E /* AppDelegate.swift */,
-				B4D47CA921ADF569005CA50E /* FirstViewController.swift */,
 				B4D47CAD21ADF569005CA50E /* Main.storyboard */,
 				3B0DB36D21B8514700DE1B5D /* ArtisanCreatedViewController.swift */,
-				3B0DB36B21B7858800DE1B5D /* ArtisanFormViewController.swift */,
 				3B0DB36921B6298500DE1B5D /* LoginViewController.swift */,
+				3B0DB36B21B7858800DE1B5D /* ArtisanFormViewController.swift */,
+				DC0AE63721B9A1C800D8C597 /* customBannerCell.swift */,
+				B4D47CA921ADF569005CA50E /* FirstViewController.swift */,
+				DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */,
+				DC0AE63921B9A25400D8C597 /* bannerQuote.swift */,
 				B4D47CB021ADF56B005CA50E /* Assets.xcassets */,
 				B4D47CB221ADF56B005CA50E /* LaunchScreen.storyboard */,
+				DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */,
 				B4D47CB521ADF56B005CA50E /* Info.plist */,
 			);
 			path = Frontend;
@@ -147,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4D47CB421ADF56B005CA50E /* LaunchScreen.storyboard in Resources */,
+				DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */,
 				B4D47CB121ADF56B005CA50E /* Assets.xcassets in Resources */,
 				B4D47CAF21ADF569005CA50E /* Main.storyboard in Resources */,
 			);
@@ -161,12 +174,15 @@
 			files = (
 				B4B9585721B787DB00B07578 /* ArtisanDetailViewController.swift in Sources */,
 				3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */,
+				DC0AE63821B9A1C800D8C597 /* customBannerCell.swift in Sources */,
 				3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */,
+				DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */,
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
 				B4B9585521B6169E00B07578 /* User.swift in Sources */,
 				B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */,
 				B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */,
+				DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */,
 				B4D47CAA21ADF569005CA50E /* FirstViewController.swift in Sources */,
 				3B0DB36C21B7858800DE1B5D /* ArtisanFormViewController.swift in Sources */,
 			);
