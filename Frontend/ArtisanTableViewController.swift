@@ -18,6 +18,8 @@ class ArtisanTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getUser(id: "5c00776e2f1dfe588f33138c")
+        self.tableView?.reloadData()
+        
         //loadSampleArtisans()
 
         // Uncomment the following line to preserve selection between presentations
@@ -25,6 +27,11 @@ class ArtisanTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        getUser(id: "5c00776e2f1dfe588f33138c")
     }
   
     @IBAction func addArtisanAction(_ sender: Any) {
@@ -115,7 +122,7 @@ class ArtisanTableViewController: UITableViewController {
             cell.nameLabel.text = artisan.name
 
         } else {
-            cell.nameLabel.text = "loading"
+            cell.nameLabel.text = ""
 
         }
         // Configure the cell...
