@@ -9,24 +9,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Frontend/LoginViewController.swift"
-            timestampString = "569882645.5426919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "5"
-            endingLineNumber = "5"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Frontend/ArtisanFormViewController.swift"
-            timestampString = "570056562.530582"
+            timestampString = "570060375.639989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "8"
@@ -38,89 +22,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Frontend/LoginViewController.swift"
-            timestampString = "569882645.5582941"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "users"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Frontend.LoginViewController.users.getter : Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
-                  moduleName = "Frontend"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zaneali/Documents/Capstone/frontend/Frontend/LoginViewController.swift"
-                  timestampString = "570056564.36322"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "110">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Frontend.LoginViewController.users.setter : Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
-                  moduleName = "Frontend"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zaneali/Documents/Capstone/frontend/Frontend/LoginViewController.swift"
-                  timestampString = "570056564.3786401"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "126">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Frontend.LoginViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Frontend.LoginViewController"
-                  moduleName = "Frontend"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zaneali/Documents/Capstone/frontend/Frontend/LoginViewController.swift"
-                  timestampString = "570056564.383786"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "173">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Frontend.LoginViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Frontend.LoginViewController&gt;"
-                  moduleName = "Frontend"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zaneali/Documents/Capstone/frontend/Frontend/LoginViewController.swift"
-                  timestampString = "570056564.388191"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "144">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frontend/LoginViewController.swift"
-            timestampString = "569882645.558712"
+            timestampString = "570060422.2736191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"

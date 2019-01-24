@@ -22,6 +22,8 @@ class AddListingsViewController: UIViewController {
         itemPrice.keyboardType = .numberPad
         
        itemDescription.layer.borderWidth = 1.0
+        itemDescription.layer.cornerRadius = 5.0
+       itemDescription.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
         // Do any additional setup after loading the view.
     }
     
