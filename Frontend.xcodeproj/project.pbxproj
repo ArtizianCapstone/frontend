@@ -10,6 +10,8 @@
 		3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36921B6298500DE1B5D /* LoginViewController.swift */; };
 		3B0DB36C21B7858800DE1B5D /* ArtisanFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36B21B7858800DE1B5D /* ArtisanFormViewController.swift */; };
 		3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36D21B8514700DE1B5D /* ArtisanCreatedViewController.swift */; };
+		3B3A6BEB21F7B29D006D301F /* AddListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */; };
+		3B40767E21E7E5B80062931D /* listings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B40767D21E7E5B80062931D /* listings.storyboard */; };
 		B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */; };
 		B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */; };
 		B4B9585321B477F600B07578 /* Artisan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585221B477F600B07578 /* Artisan.swift */; };
@@ -19,7 +21,6 @@
 		B4D47CAA21ADF569005CA50E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D47CA921ADF569005CA50E /* FirstViewController.swift */; };
 		B4D47CAF21ADF569005CA50E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D47CAD21ADF569005CA50E /* Main.storyboard */; };
 		B4D47CB121ADF56B005CA50E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4D47CB021ADF56B005CA50E /* Assets.xcassets */; };
-		B4D47CB421ADF56B005CA50E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D47CB221ADF56B005CA50E /* LaunchScreen.storyboard */; };
 		DC0AE63821B9A1C800D8C597 /* customBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63721B9A1C800D8C597 /* customBannerCell.swift */; };
 		DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63921B9A25400D8C597 /* bannerQuote.swift */; };
 		DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */; };
@@ -30,6 +31,8 @@
 		3B0DB36921B6298500DE1B5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3B0DB36B21B7858800DE1B5D /* ArtisanFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanFormViewController.swift; sourceTree = "<group>"; };
 		3B0DB36D21B8514700DE1B5D /* ArtisanCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanCreatedViewController.swift; sourceTree = "<group>"; };
+		3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListingsViewController.swift; sourceTree = "<group>"; };
+		3B40767D21E7E5B80062931D /* listings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = listings.storyboard; sourceTree = "<group>"; };
 		B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewCell.swift; sourceTree = "<group>"; };
 		B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewController.swift; sourceTree = "<group>"; };
 		B4B9585221B477F600B07578 /* Artisan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artisan.swift; sourceTree = "<group>"; };
@@ -40,7 +43,6 @@
 		B4D47CA921ADF569005CA50E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		B4D47CAE21ADF569005CA50E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4D47CB021ADF56B005CA50E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B4D47CB321ADF56B005CA50E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4D47CB521ADF56B005CA50E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC0AE63721B9A1C800D8C597 /* customBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customBannerCell.swift; sourceTree = "<group>"; };
 		DC0AE63921B9A25400D8C597 /* bannerQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerQuote.swift; sourceTree = "<group>"; };
@@ -78,6 +80,8 @@
 		B4D47CA621ADF569005CA50E /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				3B40767D21E7E5B80062931D /* listings.storyboard */,
+				3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */,
 				B4B9585221B477F600B07578 /* Artisan.swift */,
 				B4B9585421B6169E00B07578 /* User.swift */,
 				B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */,
@@ -93,7 +97,6 @@
 				DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */,
 				DC0AE63921B9A25400D8C597 /* bannerQuote.swift */,
 				B4D47CB021ADF56B005CA50E /* Assets.xcassets */,
-				B4D47CB221ADF56B005CA50E /* LaunchScreen.storyboard */,
 				DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */,
 				B4D47CB521ADF56B005CA50E /* Info.plist */,
 			);
@@ -158,7 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4D47CB421ADF56B005CA50E /* LaunchScreen.storyboard in Resources */,
+				3B40767E21E7E5B80062931D /* listings.storyboard in Resources */,
 				DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */,
 				B4D47CB121ADF56B005CA50E /* Assets.xcassets in Resources */,
 				B4D47CAF21ADF569005CA50E /* Main.storyboard in Resources */,
@@ -179,6 +182,7 @@
 				DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */,
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
+				3B3A6BEB21F7B29D006D301F /* AddListingsViewController.swift in Sources */,
 				B4B9585521B6169E00B07578 /* User.swift in Sources */,
 				B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */,
 				B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */,
@@ -197,14 +201,6 @@
 				B4D47CAE21ADF569005CA50E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B4D47CB221ADF56B005CA50E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B4D47CB321ADF56B005CA50E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
