@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:File.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/Rebecca/frontend/Frontend/Order.swift">
+   </FileRef>
+   <FileRef
       location = "group:Frontend.xcodeproj">
    </FileRef>
    <FileRef
