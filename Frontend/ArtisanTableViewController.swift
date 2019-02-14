@@ -76,8 +76,8 @@ class ArtisanTableViewController: UITableViewController {
                 
                 // JSON decoding and parsing
                 do {
-                    let artisans = try JSONDecoder().decode([Artisan].self, from: data)
-                    
+                    var artisans = try JSONDecoder().decode([Artisan].self, from: data)
+                    artisans = artisans.sorted {$0.name < $1.name }
                     //Get back to the main queue
                     DispatchQueue.main.async {
                         self.user.artisans = artisans
@@ -107,6 +107,17 @@ class ArtisanTableViewController: UITableViewController {
         } else {
             return 20
 
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            user.artisans.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 
