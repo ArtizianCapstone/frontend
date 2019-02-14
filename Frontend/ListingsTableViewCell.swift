@@ -9,10 +9,13 @@
 import UIKit
 
 class ListingsTableViewCell: UITableViewCell {
+    //MARK: Properties
+    
     @IBOutlet weak var sellerName: UILabel!
     @IBOutlet weak var itemName: UILabel!
-    @IBOutlet weak var price: UIView!
-    @IBOutlet weak var stock: UILabel!
+    @IBOutlet weak var priceValue: UILabel!
+    @IBOutlet weak var stockValue: UILabel!
+    @IBOutlet weak var sellerImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

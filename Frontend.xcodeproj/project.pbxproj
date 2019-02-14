@@ -13,9 +13,11 @@
 		3B37DBA121FA6D1500372FF0 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B37DBA021FA6D1500372FF0 /* OrdersViewController.swift */; };
 		3B3A6BEB21F7B29D006D301F /* AddListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */; };
 		3B40767E21E7E5B80062931D /* listings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B40767D21E7E5B80062931D /* listings.storyboard */; };
-		3BA7EB17220A28AF00F969C7 /* ListingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7EB16220A28AF00F969C7 /* ListingsTableViewController.swift */; };
 		3BCAF53B220BD6C700F9EEA7 /* ListingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */; };
 		3BCAF53D220CB8CB00F9EEA7 /* defaultPhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAF53C220CB8CB00F9EEA7 /* defaultPhoto.jpg */; };
+		3BCAF53F220CD92D00F9EEA7 /* defaultPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAF53E220CD92D00F9EEA7 /* defaultPhoto.png */; };
+		3BCAF541220CE04A00F9EEA7 /* Listings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAF540220CE04A00F9EEA7 /* Listings.swift */; };
+		3BF9D85E221607E900FBE733 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF9D85D221607E900FBE733 /* ListingsViewController.swift */; };
 		B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */; };
 		B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */; };
 		B4B9585321B477F600B07578 /* Artisan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585221B477F600B07578 /* Artisan.swift */; };
@@ -38,9 +40,11 @@
 		3B37DBA021FA6D1500372FF0 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListingsViewController.swift; sourceTree = "<group>"; };
 		3B40767D21E7E5B80062931D /* listings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = listings.storyboard; sourceTree = "<group>"; };
-		3BA7EB16220A28AF00F969C7 /* ListingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsTableViewController.swift; sourceTree = "<group>"; };
 		3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsTableViewCell.swift; sourceTree = "<group>"; };
 		3BCAF53C220CB8CB00F9EEA7 /* defaultPhoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultPhoto.jpg; sourceTree = "<group>"; };
+		3BCAF53E220CD92D00F9EEA7 /* defaultPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultPhoto.png; sourceTree = "<group>"; };
+		3BCAF540220CE04A00F9EEA7 /* Listings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listings.swift; sourceTree = "<group>"; };
+		3BF9D85D221607E900FBE733 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
 		B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewCell.swift; sourceTree = "<group>"; };
 		B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewController.swift; sourceTree = "<group>"; };
 		B4B9585221B477F600B07578 /* Artisan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artisan.swift; sourceTree = "<group>"; };
@@ -89,11 +93,13 @@
 			isa = PBXGroup;
 			children = (
 				3B40767D21E7E5B80062931D /* listings.storyboard */,
+				3BF9D85D221607E900FBE733 /* ListingsViewController.swift */,
+				3BCAF53E220CD92D00F9EEA7 /* defaultPhoto.png */,
 				3BCAF53C220CB8CB00F9EEA7 /* defaultPhoto.jpg */,
-				3BA7EB16220A28AF00F969C7 /* ListingsTableViewController.swift */,
+				3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */,
+				3BCAF540220CE04A00F9EEA7 /* Listings.swift */,
 				3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */,
 				B4B9585221B477F600B07578 /* Artisan.swift */,
-				3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */,
 				B4B9585421B6169E00B07578 /* User.swift */,
 				B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */,
 				B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */,
@@ -177,6 +183,7 @@
 				3B40767E21E7E5B80062931D /* listings.storyboard in Resources */,
 				DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */,
 				B4D47CB121ADF56B005CA50E /* Assets.xcassets in Resources */,
+				3BCAF53F220CD92D00F9EEA7 /* defaultPhoto.png in Resources */,
 				B4D47CAF21ADF569005CA50E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,15 +196,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BCAF53B220BD6C700F9EEA7 /* ListingsTableViewCell.swift in Sources */,
-				3BA7EB17220A28AF00F969C7 /* ListingsTableViewController.swift in Sources */,
 				B4B9585721B787DB00B07578 /* ArtisanDetailViewController.swift in Sources */,
 				3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */,
 				DC0AE63821B9A1C800D8C597 /* customBannerCell.swift in Sources */,
+				3BF9D85E221607E900FBE733 /* ListingsViewController.swift in Sources */,
 				3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */,
 				DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */,
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
 				3B3A6BEB21F7B29D006D301F /* AddListingsViewController.swift in Sources */,
+				3BCAF541220CE04A00F9EEA7 /* Listings.swift in Sources */,
 				B4B9585521B6169E00B07578 /* User.swift in Sources */,
 				B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */,
 				3B37DBA121FA6D1500372FF0 /* OrdersViewController.swift in Sources */,
