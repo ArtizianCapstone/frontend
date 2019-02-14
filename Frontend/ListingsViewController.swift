@@ -8,31 +8,38 @@
 
 import UIKit
 
-class ListingsViewController: UIViewController {
+class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var listings = [Listing]()
     
-    let photo1 = UIImage(named: "defaultImage.png")
-    let photo2 = UIImage(named: "defaultImage.png")
-    let photo3 = UIImage(named: "defaultImage.png")
+    @IBOutlet weak var funFact: UITextView!
     
-  
-    @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var factDetails: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        funFact.text! = "\nTip:"
+        factDetails.text! = "\nListings with photos sell 20% more frequently"
+        funFact.layer.cornerRadius = 5.0
+       
+        
         loadListings()
         // Do any additional setup after loading the view.
     }
-   
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 // your number of cell here
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listings.count // your number of cell here
     }
-
+    
     func tableView(tableView: UITableView, numberOfSections: Int) -> Int {
         return 1
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // your cell coding
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cellIdentifier = "ListingsTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as? ListingsTableViewCell else {
@@ -41,7 +48,7 @@ class ListingsViewController: UIViewController {
         
         let listing = listings[indexPath.row]
         cell.itemName.text = listing.name
-        cell.imageView?.image = photo1
+        cell.imageView?.image = listing.photo
         cell.sellerName.text = listing.artisan
         cell.priceValue.text? = "$" + listing.price.description
         cell.stockValue.text? = listing.quantity.description + ""
@@ -50,7 +57,11 @@ class ListingsViewController: UIViewController {
         
         return cell
     }
-
+    
+    
+   
+   
+   
     /*
     // MARK: - Navigation
 
@@ -61,16 +72,18 @@ class ListingsViewController: UIViewController {
     }
     */
 private func loadListings() {
+    let defaultImage = UIImage(named: "defaultPhoto.png")
+    
+    let photo1 = UIImage(named: "shoes1.jpg")
+    let photo2 = UIImage(named: "pants.jpg")
+    let photo3 = UIImage(named: "rugs.jpeg")
     
     
+    let listing1 = Listing(name: "Shoes", artisan: "Tom Savage", price: 42.51, quantity : 2, photo: photo1!)
     
-    let listing1 = Listing(name: "Shoes", artisan: "Tom", price: 5.42, quantity : 2)
-    //  else{
-    //     fatalError("Unable to instantiate listing1")
-    // }
-    let listing2 = Listing(name: "Pants", artisan: "Jim", price: 5.42, quantity : 2)
+    let listing2 = Listing(name: "Pants", artisan: "Jim Morrisey", price: 30.00, quantity : 2, photo: photo2 ?? defaultImage!)
     
-    let listing3 = Listing(name: "Rugs", artisan: "Sally", price: 5.42, quantity : 2)
+    let listing3 = Listing(name: "Rugs", artisan: "Sally Susanna", price: 5000, quantity : 2, photo: photo3 ?? defaultImage!)
     
     listings += [listing1,listing2,listing3]
     

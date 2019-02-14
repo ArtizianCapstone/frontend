@@ -16,8 +16,9 @@ class ListingsTableViewCell: UITableViewCell {
     @IBOutlet weak var priceValue: UILabel!
     @IBOutlet weak var stockValue: UILabel!
     @IBOutlet weak var sellerImage: UIImageView!
-    
-    override func awakeFromNib() {
+     override func awakeFromNib() {
+        
+        
         super.awakeFromNib()
         // Initialization code
     }

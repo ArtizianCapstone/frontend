@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Frontend.xcodeproj">
+      location = "group:/Users/zaneali/Documents/Capstone/frontend/Frontend/shoes1.jpg">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/zaneali/Documents/Capstone/frontend/Frontend/shoes1.jpg">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/zaneali/Documents/Capstone/frontend/Frontend/shoes.jpg">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
