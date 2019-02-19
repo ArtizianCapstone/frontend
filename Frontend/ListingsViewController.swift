@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var listings = [Listing]()
