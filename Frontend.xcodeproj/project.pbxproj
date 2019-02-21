@@ -14,6 +14,7 @@
 		3B122BA2221F46D3004932A0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B122B9F221F4589004932A0 /* Home.storyboard */; };
 		3B122BA5221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3B122BA3221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf */; };
 		3B122BA6221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3B122BA4221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf */; };
+		3B122BA8221F5939004932A0 /* listings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B122BA7221F5939004932A0 /* listings.png */; };
 		3B37DBA121FA6D1500372FF0 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B37DBA021FA6D1500372FF0 /* OrdersViewController.swift */; };
 		3B3A6BEB21F7B29D006D301F /* AddListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */; };
 		3B40767E21E7E5B80062931D /* listings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B40767D21E7E5B80062931D /* listings.storyboard */; };
@@ -48,6 +49,7 @@
 		3B122BA0221F458B004932A0 /* CustomMeetingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomMeetingCell.swift; path = /Users/zaneali/Documents/Capstone/frontend/Frontend/CustomMeetingCell.swift; sourceTree = "<absolute>"; };
 		3B122BA3221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		3B122BA4221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		3B122BA7221F5939004932A0 /* listings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = listings.png; path = Assets.xcassets/listings.png; sourceTree = "<group>"; };
 		3B37DBA021FA6D1500372FF0 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListingsViewController.swift; sourceTree = "<group>"; };
 		3B40767D21E7E5B80062931D /* listings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = listings.storyboard; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */,
 				DC0AE63921B9A25400D8C597 /* bannerQuote.swift */,
 				B4D47CB021ADF56B005CA50E /* Assets.xcassets */,
+				3B122BA7221F5939004932A0 /* listings.png */,
 				DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */,
 				B4D47CB521ADF56B005CA50E /* Info.plist */,
 			);
@@ -225,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B122BA8221F5939004932A0 /* listings.png in Resources */,
 				3BCAF53D220CB8CB00F9EEA7 /* defaultPhoto.jpg in Resources */,
 				3B40767E21E7E5B80062931D /* listings.storyboard in Resources */,
 				DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */,

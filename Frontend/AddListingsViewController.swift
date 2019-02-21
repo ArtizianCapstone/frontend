@@ -11,7 +11,8 @@ import UIKit
 class AddListingsViewController: UIViewController {
     @IBOutlet weak var itemName: UITextField!
     
-    @IBOutlet weak var cancel: UIButton!
+ 
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var itemDescription: UITextView!
     
     @IBOutlet weak var itemPrice: UITextField!
@@ -28,10 +29,10 @@ class AddListingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func cancelButton(_ sender: Any) {
-         performSegue(withIdentifier: "CancelListingSegue", sender: cancel)
-        
+    @IBAction func dismessVC(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func submitAction(_ sender: Any) {
         print("TEST")
         if (itemDescription.text! == "" || itemPrice.text! == "" || itemName.text! == ""){

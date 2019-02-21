@@ -9,18 +9,13 @@
 import UIKit
 
 class OrdersViewController: UIViewController {
-    @IBOutlet weak var addListingsButton: UIButton!
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func addListingsAction(_ sender: Any) {
-        performSegue(withIdentifier: "AddListingSegue", sender: addListingsButton)
-        
-    }
+
     
     /*
     // MARK: - Navigation

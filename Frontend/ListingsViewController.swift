@@ -12,6 +12,7 @@ import Alamofire
 class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var listings = [Listing]()
     
+    @IBOutlet weak var addListingsButton: UIButton!
     @IBOutlet weak var funFact: UITextView!
     
     
@@ -72,7 +73,11 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         // Pass the selected object to the new view controller.
     }
     */
-private func loadListings() {
+    @IBAction func addListings(_ sender: Any) {
+        performSegue(withIdentifier: "AddListingsSegue", sender: addListingsButton)
+
+    }
+    private func loadListings() {
     
     Alamofire.request("http://localhost:3000/listings").responseJSON { response in
         print("Request: \(String(describing: response.request))")   // original url request
