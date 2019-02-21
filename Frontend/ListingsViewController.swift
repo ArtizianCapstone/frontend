@@ -73,6 +73,17 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     */
 private func loadListings() {
+    
+    Alamofire.request("http://localhost:3000/listings").responseJSON { response in
+        print("Request: \(String(describing: response.request))")   // original url request
+        print("Response: \(String(describing: response.response))") // http url response
+        print("Result: \(response.result)")                         // response serialization result
+        
+        if let json = response.result.value {
+            print("JSON: \(json)") // serialized json response
+        }
+    }
+    
     let defaultImage = UIImage(named: "defaultPhoto.png")
     
     let photo1 = UIImage(named: "shoes1.jpg")
