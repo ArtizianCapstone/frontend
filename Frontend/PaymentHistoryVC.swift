@@ -1,29 +1,22 @@
 //
-//  LoginViewController.swift
+//  PaymentHistoryVC.swift
 //  Frontend
 //
-//  Created by Zane Ali on 12/3/18.
-//  Copyright © 2018 Artizian. All rights reserved.
+//  Created by Rebecca Krieger on 2/21/19.
+//  Copyright © 2019 Artizian. All rights reserved.
 //
 
 import UIKit
 
-
-class LoginViewController: UIViewController {
-    
-    var users = ["jkurtz": "5c00776e2f1dfe588f33138c",
-                 "bfoote":  "5c01b47607170f9377b207bc"]
-    //"we will have a master password for now"]
-    
-
+class PaymentHistoryVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: Get the database information using POSTMAN
+
         // Do any additional setup after loading the view.
     }
-    var authenticated = false
-   
+    
+
     /*
     // MARK: - Navigation
 

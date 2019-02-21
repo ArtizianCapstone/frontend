@@ -7,7 +7,6 @@
 
 import Foundation
 class Order{
-    
     var orderDate: NSDate
     var orderDetails: String
     //enum
@@ -22,6 +21,5 @@ class Order{
         self.sd = shipDate
         self.dd1 = whenDueEarly
         self.dd2 = whenDueLate
-        
     }
 }

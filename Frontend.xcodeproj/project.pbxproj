@@ -10,11 +10,19 @@
 		3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36921B6298500DE1B5D /* LoginViewController.swift */; };
 		3B0DB36C21B7858800DE1B5D /* ArtisanFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36B21B7858800DE1B5D /* ArtisanFormViewController.swift */; };
 		3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36D21B8514700DE1B5D /* ArtisanCreatedViewController.swift */; };
+		B38CC87E221E6E2500BBE156 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC87D221E6E2500BBE156 /* PaymentViewController.swift */; };
+		B38CC884221F427400BBE156 /* TabySegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC883221F427300BBE156 /* TabySegmentedControl.swift */; };
+		B38CC886221F479600BBE156 /* PaymentHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC885221F479600BBE156 /* PaymentHistoryVC.swift */; };
+		B38CC888221F47BD00BBE156 /* UpcomingPaymentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC887221F47BD00BBE156 /* UpcomingPaymentsVC.swift */; };
+		B38CC88A221F489F00BBE156 /* CurrentPaymentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC889221F489F00BBE156 /* CurrentPaymentsCell.swift */; };
+		B38CC88C221F4A1000BBE156 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC88B221F4A1000BBE156 /* Payment.swift */; };
+		B38CC88E221F4D5600BBE156 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC88D221F4D5600BBE156 /* Item.swift */; };
 		B3F4608A220A0A0000E03E50 /* ExpandableCell in Resources */ = {isa = PBXBuildFile; fileRef = B3F46089220A0A0000E03E50 /* ExpandableCell */; };
 		B3F460A2220CCCBD00E03E50 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F460A1220CCCBD00E03E50 /* OrderCell.swift */; };
 		B3F460A4220CDB3C00E03E50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F460A3220CDB3C00E03E50 /* Main.storyboard */; };
-		B3F460A6220CE09200E03E50 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F460A5220CE09200E03E50 /* Order.swift */; };
 		B3F460A8220CE3E800E03E50 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F460A7220CE3E800E03E50 /* OrdersViewController.swift */; };
+		B3F460AA220CE59D00E03E50 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F460A9220CE59D00E03E50 /* Order.swift */; };
+		B3F460AC220CEACD00E03E50 /* BuyShippingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F460AB220CEACD00E03E50 /* BuyShippingViewController.swift */; };
 		B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */; };
 		B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */; };
 		B4B9585321B477F600B07578 /* Artisan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585221B477F600B07578 /* Artisan.swift */; };
@@ -38,11 +46,19 @@
 		912974EA2A37C15395BD6760 /* Pods_Frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969B2E797BC8006122B0153 /* Pods-Frontend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frontend/Pods-Frontend.debug.xcconfig"; sourceTree = "<group>"; };
 		A9232B9C775B3F30CCA2B00B /* Pods-Frontend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frontend/Pods-Frontend.release.xcconfig"; sourceTree = "<group>"; };
+		B38CC87D221E6E2500BBE156 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		B38CC883221F427300BBE156 /* TabySegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabySegmentedControl.swift; sourceTree = "<group>"; };
+		B38CC885221F479600BBE156 /* PaymentHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryVC.swift; sourceTree = "<group>"; };
+		B38CC887221F47BD00BBE156 /* UpcomingPaymentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingPaymentsVC.swift; sourceTree = "<group>"; };
+		B38CC889221F489F00BBE156 /* CurrentPaymentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentPaymentsCell.swift; path = /Users/Rebecca/frontend/Frontend/CurrentPaymentsCell.swift; sourceTree = "<absolute>"; };
+		B38CC88B221F4A1000BBE156 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		B38CC88D221F4D5600BBE156 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B3F46089220A0A0000E03E50 /* ExpandableCell */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ExpandableCell; sourceTree = "<group>"; };
 		B3F460A1220CCCBD00E03E50 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		B3F460A3220CDB3C00E03E50 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B3F460A5220CE09200E03E50 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Order.swift; path = /Users/Rebecca/frontend/Frontend/Order.swift; sourceTree = "<absolute>"; };
 		B3F460A7220CE3E800E03E50 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		B3F460A9220CE59D00E03E50 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Order.swift; path = /Users/Rebecca/frontend/Frontend/Order.swift; sourceTree = "<absolute>"; };
+		B3F460AB220CEACD00E03E50 /* BuyShippingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyShippingViewController.swift; sourceTree = "<group>"; };
 		B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewCell.swift; sourceTree = "<group>"; };
 		B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewController.swift; sourceTree = "<group>"; };
 		B4B9585221B477F600B07578 /* Artisan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artisan.swift; sourceTree = "<group>"; };
@@ -111,7 +127,11 @@
 		B4D47CA621ADF569005CA50E /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
-				B3F460A5220CE09200E03E50 /* Order.swift */,
+				B38CC889221F489F00BBE156 /* CurrentPaymentsCell.swift */,
+				B38CC883221F427300BBE156 /* TabySegmentedControl.swift */,
+				B3F460A9220CE59D00E03E50 /* Order.swift */,
+				B38CC88B221F4A1000BBE156 /* Payment.swift */,
+				B38CC88D221F4D5600BBE156 /* Item.swift */,
 				B4B9585221B477F600B07578 /* Artisan.swift */,
 				B4B9585421B6169E00B07578 /* User.swift */,
 				B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */,
@@ -119,6 +139,8 @@
 				B4B9585621B787DB00B07578 /* ArtisanDetailViewController.swift */,
 				B4D47CA721ADF569005CA50E /* AppDelegate.swift */,
 				B3F460A3220CDB3C00E03E50 /* Main.storyboard */,
+				B38CC87D221E6E2500BBE156 /* PaymentViewController.swift */,
+				B3F460AB220CEACD00E03E50 /* BuyShippingViewController.swift */,
 				B3F460A7220CE3E800E03E50 /* OrdersViewController.swift */,
 				B3F460A1220CCCBD00E03E50 /* OrderCell.swift */,
 				3B0DB36D21B8514700DE1B5D /* ArtisanCreatedViewController.swift */,
@@ -132,6 +154,8 @@
 				B4D47CB221ADF56B005CA50E /* LaunchScreen.storyboard */,
 				DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */,
 				B4D47CB521ADF56B005CA50E /* Info.plist */,
+				B38CC885221F479600BBE156 /* PaymentHistoryVC.swift */,
+				B38CC887221F47BD00BBE156 /* UpcomingPaymentsVC.swift */,
 			);
 			path = Frontend;
 			sourceTree = "<group>";
@@ -260,18 +284,26 @@
 			files = (
 				B4B9585721B787DB00B07578 /* ArtisanDetailViewController.swift in Sources */,
 				3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */,
+				B3F460AC220CEACD00E03E50 /* BuyShippingViewController.swift in Sources */,
 				B3F460A2220CCCBD00E03E50 /* OrderCell.swift in Sources */,
+				B38CC88E221F4D5600BBE156 /* Item.swift in Sources */,
 				B3F460A8220CE3E800E03E50 /* OrdersViewController.swift in Sources */,
+				B38CC888221F47BD00BBE156 /* UpcomingPaymentsVC.swift in Sources */,
+				B38CC88A221F489F00BBE156 /* CurrentPaymentsCell.swift in Sources */,
+				B38CC88C221F4A1000BBE156 /* Payment.swift in Sources */,
 				DC0AE63821B9A1C800D8C597 /* customBannerCell.swift in Sources */,
 				3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */,
+				B38CC87E221E6E2500BBE156 /* PaymentViewController.swift in Sources */,
+				B3F460AA220CE59D00E03E50 /* Order.swift in Sources */,
 				DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */,
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
 				B4B9585521B6169E00B07578 /* User.swift in Sources */,
 				B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */,
+				B38CC886221F479600BBE156 /* PaymentHistoryVC.swift in Sources */,
+				B38CC884221F427400BBE156 /* TabySegmentedControl.swift in Sources */,
 				B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */,
 				DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */,
-				B3F460A6220CE09200E03E50 /* Order.swift in Sources */,
 				B4D47CAA21ADF569005CA50E /* FirstViewController.swift in Sources */,
 				3B0DB36C21B7858800DE1B5D /* ArtisanFormViewController.swift in Sources */,
 			);
