@@ -1,11 +1,11 @@
-//
+/*
 //  Artisan.swift
 //  Frontend
 //
 //  Created by Vernon Chan on 12/2/18.
 //  Copyright © 2018 Artizian. All rights reserved.
 //
-
+*/
 import UIKit
 
 struct Artisan : Codable {

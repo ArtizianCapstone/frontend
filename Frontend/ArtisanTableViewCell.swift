@@ -1,4 +1,4 @@
-//
+    //
 //  ArtisanTableViewCell.swift
 //  Frontend
 //
