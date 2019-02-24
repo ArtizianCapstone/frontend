@@ -12,7 +12,7 @@ class Payment{
     var name: String
     var expectedPayoutDate: NSDate
     var itemsCompensatedFor: [Item]
-    var datePaidOut:NSDate
+    var datePaidOut:NSDate?
     var totalPayout: Float
     init(artisan: String, whenNextSeeing: NSDate, itemsBought: [Item], whenPaid: NSDate){
         self.name = artisan

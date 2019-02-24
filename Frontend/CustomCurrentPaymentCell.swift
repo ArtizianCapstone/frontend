@@ -1,24 +1,20 @@
 //
-//  CurrentPaymentsCell.swift
-//  
+//  CustomCurrentPaymentCell.swift
+//  Frontend
 //
-//  Created by Rebecca Krieger on 2/20/19.
+//  Created by Rebecca Krieger on 2/21/19.
+//  Copyright © 2019 Artizian. All rights reserved.
 //
 
 import UIKit
-import ExpandableCell
 
-class CurrentPaymentsCell: ExpandableCell {
+class CustomCurrentPaymentCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    @IBOutlet weak var DateMeeting: UILabel!
-    @IBOutlet weak var ArtisanName: UILabel!
-    @IBOutlet weak var AmountToPay: UILabel!
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

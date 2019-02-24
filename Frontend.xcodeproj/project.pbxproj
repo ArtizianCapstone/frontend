@@ -17,6 +17,7 @@
 		B38CC88A221F489F00BBE156 /* CurrentPaymentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC889221F489F00BBE156 /* CurrentPaymentsCell.swift */; };
 		B38CC88C221F4A1000BBE156 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC88B221F4A1000BBE156 /* Payment.swift */; };
 		B38CC88E221F4D5600BBE156 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC88D221F4D5600BBE156 /* Item.swift */; };
+		B38CC896221F52E100BBE156 /* CustomCurrentPaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC895221F52E100BBE156 /* CustomCurrentPaymentCell.swift */; };
 		B3F4608A220A0A0000E03E50 /* ExpandableCell in Resources */ = {isa = PBXBuildFile; fileRef = B3F46089220A0A0000E03E50 /* ExpandableCell */; };
 		B3F460A2220CCCBD00E03E50 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F460A1220CCCBD00E03E50 /* OrderCell.swift */; };
 		B3F460A4220CDB3C00E03E50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F460A3220CDB3C00E03E50 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		B38CC889221F489F00BBE156 /* CurrentPaymentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentPaymentsCell.swift; path = /Users/Rebecca/frontend/Frontend/CurrentPaymentsCell.swift; sourceTree = "<absolute>"; };
 		B38CC88B221F4A1000BBE156 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		B38CC88D221F4D5600BBE156 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		B38CC895221F52E100BBE156 /* CustomCurrentPaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCurrentPaymentCell.swift; sourceTree = "<group>"; };
 		B3F46089220A0A0000E03E50 /* ExpandableCell */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ExpandableCell; sourceTree = "<group>"; };
 		B3F460A1220CCCBD00E03E50 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		B3F460A3220CDB3C00E03E50 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				B4D47CB521ADF56B005CA50E /* Info.plist */,
 				B38CC885221F479600BBE156 /* PaymentHistoryVC.swift */,
 				B38CC887221F47BD00BBE156 /* UpcomingPaymentsVC.swift */,
+				B38CC895221F52E100BBE156 /* CustomCurrentPaymentCell.swift */,
 			);
 			path = Frontend;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
 				B4B9585521B6169E00B07578 /* User.swift in Sources */,
+				B38CC896221F52E100BBE156 /* CustomCurrentPaymentCell.swift in Sources */,
 				B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */,
 				B38CC886221F479600BBE156 /* PaymentHistoryVC.swift in Sources */,
 				B38CC884221F427400BBE156 /* TabySegmentedControl.swift in Sources */,
