@@ -41,7 +41,7 @@ class ArtisanTableViewController: UITableViewController {
     }
     private func getUser(id: String) {
         let urlString = "http://localhost:3000/users/" + id
-        
+        //let urlString = "http:///ec2-3-83-249-93.compute-1.amazonaws.com:3000/users/" + id
         var url = URL(string: urlString)!
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -192,7 +192,7 @@ class ArtisanTableViewController: UITableViewController {
             destVC?.bio = user.artisans[index].bio
             destVC?.name = user.artisans[index].name
             destVC?.number = user.artisans[index].phone_number
-            
+            destVC?.artisan = user.artisans[index]
         }
     }
     
@@ -207,6 +207,7 @@ class ArtisanTableViewController: UITableViewController {
         
         //Make HTTP Request
         let urlString = "http://localhost:3000/users"
+        //let urlString = "http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/users"
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in

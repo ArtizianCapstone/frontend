@@ -9,23 +9,53 @@
 import UIKit
 
 class ArtisanDetailViewController: UIViewController {
+    var artisan: Artisan?
+    
     var name: String = ""
     var bio: String = ""
     var number: String = ""
     
-    @IBOutlet weak var cellNumber: UILabel!
-    @IBOutlet weak var bioField: UITextView!
+    var infoViewController: InfoViewController!
+    var paymentViewController: PaymentViewController!
+    var listingViewController: ListingViewController!
+    
+    @IBOutlet weak var viewContainer: UIView!
+    
+    @IBAction func switchViewAction(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            viewContainer.bringSubviewToFront(infoViewController.view)
+            break
+        case 1:
+            viewContainer.bringSubviewToFront(paymentViewController.view)
+            break
+        case 2:  
+            viewContainer.bringSubviewToFront(listingViewController.view)
+            break
+        default:
+            break
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = name
-        cellNumber.text = number
-        bioField.text = bio
         
         print(name)
         print(bio)
         print(number)
-        // Do any additional setup after loading the view.
+        
+        infoViewController = InfoViewController()
+        infoViewController.artisan = self.artisan
+
+        paymentViewController = PaymentViewController()
+        listingViewController = ListingViewController()
+        
+        viewContainer.addSubview(paymentViewController.view)
+        viewContainer.addSubview(listingViewController.view)
+        viewContainer.addSubview(infoViewController.view)
+        
+        
     }
     
 

@@ -20,11 +20,17 @@
 		3BF9D85E221607E900FBE733 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF9D85D221607E900FBE733 /* ListingsViewController.swift */; };
 		3BF9D862221621BC00FBE733 /* pants.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BF9D85F221621BB00FBE733 /* pants.jpg */; };
 		3BF9D863221621BC00FBE733 /* rugs.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3BF9D860221621BB00FBE733 /* rugs.jpeg */; };
+		B43C4B60221B816600659D1C /* artisans.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B43C4B5F221B816600659D1C /* artisans.storyboard */; };
+		B4482A86222359C5002ED0EE /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4482A85222359C5002ED0EE /* PaymentViewController.swift */; };
 		B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */; };
 		B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */; };
 		B4B9585321B477F600B07578 /* Artisan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585221B477F600B07578 /* Artisan.swift */; };
 		B4B9585521B6169E00B07578 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585421B6169E00B07578 /* User.swift */; };
 		B4B9585721B787DB00B07578 /* ArtisanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9585621B787DB00B07578 /* ArtisanDetailViewController.swift */; };
+		B4CFFEF4221E7AA00056171D /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CFFEF2221E7AA00056171D /* InfoViewController.swift */; };
+		B4CFFEF5221E7AA00056171D /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4CFFEF3221E7AA00056171D /* InfoViewController.xib */; };
+		B4CFFEFC221E7AC70056171D /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CFFEFA221E7AC70056171D /* ListingViewController.swift */; };
+		B4CFFEFD221E7AC70056171D /* ListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4CFFEFB221E7AC70056171D /* ListingViewController.xib */; };
 		B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D47CA721ADF569005CA50E /* AppDelegate.swift */; };
 		B4D47CAA21ADF569005CA50E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D47CA921ADF569005CA50E /* FirstViewController.swift */; };
 		B4D47CAF21ADF569005CA50E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D47CAD21ADF569005CA50E /* Main.storyboard */; };
@@ -50,11 +56,17 @@
 		3BF9D85F221621BB00FBE733 /* pants.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pants.jpg; sourceTree = "<group>"; };
 		3BF9D860221621BB00FBE733 /* rugs.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rugs.jpeg; sourceTree = "<group>"; };
 		3BF9D8692216268100FBE733 /* shoes1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shoes1.jpg; sourceTree = "<group>"; };
+		B43C4B5F221B816600659D1C /* artisans.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = artisans.storyboard; sourceTree = "<group>"; };
+		B4482A85222359C5002ED0EE /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewCell.swift; sourceTree = "<group>"; };
 		B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewController.swift; sourceTree = "<group>"; };
 		B4B9585221B477F600B07578 /* Artisan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artisan.swift; sourceTree = "<group>"; };
 		B4B9585421B6169E00B07578 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B4B9585621B787DB00B07578 /* ArtisanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanDetailViewController.swift; sourceTree = "<group>"; };
+		B4CFFEF2221E7AA00056171D /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B4CFFEF3221E7AA00056171D /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
+		B4CFFEFA221E7AC70056171D /* ListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
+		B4CFFEFB221E7AC70056171D /* ListingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingViewController.xib; sourceTree = "<group>"; };
 		B4D47CA421ADF569005CA50E /* Frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D47CA721ADF569005CA50E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4D47CA921ADF569005CA50E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4CFFEEB221E7A2E0056171D /* Artisan Detail Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				B4CFFEF2221E7AA00056171D /* InfoViewController.swift */,
+				B4CFFEF3221E7AA00056171D /* InfoViewController.xib */,
+				B4CFFEFA221E7AC70056171D /* ListingViewController.swift */,
+				B4CFFEFB221E7AC70056171D /* ListingViewController.xib */,
+				B4482A85222359C5002ED0EE /* PaymentViewController.swift */,
+			);
+			path = "Artisan Detail Subviews";
+			sourceTree = "<group>";
+		};
 		B4D47C9B21ADF569005CA50E = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +121,11 @@
 		B4D47CA621ADF569005CA50E /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				B43C4B5F221B816600659D1C /* artisans.storyboard */,
+				B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */,
+				B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */,
+				B4B9585621B787DB00B07578 /* ArtisanDetailViewController.swift */,
+				B4CFFEEB221E7A2E0056171D /* Artisan Detail Subviews */,
 				3B40767D21E7E5B80062931D /* listings.storyboard */,
 				3BF9D85D221607E900FBE733 /* ListingsViewController.swift */,
 				3BF9D85F221621BB00FBE733 /* pants.jpg */,
@@ -109,9 +138,6 @@
 				3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */,
 				B4B9585221B477F600B07578 /* Artisan.swift */,
 				B4B9585421B6169E00B07578 /* User.swift */,
-				B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */,
-				B4B9585021B477AC00B07578 /* ArtisanTableViewController.swift */,
-				B4B9585621B787DB00B07578 /* ArtisanDetailViewController.swift */,
 				B4D47CA721ADF569005CA50E /* AppDelegate.swift */,
 				B4D47CAD21ADF569005CA50E /* Main.storyboard */,
 				3B37DBA021FA6D1500372FF0 /* OrdersViewController.swift */,
@@ -190,10 +216,13 @@
 				3BCAF53D220CB8CB00F9EEA7 /* defaultPhoto.jpg in Resources */,
 				3B40767E21E7E5B80062931D /* listings.storyboard in Resources */,
 				DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */,
+				B4CFFEFD221E7AC70056171D /* ListingViewController.xib in Resources */,
 				B4D47CB121ADF56B005CA50E /* Assets.xcassets in Resources */,
 				3BF9D862221621BC00FBE733 /* pants.jpg in Resources */,
 				3BCAF53F220CD92D00F9EEA7 /* defaultPhoto.png in Resources */,
 				3BF9D863221621BC00FBE733 /* rugs.jpeg in Resources */,
+				B43C4B60221B816600659D1C /* artisans.storyboard in Resources */,
+				B4CFFEF5221E7AA00056171D /* InfoViewController.xib in Resources */,
 				B4D47CAF21ADF569005CA50E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +241,7 @@
 				3BF9D85E221607E900FBE733 /* ListingsViewController.swift in Sources */,
 				3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */,
 				DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */,
+				B4482A86222359C5002ED0EE /* PaymentViewController.swift in Sources */,
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
 				3B3A6BEB21F7B29D006D301F /* AddListingsViewController.swift in Sources */,
@@ -222,7 +252,9 @@
 				B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */,
 				DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */,
 				B4D47CAA21ADF569005CA50E /* FirstViewController.swift in Sources */,
+				B4CFFEFC221E7AC70056171D /* ListingViewController.swift in Sources */,
 				3B0DB36C21B7858800DE1B5D /* ArtisanFormViewController.swift in Sources */,
+				B4CFFEF4221E7AA00056171D /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,14 +393,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UU78N37L5U;
+				DEVELOPMENT_TEAM = FJ5DVU875S;
 				INFOPLIST_FILE = Frontend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Artizian.Frontend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Artizian.Frontend123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -380,14 +412,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UU78N37L5U;
+				DEVELOPMENT_TEAM = FJ5DVU875S;
 				INFOPLIST_FILE = Frontend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Artizian.Frontend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Artizian.Frontend123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
