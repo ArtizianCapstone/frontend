@@ -1,21 +1,21 @@
 //
-//  ListingViewController.swift
+//  PaymentSubview.swift
 //  Frontend
 //
-//  Created by Vernon Chan on 2/20/19.
+//  Created by Vernon Chan on 3/1/19.
 //  Copyright © 2019 Artizian. All rights reserved.
 //
 
 import UIKit
 
-class ListingViewController: UIViewController {
+class PaymentSubview: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
 
     /*
     // MARK: - Navigation

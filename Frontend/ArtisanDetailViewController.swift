@@ -15,25 +15,32 @@ class ArtisanDetailViewController: UIViewController {
     var bio: String = ""
     var number: String = ""
     
-    var infoViewController: InfoViewController!
-    var paymentViewController: PaymentViewController!
-    var listingViewController: ListingViewController!
+    var infoSubviewNew: InfoSubview?
+    var paymentSubviewNew: PaymentSubview?
+    var listingSubviewNew: ListingSubview?
     
-    @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var infoSubview: InfoSubview!
+    @IBOutlet weak var paymentSubview: PaymentSubview!
+    @IBOutlet weak var listingSubview: ListingSubview!
+    
     
     @IBAction func switchViewAction(_ sender: UISegmentedControl) {
+        infoSubviewNew!.view.isHidden = true
+        paymentSubviewNew!.view.isHidden = true
+        listingSubviewNew!.view.isHidden = true
+        
         switch sender.selectedSegmentIndex {
-        case 0:
-            viewContainer.bringSubviewToFront(infoViewController.view)
-            break
-        case 1:
-            viewContainer.bringSubviewToFront(paymentViewController.view)
-            break
-        case 2:  
-            viewContainer.bringSubviewToFront(listingViewController.view)
-            break
-        default:
-            break
+            case 0:
+                infoSubviewNew!.view.isHidden = false
+                break
+            case 1:
+                paymentSubviewNew!.view.isHidden = false
+                break
+            case 2:  
+                listingSubviewNew!.view.isHidden = false
+                break
+            default:
+                break
         }
     }
     
@@ -45,17 +52,24 @@ class ArtisanDetailViewController: UIViewController {
         print(bio)
         print(number)
         
-        infoViewController = InfoViewController()
-        infoViewController.artisan = self.artisan
-
-        paymentViewController = PaymentViewController()
-        listingViewController = ListingViewController()
+        guard let listingSubviewNew1 = children[0] as? ListingSubview else {
+            fatalError("Check storyboard for missing ListingView")
+        }
         
-        viewContainer.addSubview(paymentViewController.view)
-        viewContainer.addSubview(listingViewController.view)
-        viewContainer.addSubview(infoViewController.view)
+        guard let paymentSubviewNew1 = children[1] as? PaymentSubview else {
+            fatalError("Check storyboard for missing PaymentSubview")
+        }
         
+        guard let infoSubviewNew1 = children[2] as? InfoSubview else {
+            fatalError("Check storyboard for missing Infoview")
+        }
         
+        listingSubviewNew = listingSubviewNew1
+        paymentSubviewNew = paymentSubviewNew1
+        infoSubviewNew = infoSubviewNew1
+        
+        infoSubviewNew?.artisan = self.artisan
+        infoSubviewNew?.testLabel.text = artisan?.name
     }
     
 
