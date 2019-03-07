@@ -216,14 +216,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fag-LE-b3f">
-                                                    <rect key="frame" x="120" y="11" width="45" height="21"/>
+                                                    <rect key="frame" x="120" y="11" width="119" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MoneyOwed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiQ-tn-aOI">
-                                                    <rect key="frame" x="210" y="12" width="97" height="21"/>
+                                                    <rect key="frame" x="239" y="10" width="97" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -263,11 +263,12 @@
                     </view>
                     <connections>
                         <outlet property="upcomingPaymentsTable" destination="Gwb-NB-EQ5" id="P5L-g8-iBO"/>
+                        <outlet property="weeklyTotal" destination="mSg-K5-Rip" id="tt8-Yv-Viv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drJ-47-p4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-202.40000000000001" y="672.41379310344837"/>
+            <point key="canvasLocation" x="-190" y="672"/>
         </scene>
         <!--Payment HistoryVC-->
         <scene sceneID="YIc-2m-z4x">

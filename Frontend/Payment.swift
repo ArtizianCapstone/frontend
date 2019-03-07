@@ -10,11 +10,11 @@ import Foundation
 //change from string to artisan id number
 class Payment{
     var name: String
-    var expectedPayoutDate: NSDate
+    var expectedPayoutDate: Date
     var itemsCompensatedFor: [Item]
-    var datePaidOut:NSDate?
+    var datePaidOut:Date?
     var totalPayout: Float
-    init(artisan: String, whenNextSeeing: NSDate, itemsBought: [Item], whenPaid: NSDate){
+    init(artisan: String, whenNextSeeing: Date, itemsBought: [Item], whenPaid: Date?){
         self.name = artisan
         self.expectedPayoutDate = whenNextSeeing
         self.itemsCompensatedFor = itemsBought
