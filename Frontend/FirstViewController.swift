@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import Alamofire
 //home screen
 //UICollectionViewDelegateFlowLayout,
 //firstViewController
@@ -32,6 +33,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     @IBOutlet weak var totalGeneratedLabel: UILabel!
     @IBOutlet weak var shipmentOverviewLabel: UILabel!
     @IBOutlet weak var paymentOverviewLabel: UILabel!
+    @IBOutlet weak var meetingTable: UITableView!
     
     var meetings = [Meeting]()
     let cellSpacingHeight: CGFloat = 8
@@ -63,6 +65,10 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         banner.dataSource = self
         bannerLayout.itemSize = CGSize(width: view.frame.width, height: view.frame.height)
         
+        loadTodaysMeetings {
+            self.meetingTable.reloadData()
+        }
+        
         totalGeneratedLabel.layer.masksToBounds = true
         totalGeneratedLabel.layer.cornerRadius=16.0;
         paymentOverviewLabel.layer.masksToBounds = true
@@ -76,9 +82,45 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         //meeting sample data
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        meetings.append(Meeting(artisanName: "Camila Aguero", time: formatter.date(from: "2016/10/08 11:30")!, numItems: 10))
-        meetings.append(Meeting(artisanName: "Diego Avila", time: formatter.date(from: "2016/10/08 14:00")!, numItems: 7))
-        meetings.append(Meeting(artisanName: "Sebastian Alverado", time: formatter.date(from: "2016/10/08 17:00")!, numItems: 8))
+        //meetings.append(Meeting(artisanName: "Camila Aguero", time: formatter.date(from: "2016/10/08 11:30")!, numItems: 10))
+        //meetings.append(Meeting(artisanName: "Diego Avila", time: formatter.date(from: "2016/10/08 14:00")!, numItems: 7))
+        //meetings.append(Meeting(artisanName: "Sebastian Alverado", time: formatter.date(from: "2016/10/08 17:00")!, numItems: 8))
+    }
+    
+    private func loadTodaysMeetings(completion : @escaping () -> ()) {
+        
+        //let defaultImage = UIImage(named: "defaultPhoto.png")
+        
+        /*let photo1 = UIImage(named: "shoes1.jpg")
+         let photo2 = UIImage(named: "pants.jpg")
+         let photo3 = UIImage(named: "rugs.jpeg")
+         */
+        
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/meetings").responseJSON { response in
+            
+            
+            if let json = response.result.value {
+                // serialized json response
+                print("json from alamo fire", json)
+                if let jsonarray = json as? [[String: Any]] {
+                    let dateFormatter = DateFormatter()
+                    let calendar = Calendar.current
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                    for x in jsonarray {
+                        //if()
+                        let dateString = x["date"] as! String
+                        let myDate = dateFormatter.date(from: dateString )!
+                        if calendar.isDateInToday(myDate) {
+                            self.meetings.append(Meeting(artisanName: "sample name", time: myDate, numItems: x["itemsExpected"] as! Int))
+                        }
+                        
+                        // access all key / value pairs in dictionary
+                    }
+                }
+                completion()
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -121,7 +163,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
         return headerView
-    }
+        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "meetingCell", for: indexPath) as! CustomMeetingCell
