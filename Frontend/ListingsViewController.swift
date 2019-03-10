@@ -21,19 +21,24 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+            loadListings {
+                 self.tableView.reloadData()
+        }
+       
         funFact.text! = "\nTip:"
         factDetails.text! = "\nListings with photos sell 20% more frequently"
         funFact.layer.cornerRadius = 5.0
        
         
-        loadListings()
+       
         // Do any additional setup after loading the view.
     }
     
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listings.count // your number of cell here
+        print (self.listings.count)
+        return listings.count
     }
     
     func tableView(tableView: UITableView, numberOfSections: Int) -> Int {
@@ -77,25 +82,36 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         performSegue(withIdentifier: "AddListingsSegue", sender: addListingsButton)
 
     }
-    private func loadListings() {
-    
-    Alamofire.request("http://localhost:3000/listings").responseJSON { response in
-        print("Request: \(String(describing: response.request))")   // original url request
-        print("Response: \(String(describing: response.response))") // http url response
-        print("Result: \(response.result)")                         // response serialization result
+    private func loadListings(completion : @escaping () -> ()) {
         
-        if let json = response.result.value {
-            print("JSON: \(json)") // serialized json response
+        let defaultImage = UIImage(named: "defaultPhoto.png")
+        
+        /*let photo1 = UIImage(named: "shoes1.jpg")
+        let photo2 = UIImage(named: "pants.jpg")
+        let photo3 = UIImage(named: "rugs.jpeg")
+        */
+        
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings").responseJSON { response in
+            
+        
+            if let json = response.result.value {
+            // serialized json response
+    
+                if let jsonarray = json as? [[String: Any]] {
+                   for x in jsonarray {
+                       self.listings.append(Listing(name: (x["name"] as? String ?? "No Name"), artisan: (x["artisan"] as? String) ?? "No artisan" , price: (x["price"] as? Float) ?? 0.0, quantity : 0, photo: defaultImage!))
+                    
+                    
+             
+                        // access all key / value pairs in dictionary
+                    }
+                }
+                completion()
         }
     }
     
-    let defaultImage = UIImage(named: "defaultPhoto.png")
     
-    let photo1 = UIImage(named: "shoes1.jpg")
-    let photo2 = UIImage(named: "pants.jpg")
-    let photo3 = UIImage(named: "rugs.jpeg")
-    
-    
+    /*
     let listing1 = Listing(name: "Shoes", artisan: "Tom Savage", price: 42.51, quantity : 2, photo: photo1!)
     
     let listing2 = Listing(name: "Pants", artisan: "Jim Morrisey", price: 30.00, quantity : 2, photo: photo2 ?? defaultImage!)
@@ -103,7 +119,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     let listing3 = Listing(name: "Rugs", artisan: "Sally Susanna", price: 5000, quantity : 2, photo: photo3 ?? defaultImage!)
     
     listings += [listing1,listing2,listing3]
-    
+    */
     }
 
 }
