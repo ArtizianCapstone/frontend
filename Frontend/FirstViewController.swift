@@ -88,17 +88,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     private func loadTodaysMeetings(completion : @escaping () -> ()) {
-        
-        //let defaultImage = UIImage(named: "defaultPhoto.png")
-        
-        /*let photo1 = UIImage(named: "shoes1.jpg")
-         let photo2 = UIImage(named: "pants.jpg")
-         let photo3 = UIImage(named: "rugs.jpeg")
-         */
-        
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/meetings").responseJSON { response in
-            
-            
             if let json = response.result.value {
                 // serialized json response
                 print("json from alamo fire", json)
@@ -111,11 +101,12 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                         //if()
                         let dateString = x["date"] as! String
                         let myDate = dateFormatter.date(from: dateString )!
+                        let artisanJSON = x["artisan"] as? [String: Any]
+                        //print("artisanJSON:")
+                        //print(artisanJSON!["name"]!)
                         if calendar.isDateInToday(myDate) {
-                            self.meetings.append(Meeting(artisanName: "sample name", time: myDate, numItems: x["itemsExpected"] as! Int))
+                            self.meetings.append(Meeting(artisanName: artisanJSON!["name"]! as! String, time: myDate, numItems: x["itemsExpected"] as! Int))
                         }
-                        
-                        // access all key / value pairs in dictionary
                     }
                 }
                 completion()

@@ -10,8 +10,6 @@
 		3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36921B6298500DE1B5D /* LoginViewController.swift */; };
 		3B0DB36C21B7858800DE1B5D /* ArtisanFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36B21B7858800DE1B5D /* ArtisanFormViewController.swift */; };
 		3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36D21B8514700DE1B5D /* ArtisanCreatedViewController.swift */; };
-		3B122BA1221F458B004932A0 /* CustomMeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B122BA0221F458B004932A0 /* CustomMeetingCell.swift */; };
-		3B122BA2221F46D3004932A0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B122B9F221F4589004932A0 /* Home.storyboard */; };
 		3B122BA5221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3B122BA3221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf */; };
 		3B122BA6221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3B122BA4221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf */; };
 		3B122BA8221F5939004932A0 /* listings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B122BA7221F5939004932A0 /* listings.png */; };
@@ -39,14 +37,14 @@
 		DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63921B9A25400D8C597 /* bannerQuote.swift */; };
 		DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */; };
 		DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */; };
+		DCDB36932234E95F00FC8880 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCDB36922234E95F00FC8880 /* Home.storyboard */; };
+		DCDB36952234E98200FC8880 /* CustomMeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDB36942234E98200FC8880 /* CustomMeetingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3B0DB36921B6298500DE1B5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3B0DB36B21B7858800DE1B5D /* ArtisanFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanFormViewController.swift; sourceTree = "<group>"; };
 		3B0DB36D21B8514700DE1B5D /* ArtisanCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanCreatedViewController.swift; sourceTree = "<group>"; };
-		3B122B9F221F4589004932A0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Home.storyboard; path = /Users/zaneali/Documents/Capstone/frontend/Frontend/Home.storyboard; sourceTree = "<absolute>"; };
-		3B122BA0221F458B004932A0 /* CustomMeetingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomMeetingCell.swift; path = /Users/zaneali/Documents/Capstone/frontend/Frontend/CustomMeetingCell.swift; sourceTree = "<absolute>"; };
 		3B122BA3221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		3B122BA4221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		3B122BA7221F5939004932A0 /* listings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = listings.png; path = Assets.xcassets/listings.png; sourceTree = "<group>"; };
@@ -79,6 +77,8 @@
 		DC0AE63921B9A25400D8C597 /* bannerQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerQuote.swift; sourceTree = "<group>"; };
 		DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fakegraph.png; sourceTree = "<group>"; };
+		DCDB36922234E95F00FC8880 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		DCDB36942234E98200FC8880 /* CustomMeetingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomMeetingCell.swift; path = /Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/CustomMeetingCell.swift; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +114,8 @@
 		B4D47CA621ADF569005CA50E /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
-				3B122BA0221F458B004932A0 /* CustomMeetingCell.swift */,
-				3B122B9F221F4589004932A0 /* Home.storyboard */,
+				DCDB36942234E98200FC8880 /* CustomMeetingCell.swift */,
+				DCDB36922234E95F00FC8880 /* Home.storyboard */,
 				3B122BA4221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf */,
 				3B122BA3221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf */,
 				3B40767D21E7E5B80062931D /* listings.storyboard */,
@@ -230,6 +230,7 @@
 			files = (
 				3B122BA8221F5939004932A0 /* listings.png in Resources */,
 				3BCAF53D220CB8CB00F9EEA7 /* defaultPhoto.jpg in Resources */,
+				DCDB36932234E95F00FC8880 /* Home.storyboard in Resources */,
 				3B40767E21E7E5B80062931D /* listings.storyboard in Resources */,
 				DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */,
 				3B122BA6221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
@@ -238,7 +239,6 @@
 				3BCAF53F220CD92D00F9EEA7 /* defaultPhoto.png in Resources */,
 				3BF9D863221621BC00FBE733 /* rugs.jpeg in Resources */,
 				B4D47CAF21ADF569005CA50E /* Main.storyboard in Resources */,
-				3B122BA2221F46D3004932A0 /* Home.storyboard in Resources */,
 				3B122BA5221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +276,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -287,7 +287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -297,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCDB36952234E98200FC8880 /* CustomMeetingCell.swift in Sources */,
 				3BCAF53B220BD6C700F9EEA7 /* ListingsTableViewCell.swift in Sources */,
 				B4B9585721B787DB00B07578 /* ArtisanDetailViewController.swift in Sources */,
 				3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */,
@@ -305,7 +306,6 @@
 				3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */,
 				DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */,
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
-				3B122BA1221F458B004932A0 /* CustomMeetingCell.swift in Sources */,
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
 				3B3A6BEB21F7B29D006D301F /* AddListingsViewController.swift in Sources */,
 				3BCAF541220CE04A00F9EEA7 /* Listings.swift in Sources */,
