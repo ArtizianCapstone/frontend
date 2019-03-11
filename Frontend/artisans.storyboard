@@ -382,6 +382,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwW-lb-yNK">
+                                <rect key="frame" x="16" y="90" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Schedule Meeting Time"/>
+                                <connections>
+                                    <action selector="scheduleButton:" destination="nYr-Yy-fjg" eventType="touchUpInside" id="wsb-sA-chI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -394,6 +402,7 @@
                     </view>
                     <connections>
                         <outlet property="testLabel" destination="IfS-uN-8zW" id="zpX-1c-Su3"/>
+                        <segue destination="njz-PD-yPV" kind="show" identifier="createMeeting" id="4T5-Jz-he2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9U-HL-FXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -525,6 +534,135 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBs-bm-exc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3477.5999999999999" y="644.97751124437787"/>
+        </scene>
+        <!--Meeting Schedule-->
+        <scene sceneID="DhU-3w-n7Z">
+            <objects>
+                <viewController title="Meeting Schedule" id="njz-PD-yPV" customClass="CreateMeetingViewController" customModule="Frontend" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4bp-ud-Zd1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="508"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-hI-p9a">
+                                <rect key="frame" x="16" y="69" width="176.5" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="9hl-aE-ihI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJK-w0-nUU">
+                                <rect key="frame" x="16" y="136" width="122.5" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="VUH-TU-nKT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items expected:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHL-FD-fih">
+                                <rect key="frame" x="16" y="267" width="145" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Kwj-J0-6eS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter item number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LDZ-rH-b7s">
+                                <rect key="frame" x="208" y="274" width="151" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="1Gh-YY-ppg"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter frequency" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-fy-at4">
+                                <rect key="frame" x="208" y="76" width="151" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="g4O-vD-27c"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqf-mu-5e1">
+                                <rect key="frame" x="208" y="143" width="151" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="Ige-lb-tGU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xWe-Bw-evT">
+                                <rect key="frame" x="208" y="209" width="151" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="6Zg-hc-5uO"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUe-66-Qih">
+                                <rect key="frame" x="16" y="202" width="125" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="T8g-8G-7B5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-8V-hHV">
+                                <rect key="frame" x="46" y="338" width="42" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="a9z-j2-Wfc"/>
+                                    <constraint firstAttribute="width" constant="42" id="wtk-mo-VeQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <segue destination="KEN-WN-gPK" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="fTd-tv-TH2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lhg-61-qTD" firstAttribute="trailing" secondItem="jTa-8V-hHV" secondAttribute="trailing" constant="284" id="3bj-Y8-ZRI"/>
+                            <constraint firstItem="xWe-Bw-evT" firstAttribute="top" secondItem="eqf-mu-5e1" secondAttribute="bottom" constant="36" id="CVt-kQ-U29"/>
+                            <constraint firstItem="wIu-fy-at4" firstAttribute="top" secondItem="lhg-61-qTD" secondAttribute="top" constant="56" id="CoD-9H-2XL"/>
+                            <constraint firstItem="LDZ-rH-b7s" firstAttribute="top" secondItem="xWe-Bw-evT" secondAttribute="bottom" constant="35" id="HH9-uI-Ptk"/>
+                            <constraint firstItem="eqf-mu-5e1" firstAttribute="top" secondItem="wIu-fy-at4" secondAttribute="bottom" constant="37" id="JY8-aO-wJy"/>
+                            <constraint firstItem="lhg-61-qTD" firstAttribute="trailing" secondItem="xWe-Bw-evT" secondAttribute="trailing" constant="13" id="NpT-lE-yTA"/>
+                            <constraint firstItem="hHL-FD-fih" firstAttribute="top" secondItem="KUe-66-Qih" secondAttribute="bottom" constant="20" id="RDo-P0-46O"/>
+                            <constraint firstItem="lhg-61-qTD" firstAttribute="trailing" secondItem="LDZ-rH-b7s" secondAttribute="trailing" constant="13" id="X49-d1-Vo3"/>
+                            <constraint firstItem="lhg-61-qTD" firstAttribute="trailing" secondItem="wIu-fy-at4" secondAttribute="trailing" constant="13" id="Y8F-95-aDx"/>
+                            <constraint firstItem="KUe-66-Qih" firstAttribute="top" secondItem="TJK-w0-nUU" secondAttribute="bottom" constant="21" id="ehU-Wd-9w2"/>
+                            <constraint firstItem="lhg-61-qTD" firstAttribute="trailing" secondItem="eqf-mu-5e1" secondAttribute="trailing" constant="13" id="flR-1N-zpF"/>
+                            <constraint firstItem="TJK-w0-nUU" firstAttribute="leading" secondItem="lhg-61-qTD" secondAttribute="leading" constant="16" id="flu-yh-NZZ"/>
+                            <constraint firstItem="TJK-w0-nUU" firstAttribute="top" secondItem="9KQ-hI-p9a" secondAttribute="bottom" constant="22" id="pFZ-d7-vXr"/>
+                            <constraint firstItem="9KQ-hI-p9a" firstAttribute="top" secondItem="lhg-61-qTD" secondAttribute="top" constant="49" id="ppX-ci-e88"/>
+                            <constraint firstItem="jTa-8V-hHV" firstAttribute="top" secondItem="hHL-FD-fih" secondAttribute="bottom" constant="26" id="x73-dl-qdL"/>
+                            <constraint firstItem="hHL-FD-fih" firstAttribute="leading" secondItem="lhg-61-qTD" secondAttribute="leading" constant="16" id="xRq-uk-7cL"/>
+                            <constraint firstItem="jTa-8V-hHV" firstAttribute="leading" secondItem="lhg-61-qTD" secondAttribute="leading" constant="46" id="y8v-Zq-0I8"/>
+                            <constraint firstItem="9KQ-hI-p9a" firstAttribute="leading" secondItem="lhg-61-qTD" secondAttribute="leading" constant="16" id="yYN-fo-HSS"/>
+                            <constraint firstItem="KUe-66-Qih" firstAttribute="leading" secondItem="lhg-61-qTD" secondAttribute="leading" constant="16" id="zOO-aV-5fj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lhg-61-qTD"/>
+                    </view>
+                    <connections>
+                        <outlet property="frequencyField" destination="wIu-fy-at4" id="CU5-jY-Q8n"/>
+                        <outlet property="itemsExpectedField" destination="LDZ-rH-b7s" id="3hq-h1-W0d"/>
+                        <outlet property="startingDateField" destination="eqf-mu-5e1" id="gPQ-Vq-czf"/>
+                        <outlet property="timeField" destination="xWe-Bw-evT" id="yDF-gF-dhv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xmx-Cd-xRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KEN-WN-gPK" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4266" y="-399"/>
         </scene>
     </scenes>
     <resources>
