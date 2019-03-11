@@ -16,11 +16,25 @@ class InfoSubview: UIViewController {
     
     @IBOutlet weak var phone_number: UILabel!
     
+    @IBOutlet weak var nextMeetingBackground: UIButton!
+    @IBOutlet weak var lastMeetingBackground: UIButton!
+    @IBOutlet weak var meetingHistoryBackground: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        phone_number.text = artisan?.phone_number
         scheduleButton.backgroundColor = Constants.Colors.gray
         scheduleButton.layer.cornerRadius = Constants.RoundedButton.cornerRadius
+        
+        nextMeetingBackground.backgroundColor = Constants.Colors.green
+        nextMeetingBackground.layer.cornerRadius = Constants.RoundedButton.cornerRadius
+        
+        lastMeetingBackground.backgroundColor = Constants.Colors.gray
+        lastMeetingBackground.layer.cornerRadius = Constants.RoundedButton.cornerRadius
+        
+        meetingHistoryBackground.backgroundColor = Constants.Colors.gray
+        meetingHistoryBackground.layer.cornerRadius = Constants.RoundedButton.cornerRadius
+        
     }
     @IBAction func scheduleButton(_ sender: Any) {
         performSegue(withIdentifier: "createMeeting", sender:   self)
