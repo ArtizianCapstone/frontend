@@ -15,6 +15,7 @@ struct Artisan : Codable {
     var name: String
     var phone_number: String
     var bio: String
+    var _id: String
     /*
     //MARK: Initialization
     init(name: String, phone_number: String) {

@@ -7,18 +7,25 @@
 //
 
 import UIKit
+import Alamofire
 
 class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var meetingNames : [String] = []
     var meetingPrices : [Float] = []
     var meetingStock : [Int] = []
     var meetingQuantity : [String] = []
-
+    
+    var artisan: Artisan? = nil
+    
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        loadArtisanMeetings {
+            
+        }
+        
         // Do any additional setup after loading the view.
         meetingNames.append( "Table Cloth")
         meetingNames.append( "Small Rug")
@@ -54,6 +61,10 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.meetingQuantity.text = meetingQuantity[indexPath.row]
         
         return cell
+    }
+    
+    private func loadArtisanMeetings(completion : @escaping () -> ()) {
+        
     }
 
     /*
