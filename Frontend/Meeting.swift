@@ -20,7 +20,7 @@ struct MeetingSchedule : Codable {
     }
 }
 
-struct Meeting : Codable {
+class Meeting : Codable {
     var userId: String
     var artisanId: String
     var date: Date
@@ -31,5 +31,16 @@ struct Meeting : Codable {
         self.artisanId = artisanId
         self.date = date
         self.numItemsExpected = numItemsExpected
+    }
+    
+    func toJSON() -> Dictionary<String, AnyObject> {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        return [
+            "userID": self.userId as AnyObject,
+            "artisanID": self.artisanId as AnyObject,
+            "date": dateFormatter.string(from: self.date) as AnyObject,
+            "itemsExpected": self.numItemsExpected as AnyObject
+        ]
     }
 }

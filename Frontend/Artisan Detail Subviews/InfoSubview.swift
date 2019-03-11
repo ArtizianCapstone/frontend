@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class InfoSubview: UIViewController {
 
@@ -47,7 +48,6 @@ class InfoSubview: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
     //start pasting from TempArtisanViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
@@ -59,7 +59,7 @@ class InfoSubview: UIViewController {
         var newMeetings: [Meeting] = []
         for index in 0..<num {
             let meetingDate = schedule.startingDate.addingTimeInterval(TimeInterval(schedule.frequency * index * 604800))
-            newMeetings.append(Meeting(userId: "5c00776e2f1dfe588f33138c", artisanId: "5c098020ecc0c26eb4108619", date: meetingDate, numItemsExpected: schedule.numItemsExpected))
+            newMeetings.append(Meeting(userId: "5c00776e2f1dfe588f33138c", artisanId: (artisan?._id)!, date: meetingDate, numItemsExpected: schedule.numItemsExpected))
         }
         return newMeetings
     }
@@ -84,9 +84,53 @@ class InfoSubview: UIViewController {
             print(dateFormatter.string(from: newMeetingSchedule.startingDate))
             let newMeetings = generateMeetings(schedule: newMeetingSchedule, num:3)
             for meeting in newMeetings {
+                postMeetings(meeting: meeting) {
+                    // call another get meetings right here
+                    self.getMeetings(artisanId: (self.artisan?._id)!) {
+                        //reload array
+                    }
+                }
                 print(meeting.date)
+            }
+            
+        }
+    }
+    
+    private func postMeetings(meeting: Meeting, completion : @escaping () -> ()) {
+        let meetingJSON = meeting.toJSON()
+        Alamofire.request( "http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/meetings", method: .post, parameters: meetingJSON ).responseJSON { response in
+            if let json = response.result.value {
+                // serialized json response
+                print("json from alamo fire", json)
+                completion()
             }
         }
     }
+    
+    func getMeetings(artisanId: String, completion : @escaping () -> ()) {
+        let url = "http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/meetings/5c00776e2f1dfe588f33138c/" + artisanId
+        Alamofire.request(url).responseJSON { response in
+            if let json = response.result.value {
+                // serialized json response
+                print("json from meeting get request", json)
 
+                //check if json is empty
+                // if json is not empty set artisan.scheduledMeetings to true
+                
+                // convert json data to meeting structure and add to array for tableview
+                /*
+                if let jsonarray = json as? [[String: Any]] {
+                    let dateFormatter = DateFormatter()
+                    let calendar = Calendar.current
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                    for x in jsonarray {
+                 
+                        self.meetings.append(Meeting(artisanName: artisanJSON!["name"]! as! String, time: myDate, numItems: x["itemsExpected"] as! Int))
+                    }
+                }*/
+                completion()
+            }
+        }
+    }
 }
