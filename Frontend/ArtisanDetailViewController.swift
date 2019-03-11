@@ -48,9 +48,9 @@ class ArtisanDetailViewController: UIViewController {
         super.viewDidLoad()
         self.title = name
         
-        print(name)
-        print(bio)
-        print(number)
+        //print(name)
+        //print(bio)
+        //print(number)
         
         guard let listingSubviewNew1 = children[0] as? ListingSubview else {
             fatalError("Check storyboard for missing ListingView")
@@ -69,6 +69,7 @@ class ArtisanDetailViewController: UIViewController {
         infoSubviewNew = infoSubviewNew1
         
         infoSubviewNew?.artisan = self.artisan
+        infoSubviewNew?.phone_number.text = self.artisan?.phone_number
         listingSubviewNew?.artisan = self.artisan
     }
     

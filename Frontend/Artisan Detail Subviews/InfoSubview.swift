@@ -11,21 +11,22 @@ import UIKit
 class InfoSubview: UIViewController {
 
     var artisan: Artisan? = nil
+    @IBOutlet weak var scheduleButton: UIButton!
     
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var phone_number: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = artisan?.phone_number
-        
-        // Do any additional setup after loading the view.
+//        phone_number.text = artisan?.phone_number
+        scheduleButton.backgroundColor = Constants.Colors.gray
+        scheduleButton.layer.cornerRadius = Constants.RoundedButton.cornerRadius
     }
     @IBAction func scheduleButton(_ sender: Any) {
         performSegue(withIdentifier: "createMeeting", sender:   self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        testLabel.text = artisan?.phone_number
+//        phone_number.text = artisan?.phone_number
 
     }
     

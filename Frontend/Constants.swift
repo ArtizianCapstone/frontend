@@ -26,5 +26,9 @@ struct Constants {
         static let serverUrl = "http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/"
         static let localUrl = "http://localhost:3000/"
     }
+    
+    struct RoundedButton {
+        static let cornerRadius:CGFloat = 10
+    }
 }
 
