@@ -1,22 +1,22 @@
-    //
-//  ArtisanTableViewCell.swift
-//  Frontend
 //
-//  Created by Vernon Chan on 12/2/18.
-//  Copyright © 2018 Artizian. All rights reserved.
+//  MEetingTableViewCell.swift
+//  
+//
+//  Created by Vernon Chan on 3/7/19.
 //
 
 import UIKit
 
-class ArtisanTableViewCell: UITableViewCell {
-    //MARK: Properties
-    @IBOutlet weak var nameLabel: UILabel!
-    
+class MeetingTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var stock: UILabel!
+    @IBOutlet weak var meetingQuantity: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ArtisanTableViewController: UITableViewController {
     //MARK: Properties
@@ -18,6 +19,9 @@ class ArtisanTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getUser(id: "5c00776e2f1dfe588f33138c")
+        
+        
+        
         self.tableView?.reloadData()
         
         //loadSampleArtisans()

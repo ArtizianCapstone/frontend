@@ -69,7 +69,6 @@ class ArtisanDetailViewController: UIViewController {
         infoSubviewNew = infoSubviewNew1
         
         infoSubviewNew?.artisan = self.artisan
-        infoSubviewNew?.testLabel.text = artisan?.name
     }
     
 

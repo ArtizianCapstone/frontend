@@ -16,8 +16,14 @@ class InfoSubview: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = artisan?.name
+        testLabel.text = artisan?.phone_number
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        testLabel.text = artisan?.phone_number
+
     }
     
     func hide() {
