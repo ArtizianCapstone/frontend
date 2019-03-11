@@ -24,9 +24,6 @@
 		B4018DF5222A1E57003A0FC6 /* InfoSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4018DF4222A1E57003A0FC6 /* InfoSubview.swift */; };
 		B4018DF7222A1E6A003A0FC6 /* PaymentSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4018DF6222A1E6A003A0FC6 /* PaymentSubview.swift */; };
 		B4018DF9222A1E79003A0FC6 /* ListingSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4018DF8222A1E79003A0FC6 /* ListingSubview.swift */; };
-		B41F40862231B7DD00C293C4 /* TempArtisanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F40832231B7DD00C293C4 /* TempArtisanViewController.swift */; };
-		B41F40872231B7DD00C293C4 /* CreateMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F40842231B7DD00C293C4 /* CreateMeetingViewController.swift */; };
-		B41F40922231C0FB00C293C4 /* MeetingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F40912231C0FB00C293C4 /* MeetingTableViewCell.swift */; };
 		B41F409622336DDF00C293C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F409522336DDF00C293C4 /* Constants.swift */; };
 		B43C4B60221B816600659D1C /* artisans.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B43C4B5F221B816600659D1C /* artisans.storyboard */; };
 		B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */; };
@@ -43,6 +40,9 @@
 		DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63921B9A25400D8C597 /* bannerQuote.swift */; };
 		DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */; };
 		DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */; };
+		DCFE7D6F22360DE200297298 /* TempArtisanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */; };
+		DCFE7D7022360DE200297298 /* CreateMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */; };
+		DCFE7D7222360E1200297298 /* MeetingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,10 +66,6 @@
 		B4018DF4222A1E57003A0FC6 /* InfoSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSubview.swift; sourceTree = "<group>"; };
 		B4018DF6222A1E6A003A0FC6 /* PaymentSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSubview.swift; sourceTree = "<group>"; };
 		B4018DF8222A1E79003A0FC6 /* ListingSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingSubview.swift; sourceTree = "<group>"; };
-		B41F40832231B7DD00C293C4 /* TempArtisanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempArtisanViewController.swift; path = /Users/vernonchan/Desktop/Artizian/Frontend/Frontend/TempArtisanViewController.swift; sourceTree = "<absolute>"; };
-		B41F40842231B7DD00C293C4 /* CreateMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateMeetingViewController.swift; path = /Users/vernonchan/Desktop/Artizian/Frontend/Frontend/CreateMeetingViewController.swift; sourceTree = "<absolute>"; };
-		B41F40852231B7DD00C293C4 /* createMeeting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = createMeeting.storyboard; path = /Users/vernonchan/Desktop/Artizian/Frontend/Frontend/createMeeting.storyboard; sourceTree = "<absolute>"; };
-		B41F40912231C0FB00C293C4 /* MeetingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeetingTableViewCell.swift; path = /Users/vernonchan/Desktop/Artizian/Frontend/Frontend/MeetingTableViewCell.swift; sourceTree = "<absolute>"; };
 		B41F409522336DDF00C293C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B43C4B5F221B816600659D1C /* artisans.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = artisans.storyboard; sourceTree = "<group>"; };
 		B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisanTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,6 +84,9 @@
 		DC0AE63921B9A25400D8C597 /* bannerQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerQuote.swift; sourceTree = "<group>"; };
 		DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fakegraph.png; sourceTree = "<group>"; };
+		DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempArtisanViewController.swift; path = /Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/TempArtisanViewController.swift; sourceTree = "<absolute>"; };
+		DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateMeetingViewController.swift; path = /Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/CreateMeetingViewController.swift; sourceTree = "<absolute>"; };
+		DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeetingTableViewCell.swift; path = "/Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/Artisan Detail Subviews/MeetingTableViewCell.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +121,10 @@
 		B4CFFEEB221E7A2E0056171D /* Artisan Detail Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */,
 				B4018DF4222A1E57003A0FC6 /* InfoSubview.swift */,
 				B4018DF6222A1E6A003A0FC6 /* PaymentSubview.swift */,
 				B4018DF8222A1E79003A0FC6 /* ListingSubview.swift */,
-				B41F40912231C0FB00C293C4 /* MeetingTableViewCell.swift */,
 			);
 			path = "Artisan Detail Subviews";
 			sourceTree = "<group>";
@@ -151,6 +150,8 @@
 		B4D47CA621ADF569005CA50E /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */,
+				DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */,
 				B41F409522336DDF00C293C4 /* Constants.swift */,
 				B43C4B5F221B816600659D1C /* artisans.storyboard */,
 				B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */,
@@ -158,9 +159,6 @@
 				B4B9585621B787DB00B07578 /* ArtisanDetailViewController.swift */,
 				B4CFFEEB221E7A2E0056171D /* Artisan Detail Subviews */,
 				3B40767D21E7E5B80062931D /* listings.storyboard */,
-				B41F40852231B7DD00C293C4 /* createMeeting.storyboard */,
-				B41F40842231B7DD00C293C4 /* CreateMeetingViewController.swift */,
-				B41F40832231B7DD00C293C4 /* TempArtisanViewController.swift */,
 				B4C1C4A122360B5900F6B003 /* Meeting.swift */,
 				3BF9D85D221607E900FBE733 /* ListingsViewController.swift */,
 				3BF9D85F221621BB00FBE733 /* pants.jpg */,
@@ -316,8 +314,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFE7D7022360DE200297298 /* CreateMeetingViewController.swift in Sources */,
 				3BCAF53B220BD6C700F9EEA7 /* ListingsTableViewCell.swift in Sources */,
-				B41F40922231C0FB00C293C4 /* MeetingTableViewCell.swift in Sources */,
 				B4018DF5222A1E57003A0FC6 /* InfoSubview.swift in Sources */,
 				B4018DF7222A1E6A003A0FC6 /* PaymentSubview.swift in Sources */,
 				B4B9585721B787DB00B07578 /* ArtisanDetailViewController.swift in Sources */,
@@ -326,7 +324,6 @@
 				DC0AE63821B9A1C800D8C597 /* customBannerCell.swift in Sources */,
 				3BF9D85E221607E900FBE733 /* ListingsViewController.swift in Sources */,
 				3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */,
-				B41F40872231B7DD00C293C4 /* CreateMeetingViewController.swift in Sources */,
 				DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */,
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
@@ -334,12 +331,13 @@
 				B4C1C4A222360B5900F6B003 /* Meeting.swift in Sources */,
 				3BCAF541220CE04A00F9EEA7 /* Listings.swift in Sources */,
 				B4018DF9222A1E79003A0FC6 /* ListingSubview.swift in Sources */,
+				DCFE7D6F22360DE200297298 /* TempArtisanViewController.swift in Sources */,
 				B4B9585521B6169E00B07578 /* User.swift in Sources */,
+				DCFE7D7222360E1200297298 /* MeetingTableViewCell.swift in Sources */,
 				B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */,
 				3B37DBA121FA6D1500372FF0 /* OrdersViewController.swift in Sources */,
 				B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */,
 				DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */,
-				B41F40862231B7DD00C293C4 /* TempArtisanViewController.swift in Sources */,
 				B4D47CAA21ADF569005CA50E /* FirstViewController.swift in Sources */,
 				3B0DB36C21B7858800DE1B5D /* ArtisanFormViewController.swift in Sources */,
 			);

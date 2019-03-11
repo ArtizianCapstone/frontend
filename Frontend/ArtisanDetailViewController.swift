@@ -70,6 +70,11 @@ class ArtisanDetailViewController: UIViewController {
         
         infoSubviewNew?.artisan = self.artisan
         listingSubviewNew?.artisan = self.artisan
+    
+        infoSubviewNew?.getMeetings(artisanId: (artisan?._id)!) {
+            //reload array
+        }
+        
     }
     
 
