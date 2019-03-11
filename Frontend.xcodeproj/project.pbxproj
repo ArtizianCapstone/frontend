@@ -84,9 +84,9 @@
 		DC0AE63921B9A25400D8C597 /* bannerQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerQuote.swift; sourceTree = "<group>"; };
 		DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fakegraph.png; sourceTree = "<group>"; };
-		DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempArtisanViewController.swift; path = /Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/TempArtisanViewController.swift; sourceTree = "<absolute>"; };
-		DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateMeetingViewController.swift; path = /Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/CreateMeetingViewController.swift; sourceTree = "<absolute>"; };
-		DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeetingTableViewCell.swift; path = "/Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/Artisan Detail Subviews/MeetingTableViewCell.swift"; sourceTree = "<absolute>"; };
+		DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempArtisanViewController.swift; path = /Users/vernonchan/Desktop/Artizian/Frontend/Frontend/TempArtisanViewController.swift; sourceTree = "<absolute>"; };
+		DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeetingViewController.swift; sourceTree = "<group>"; };
+		DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

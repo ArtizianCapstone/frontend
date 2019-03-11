@@ -17,11 +17,11 @@ struct Artisan : Codable {
     var bio: String
     var _id: String
     var scheduledMeetings: Bool = false
-    /*
-    //MARK: Initialization
-    init(name: String, phone_number: String) {
-        self.name = name
-        self.phone_number = phone_number
+    
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case phone_number
+        case bio
+        case _id
     }
- */
 }
