@@ -526,8 +526,12 @@
                     </view>
                     <connections>
                         <outlet property="lastMeetingBackground" destination="fbF-iK-JbN" id="85M-Ty-Vmn"/>
+                        <outlet property="lastMeetingDateLabel" destination="mea-TB-gaX" id="YIV-mG-kDJ"/>
+                        <outlet property="lastMeetingTimeLabel" destination="LcG-bb-zq5" id="SUF-Q7-dYs"/>
                         <outlet property="meetingHistoryBackground" destination="M0z-9y-Mzz" id="Rkc-qa-1c6"/>
                         <outlet property="nextMeetingBackground" destination="wVS-05-1HQ" id="LZU-Ke-iPY"/>
+                        <outlet property="nextMeetingDateLabel" destination="vpV-eq-Mus" id="XkM-Nx-RMv"/>
+                        <outlet property="nextMeetingTimeLabel" destination="A13-E3-fU4" id="pdi-BI-3Lf"/>
                         <outlet property="phone_number" destination="IfS-uN-8zW" id="zpX-1c-Su3"/>
                         <outlet property="scheduleButton" destination="lwW-lb-yNK" id="r2F-no-a6J"/>
                         <segue destination="njz-PD-yPV" kind="show" identifier="createMeeting" id="4T5-Jz-he2"/>
@@ -699,7 +703,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter item number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LDZ-rH-b7s">
-                                <rect key="frame" x="208" y="274" width="151" height="30"/>
+                                <rect key="frame" x="211" y="274" width="151" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="1Gh-YY-ppg"/>
                                 </constraints>
@@ -708,7 +712,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter frequency" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-fy-at4">
-                                <rect key="frame" x="208" y="76" width="151" height="30"/>
+                                <rect key="frame" x="211" y="76" width="151" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="g4O-vD-27c"/>
                                 </constraints>
@@ -717,7 +721,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqf-mu-5e1">
-                                <rect key="frame" x="208" y="143" width="151" height="30"/>
+                                <rect key="frame" x="211" y="143" width="151" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="Ige-lb-tGU"/>
                                 </constraints>
@@ -726,7 +730,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xWe-Bw-evT">
-                                <rect key="frame" x="208" y="209" width="151" height="30"/>
+                                <rect key="frame" x="211" y="209" width="151" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="6Zg-hc-5uO"/>
                                 </constraints>
@@ -744,7 +748,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-8V-hHV">
-                                <rect key="frame" x="46" y="338" width="42" height="30"/>
+                                <rect key="frame" x="46" y="338" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="a9z-j2-Wfc"/>
                                     <constraint firstAttribute="width" constant="42" id="wtk-mo-VeQ"/>

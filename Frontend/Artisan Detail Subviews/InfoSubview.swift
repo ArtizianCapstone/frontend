@@ -9,6 +9,14 @@
 import UIKit
 import Alamofire
 
+extension Date {
+    
+    static func - (lhs: Date, rhs: Date) -> TimeInterval {
+        return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
+    }
+    
+}
+
 class InfoSubview: UIViewController {
 
     var artisan: Artisan? = nil
@@ -19,6 +27,11 @@ class InfoSubview: UIViewController {
     @IBOutlet weak var nextMeetingBackground: UIButton!
     @IBOutlet weak var lastMeetingBackground: UIButton!
     @IBOutlet weak var meetingHistoryBackground: UIButton!
+    
+    @IBOutlet weak var lastMeetingDateLabel: UILabel!
+    @IBOutlet weak var lastMeetingTimeLabel: UILabel!
+    @IBOutlet weak var nextMeetingDateLabel: UILabel!
+    @IBOutlet weak var nextMeetingTimeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,19 +145,86 @@ class InfoSubview: UIViewController {
                 // if json is not empty set artisan.scheduledMeetings to true
                 
                 // convert json data to meeting structure and add to array for tableview
-                /*
+                var retrievedMeetings:[Meeting] = []
+                
                 if let jsonarray = json as? [[String: Any]] {
                     let dateFormatter = DateFormatter()
-                    let calendar = Calendar.current
                     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
                     dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                    
                     for x in jsonarray {
-                 
-                        self.meetings.append(Meeting(artisanName: artisanJSON!["name"]! as! String, time: myDate, numItems: x["itemsExpected"] as! Int))
+                        let dateString = x["date"] as! String
+                        let myDate = dateFormatter.date(from: dateString )!
+                        //let artisanJSON = x["artisan"] as? [String: Any]
+                        retrievedMeetings.append(Meeting( userId: "5c00776e2f1dfe588f33138c", artisanId: artisanId, date: myDate, numItemsExpected: x["itemsExpected"] as! Int))
                     }
-                }*/
+                    self.updateMeetingDisplay(meetings: retrievedMeetings)
+                }
                 completion()
             }
         }
+    }
+    
+    //updates display of future and past meeting based on recent get request
+    func updateMeetingDisplay(meetings: [Meeting]) {
+        //let calendar = Calendar.current
+        let currentDate = Date()
+        var upcomingMeetings:[Meeting] = []
+        var pastMeetings:[Meeting] = []
+
+        //meetings dates into future and past meetings
+        for meeting in meetings {
+            if meeting.date < currentDate {
+                pastMeetings.append(meeting)
+            }
+            else {
+                upcomingMeetings.append(meeting)
+            }
+        }
+        
+        if upcomingMeetings.isEmpty {
+            nextMeetingDateLabel.text = "None"
+            nextMeetingTimeLabel.text = ""
+        }
+        else {
+            var nextMeeting = upcomingMeetings[0]
+            for meeting in upcomingMeetings {
+                let interval = meeting.date - currentDate
+                if nextMeeting.date - currentDate > interval {
+                    nextMeeting = meeting
+                }
+            }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            nextMeetingDateLabel.text = dateFormatter.string(from: nextMeeting.date)
+            let timeFormatter = DateFormatter()
+            timeFormatter.dateFormat = "HH:mm a"
+            nextMeetingTimeLabel.text = timeFormatter.string(from: nextMeeting.date)
+        }
+        
+        if pastMeetings.isEmpty {
+            lastMeetingDateLabel.text = "None"
+            lastMeetingTimeLabel.text = ""
+        }
+        else {
+            var lastMeeting = pastMeetings[0]
+            for meeting in pastMeetings {
+                let interval = currentDate - meeting.date
+                if currentDate - lastMeeting.date > interval {
+                    lastMeeting = meeting
+                }
+            }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            lastMeetingDateLabel.text = dateFormatter.string(from: lastMeeting.date)
+            let timeFormatter = DateFormatter()
+            timeFormatter.dateFormat = "HH:mm a"
+            lastMeetingTimeLabel.text = timeFormatter.string(from: lastMeeting.date)
+        }
+        //var pastMeeting = pastMeetings[0]
+       
+        
     }
 }
