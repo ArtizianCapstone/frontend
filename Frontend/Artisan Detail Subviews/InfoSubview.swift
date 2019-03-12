@@ -55,6 +55,7 @@ class InfoSubview: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
 //        phone_number.text = artisan?.phone_number
+        
 
     }
     
@@ -140,9 +141,6 @@ class InfoSubview: UIViewController {
             if let json = response.result.value {
                 // serialized json response
                 print("json from meeting get request", json)
-
-                //check if json is empty
-                // if json is not empty set artisan.scheduledMeetings to true
                 
                 // convert json data to meeting structure and add to array for tableview
                 var retrievedMeetings:[Meeting] = []
@@ -157,6 +155,10 @@ class InfoSubview: UIViewController {
                         let myDate = dateFormatter.date(from: dateString )!
                         //let artisanJSON = x["artisan"] as? [String: Any]
                         retrievedMeetings.append(Meeting( userId: "5c00776e2f1dfe588f33138c", artisanId: artisanId, date: myDate, numItemsExpected: x["itemsExpected"] as! Int))
+                    }
+                    if retrievedMeetings.isEmpty == false{
+                        self.artisan?.scheduledMeetings = true
+                        self.scheduleButton.setTitle("Update meeting schedule", for: .normal)
                     }
                     self.updateMeetingDisplay(meetings: retrievedMeetings)
                 }
