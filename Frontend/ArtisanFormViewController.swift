@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ArtisanFormViewController: UIViewController {
     @IBOutlet weak var bioText: UITextView!
@@ -71,17 +72,24 @@ class ArtisanFormViewController: UIViewController {
             }
             //currently this userID is hard coded in, but in the future we should have a global userID maybe?
             let json: [String: Any] = ["userId": "5c00776e2f1dfe588f33138c", "name": name,"bio": bioText.text!, "phone_number": phoneNumNoHyphens]
+            let bio = bioText.text!
             
-            guard let jsonData = try? JSONSerialization.data(withJSONObject: json) else {return}
+            let artisan = Artisan( name: name, phone_number:phoneNumNoHyphens, bio: bio )
+            print("artisan before post", artisan)
+            postMeetings(artisan: artisan) {
+                
+            }
+            performSegue(withIdentifier: "CreatedArtisanSegue", sender: submitAction)
+            //guard let jsonData = try? JSONSerialization.data(withJSONObject: json) else {return}
             
             // create post request
-            guard let url = URL(string: "http://localhost:3000/artisans") else {return}
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+           // guard let url = URL(string: "http://localhost:3000/artisans") else {return}
+            //var request = URLRequest(url: url)
+            //request.httpMethod = "POST"
+            //request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             // insert json data to the request
-            request.httpBody = jsonData
-            
+            //request.httpBody = jsonData
+            /*
             let task = URLSession.shared
             task.dataTask(with: request) { (data, response, error) in
                 if let response = response {
@@ -96,7 +104,7 @@ class ArtisanFormViewController: UIViewController {
                         print(error)
                     }
                 }
-            }.resume()
+            }.resume()*/
             /*
                 guard let data = data, error == nil else {
                     print(error?.localizedDescription ?? "No data")
@@ -109,10 +117,21 @@ class ArtisanFormViewController: UIViewController {
             }
             
             task.resume()*/
-            performSegue(withIdentifier: "CreatedArtisanSegue", sender: submitAction)
+            //performSegue(withIdentifier: "CreatedArtisanSegue", sender: submitAction)
  
         
         
+        }
+    }
+    
+    private func postMeetings(artisan: Artisan, completion : @escaping () -> ()) {
+        let artisanJSON = artisan.toJSON()
+        Alamofire.request( "http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/artisans/noimage", method: .post, parameters: artisanJSON ).responseJSON { response in
+            if let json = response.result.value {
+                // serialized json response
+                print("json from artisan post", json)
+                completion()
+            }
         }
     }
         
