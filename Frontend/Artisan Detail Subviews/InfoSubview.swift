@@ -37,6 +37,7 @@ class InfoSubview: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        phone_number.isHidden = true
         phone_number.text = artisan?.phone_number
             nextMeetingBackground.backgroundColor = Constants.Colors.gray
             scheduleButton.backgroundColor = Constants.Colors.gray
