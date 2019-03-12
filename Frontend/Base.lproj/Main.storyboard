@@ -435,13 +435,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twU-1E-Is2">
-                                                    <rect key="frame" x="200" y="11" width="145" height="27"/>
+                                                    <rect key="frame" x="187" y="11" width="158" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYP-8b-stk">
-                                                    <rect key="frame" x="200" y="36" width="145" height="24"/>
+                                                    <rect key="frame" x="187" y="36" width="158" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -474,9 +474,9 @@
                                                 <constraint firstItem="9JE-MD-36g" firstAttribute="leading" secondItem="rnU-Vf-Uhs" secondAttribute="leadingMargin" id="NKp-K9-ujX"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="9JE-MD-36g" secondAttribute="bottom" id="NX9-ia-Q5m"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="K2w-Ph-fGo" secondAttribute="bottom" id="OFg-Kq-2ol"/>
-                                                <constraint firstItem="twU-1E-Is2" firstAttribute="leading" secondItem="rnU-Vf-Uhs" secondAttribute="leadingMargin" constant="185" id="OUo-Ah-e6r"/>
-                                                <constraint firstItem="twU-1E-Is2" firstAttribute="leading" secondItem="K2w-Ph-fGo" secondAttribute="trailing" constant="8" id="TtI-Mi-xMP"/>
-                                                <constraint firstItem="PYP-8b-stk" firstAttribute="leading" secondItem="K2w-Ph-fGo" secondAttribute="trailing" constant="8" id="Zc8-EY-aFQ"/>
+                                                <constraint firstItem="twU-1E-Is2" firstAttribute="leading" secondItem="rnU-Vf-Uhs" secondAttribute="leadingMargin" constant="172" id="OUo-Ah-e6r"/>
+                                                <constraint firstItem="twU-1E-Is2" firstAttribute="leading" secondItem="K2w-Ph-fGo" secondAttribute="trailing" constant="-5" id="TtI-Mi-xMP"/>
+                                                <constraint firstItem="PYP-8b-stk" firstAttribute="leading" secondItem="K2w-Ph-fGo" secondAttribute="trailing" constant="-5" id="Zc8-EY-aFQ"/>
                                                 <constraint firstItem="PYP-8b-stk" firstAttribute="top" secondItem="twU-1E-Is2" secondAttribute="bottom" constant="-2" id="bca-SS-iN9"/>
                                                 <constraint firstItem="9JE-MD-36g" firstAttribute="top" secondItem="rnU-Vf-Uhs" secondAttribute="topMargin" id="dW0-aX-PAn"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="PYP-8b-stk" secondAttribute="trailing" constant="-15" id="egx-sz-uSd"/>
@@ -638,7 +638,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59l-so-gUB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="-357"/>
+            <point key="canvasLocation" x="748" y="-357.57121439280365"/>
         </scene>
         <!--Listings-->
         <scene sceneID="kOq-p6-6Yu">
