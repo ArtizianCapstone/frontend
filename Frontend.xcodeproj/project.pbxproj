@@ -17,7 +17,7 @@
 		3BCAF53B220BD6C700F9EEA7 /* ListingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */; };
 		3BCAF53D220CB8CB00F9EEA7 /* defaultPhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAF53C220CB8CB00F9EEA7 /* defaultPhoto.jpg */; };
 		3BCAF53F220CD92D00F9EEA7 /* defaultPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAF53E220CD92D00F9EEA7 /* defaultPhoto.png */; };
-		3BCAF541220CE04A00F9EEA7 /* Listings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAF540220CE04A00F9EEA7 /* Listings.swift */; };
+		3BCAF541220CE04A00F9EEA7 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAF540220CE04A00F9EEA7 /* Listing.swift */; };
 		3BF9D85E221607E900FBE733 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF9D85D221607E900FBE733 /* ListingsViewController.swift */; };
 		3BF9D862221621BC00FBE733 /* pants.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BF9D85F221621BB00FBE733 /* pants.jpg */; };
 		3BF9D863221621BC00FBE733 /* rugs.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3BF9D860221621BB00FBE733 /* rugs.jpeg */; };
@@ -56,7 +56,7 @@
 		3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsTableViewCell.swift; sourceTree = "<group>"; };
 		3BCAF53C220CB8CB00F9EEA7 /* defaultPhoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultPhoto.jpg; sourceTree = "<group>"; };
 		3BCAF53E220CD92D00F9EEA7 /* defaultPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultPhoto.png; sourceTree = "<group>"; };
-		3BCAF540220CE04A00F9EEA7 /* Listings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listings.swift; sourceTree = "<group>"; };
+		3BCAF540220CE04A00F9EEA7 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		3BF9D85D221607E900FBE733 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
 		3BF9D85F221621BB00FBE733 /* pants.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pants.jpg; sourceTree = "<group>"; };
 		3BF9D860221621BB00FBE733 /* rugs.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rugs.jpeg; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 				3BCAF53C220CB8CB00F9EEA7 /* defaultPhoto.jpg */,
 				3BF9D8692216268100FBE733 /* shoes1.jpg */,
 				3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */,
-				3BCAF540220CE04A00F9EEA7 /* Listings.swift */,
+				3BCAF540220CE04A00F9EEA7 /* Listing.swift */,
 				3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */,
 				B4B9585221B477F600B07578 /* Artisan.swift */,
 				B4B9585421B6169E00B07578 /* User.swift */,
@@ -329,7 +329,7 @@
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
 				3B3A6BEB21F7B29D006D301F /* AddListingsViewController.swift in Sources */,
 				B4C1C4A222360B5900F6B003 /* Meeting.swift in Sources */,
-				3BCAF541220CE04A00F9EEA7 /* Listings.swift in Sources */,
+				3BCAF541220CE04A00F9EEA7 /* Listing.swift in Sources */,
 				B4018DF9222A1E79003A0FC6 /* ListingSubview.swift in Sources */,
 				DCFE7D6F22360DE200297298 /* TempArtisanViewController.swift in Sources */,
 				B4B9585521B6169E00B07578 /* User.swift in Sources */,

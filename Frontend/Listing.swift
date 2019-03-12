@@ -10,8 +10,10 @@ import UIKit
 struct Listing {
     
     var name: String
-    var artisan: String
+    var artisanId: String
     var price: Float
+    var description: String
+    var creation_date: Date
     var quantity : Int
-    var photo: UIImage
+    var photo: String
 }

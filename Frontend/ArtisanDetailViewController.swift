@@ -75,6 +75,9 @@ class ArtisanDetailViewController: UIViewController {
         infoSubviewNew?.getMeetings(artisanId: (artisan?._id)!) {
             //reload array
         }
+        listingSubviewNew?.getListings(artisanId: (artisan?._id)! ) {
+            self.listingSubviewNew?.myTableView.reloadData()
+        }
         
     
         

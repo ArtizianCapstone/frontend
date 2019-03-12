@@ -23,7 +23,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         factDetails.text! = "\nListings with photos sell 20% more frequently"
         funFact.layer.cornerRadius = 5.0
        
-        
+
         loadListings()
         // Do any additional setup after loading the view.
     }
@@ -45,14 +45,14 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as? ListingsTableViewCell else {
             fatalError("The dequeued cell is not an instance of ListingsTableViewCell.")
         }
-        
+        /*
         let listing = listings[indexPath.row]
         cell.itemName.text = listing.name
-        cell.imageView?.image = listing.photo
-        cell.sellerName.text = listing.artisan
+        //cell.imageView?.image = listing.photo
+        //cell.sellerName.text = listing.artisan
         cell.priceValue.text? = "$" + listing.price.description
         cell.stockValue.text? = listing.quantity.description + ""
-        
+        */
         // Configure the cell...
         
         return cell
@@ -72,6 +72,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     */
 private func loadListings() {
+    /*
     let defaultImage = UIImage(named: "defaultPhoto.png")
     
     let photo1 = UIImage(named: "shoes1.jpg")
@@ -86,7 +87,7 @@ private func loadListings() {
     let listing3 = Listing(name: "Rugs", artisan: "Sally Susanna", price: 5000, quantity : 2, photo: photo3 ?? defaultImage!)
     
     listings += [listing1,listing2,listing3]
-    
+    */
     }
 
 }

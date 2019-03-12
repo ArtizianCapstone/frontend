@@ -15,6 +15,7 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
     var meetingStock : [Int] = []
     var meetingQuantity : [String] = []
     
+    var listings:[Listing] = []
     var artisan: Artisan? = nil
     
     @IBOutlet weak var myTableView: UITableView!
@@ -22,11 +23,10 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadArtisanMeetings {
-            
-        }
+        
         
         // Do any additional setup after loading the view.
+        /*
         meetingNames.append( "Table Cloth")
         meetingNames.append( "Small Rug")
         meetingNames.append( "Small Blanket")
@@ -41,31 +41,63 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         meetingQuantity.append( "makes 4 per meeting")
         meetingQuantity.append( "makes 3 per meeting")
-        meetingQuantity.append( "makes 2 per meeting")
+        meetingQuantity.append( "makes 2 per meeting")*/
         myTableView.dataSource = self
+        myTableView.delegate = self
         myTableView.tableFooterView = UIView()
     }
-    
+ 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meetingNames.count
+        return listings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("cell for row at")
         let cell = tableView.dequeueReusableCell(withIdentifier: "MeetingTableViewCell", for: indexPath) as! MeetingTableViewCell
-        cell.title.text = meetingNames[indexPath.row]
-        cell.price.text = "$" + meetingPrices[indexPath.row].description
-        cell.stock.text = meetingStock[indexPath.row].description
-        cell.meetingQuantity.text = meetingQuantity[indexPath.row]
+        let rowListing = listings[indexPath.row]
+        cell.title.text = rowListing.name
+        cell.price.text = "$" + "\(rowListing.price)"
+        cell.stock.text = rowListing.description
+        cell.meetingQuantity.text = "\(rowListing.quantity)"
         
         return cell
     }
     
-    private func loadArtisanMeetings(completion : @escaping () -> ()) {
-        
+    func getListings(artisanId: String, completion : @escaping () -> ()) {
+        let url = "http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings/5c00776e2f1dfe588f33138c/" + artisanId
+        Alamofire.request(url).responseJSON { response in
+            if let json = response.result.value {
+                // serialized json response
+                print("json from listings get request", json)
+                
+                // convert json data to meeting structure and add to array for tableview
+                var retrievedListings:[Listing] = []
+                
+                if let jsonarray = json as? [[String: Any]] {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                    
+                    for x in jsonarray {
+                        let dateString = x["creation_date"] as! String
+                        let myDate = dateFormatter.date(from: dateString )!
+                        let listing_quantity = x["quantity"] as? String ?? "0"
+                        let listing_image = x["listingImage"] as? String ?? ""
+                        //let artisanJSON = x["artisan"] as? [String: Any]
+                        retrievedListings.append(Listing( name: x["name"] as! String, artisanId: artisanId, price: x["price"] as! Float, description: x["description"] as! String, creation_date: myDate, quantity: Int(listing_quantity)!, photo: listing_image))
+                        //retrievedListings.append(Li( userId: "5c00776e2f1dfe588f33138c", artisanId: artisanId, date: myDate, numItemsExpected: x["itemsExpected"] as! Int))
+                    }
+                    self.listings = retrievedListings
+                    print("listings count", self.listings.count)
+                }
+                //self.myTableView.reloadData()
+                completion()
+            }
+        }
     }
 
     /*
