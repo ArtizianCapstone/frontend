@@ -16,6 +16,7 @@
 		3B37DBA121FA6D1500372FF0 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B37DBA021FA6D1500372FF0 /* OrdersViewController.swift */; };
 		3B3A6BEB21F7B29D006D301F /* AddListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */; };
 		3B40767E21E7E5B80062931D /* listings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B40767D21E7E5B80062931D /* listings.storyboard */; };
+		3B94BD80223781AE004D2647 /* CustomMeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94BD7F223781AE004D2647 /* CustomMeetingCell.swift */; };
 		3BCAF53B220BD6C700F9EEA7 /* ListingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */; };
 		3BCAF53D220CB8CB00F9EEA7 /* defaultPhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAF53C220CB8CB00F9EEA7 /* defaultPhoto.jpg */; };
 		3BCAF53F220CD92D00F9EEA7 /* defaultPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAF53E220CD92D00F9EEA7 /* defaultPhoto.png */; };
@@ -37,9 +38,7 @@
 		DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63921B9A25400D8C597 /* bannerQuote.swift */; };
 		DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */; };
 		DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */; };
-		DC5639B322377CF500297A56 /* addlistings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5639B222377CF400297A56 /* addlistings.storyboard */; };
 		DCDB36932234E95F00FC8880 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCDB36922234E95F00FC8880 /* Home.storyboard */; };
-		DCDB36952234E98200FC8880 /* CustomMeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDB36942234E98200FC8880 /* CustomMeetingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +51,8 @@
 		3B37DBA021FA6D1500372FF0 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListingsViewController.swift; sourceTree = "<group>"; };
 		3B40767D21E7E5B80062931D /* listings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = listings.storyboard; sourceTree = "<group>"; };
+		3B94BD7E22377B57004D2647 /* addlistings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = addlistings.storyboard; path = /Users/zaneali/Documents/Capstone/frontend/Frontend/addlistings.storyboard; sourceTree = "<absolute>"; };
+		3B94BD7F223781AE004D2647 /* CustomMeetingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMeetingCell.swift; sourceTree = "<group>"; };
 		3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsTableViewCell.swift; sourceTree = "<group>"; };
 		3BCAF53C220CB8CB00F9EEA7 /* defaultPhoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultPhoto.jpg; sourceTree = "<group>"; };
 		3BCAF53E220CD92D00F9EEA7 /* defaultPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultPhoto.png; sourceTree = "<group>"; };
@@ -78,9 +79,7 @@
 		DC0AE63921B9A25400D8C597 /* bannerQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerQuote.swift; sourceTree = "<group>"; };
 		DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fakegraph.png; sourceTree = "<group>"; };
-		DC5639B222377CF400297A56 /* addlistings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = addlistings.storyboard; sourceTree = "<group>"; };
 		DCDB36922234E95F00FC8880 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		DCDB36942234E98200FC8880 /* CustomMeetingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomMeetingCell.swift; path = /Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/CustomMeetingCell.swift; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +115,8 @@
 		B4D47CA621ADF569005CA50E /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
-				DC5639B222377CF400297A56 /* addlistings.storyboard */,
-				DCDB36942234E98200FC8880 /* CustomMeetingCell.swift */,
+				3B94BD7F223781AE004D2647 /* CustomMeetingCell.swift */,
+				3B94BD7E22377B57004D2647 /* addlistings.storyboard */,
 				DCDB36922234E95F00FC8880 /* Home.storyboard */,
 				3B122BA4221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf */,
 				3B122BA3221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf */,
@@ -234,7 +233,6 @@
 				3B122BA8221F5939004932A0 /* listings.png in Resources */,
 				3BCAF53D220CB8CB00F9EEA7 /* defaultPhoto.jpg in Resources */,
 				DCDB36932234E95F00FC8880 /* Home.storyboard in Resources */,
-				DC5639B322377CF500297A56 /* addlistings.storyboard in Resources */,
 				3B40767E21E7E5B80062931D /* listings.storyboard in Resources */,
 				DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */,
 				3B122BA6221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
@@ -280,7 +278,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
@@ -293,7 +291,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -303,7 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCDB36952234E98200FC8880 /* CustomMeetingCell.swift in Sources */,
+				3B94BD80223781AE004D2647 /* CustomMeetingCell.swift in Sources */,
 				3BCAF53B220BD6C700F9EEA7 /* ListingsTableViewCell.swift in Sources */,
 				B4B9585721B787DB00B07578 /* ArtisanDetailViewController.swift in Sources */,
 				3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */,

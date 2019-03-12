@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/zaneali/Documents/Capstone/frontend/Frontend/CustomMeetingCell.swift">
+   </FileRef>
+   <FileRef
       location = "group:Frontend.xcodeproj">
    </FileRef>
    <FileRef
