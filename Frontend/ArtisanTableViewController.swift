@@ -40,7 +40,7 @@ class ArtisanTableViewController: UITableViewController {
 
     }
     private func getUser(id: String) {
-        let urlString = "http://localhost:3000/users/" + id
+        let urlString = "ec2-3-83-249-93.compute-1.amazonaws.com:3000" + id
         
         var url = URL(string: urlString)!
         
