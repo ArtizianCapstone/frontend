@@ -43,6 +43,7 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
         meetingQuantity.append( "makes 3 per meeting")
         meetingQuantity.append( "makes 2 per meeting")
         myTableView.dataSource = self
+        myTableView.tableFooterView = UIView()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -50,13 +51,13 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return meetingNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MeetingTableViewCell", for: indexPath) as! MeetingTableViewCell
         cell.title.text = meetingNames[indexPath.row]
-        cell.price.text = meetingPrices[indexPath.row].description
+        cell.price.text = "$" + meetingPrices[indexPath.row].description
         cell.stock.text = meetingStock[indexPath.row].description
         cell.meetingQuantity.text = meetingQuantity[indexPath.row]
         
