@@ -69,6 +69,7 @@ class ArtisanDetailViewController: UIViewController {
         infoSubviewNew = infoSubviewNew1
         
         infoSubviewNew?.artisan = self.artisan
+        infoSubviewNew?.bioTextView.text = self.artisan?.bio
         infoSubviewNew?.phone_number.text = self.artisan?.phone_number
         listingSubviewNew?.artisan = self.artisan
     

@@ -33,6 +33,8 @@ class InfoSubview: UIViewController {
     @IBOutlet weak var nextMeetingDateLabel: UILabel!
     @IBOutlet weak var nextMeetingTimeLabel: UILabel!
     
+    @IBOutlet weak var bioTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        phone_number.text = artisan?.phone_number
