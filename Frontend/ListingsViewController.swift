@@ -51,13 +51,14 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as? ListingsTableViewCell else {
             fatalError("The dequeued cell is not an instance of ListingsTableViewCell.")
         }
-        /*
+        
         let listing = listings[indexPath.row]
         cell.itemName.text = listing.name
-        cell.sellerName.text = listing.artisan
+        cell.sellerName.text = listing.artisanName
         cell.priceValue.text? = "$" + listing.price.description
         cell.stockValue.text? = listing.quantity.description + ""
-        */
+        cell.sellerImage.image = listing.photo
+        
         // Configure the cell...
         
         return cell
@@ -92,12 +93,18 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
             // serialized json response
                 
                 if let jsonarray = json as? [[String: Any]] {
-                   for x in jsonarray {
-                       var newListing = Listing()
-                       newListing.name = x["name"] as? String ?? "No Product Name"
-                       newListing.artisanName = x["artisanName"] as? String ?? "No Artisan Name"
-                       newListing.price = x["price"] as? Float ?? 0.0
-                       var imagerequest = x["listingImage"]
+                   
+                    for x in jsonarray {
+                        print(x)
+                        print ("\n------\n")
+                        let artisan = x["artisan"] as? [String: Any]
+                        
+                        var newListing = Listing()
+                        newListing.name = x["name"] as? String ?? "No Product Name"
+                        newListing.artisanName = artisan?["name"] as? String ?? "No Artisan Name"
+                        newListing.price = x["price"] as? Float ?? 0.0
+                        newListing.photo = defaultImage
+                        var imagerequest = x["listingImage"]
                     
                     
                         self.listings.append(newListing)

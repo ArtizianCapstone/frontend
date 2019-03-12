@@ -106,14 +106,11 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             
             if let json = response.result.value {
                 // serialized json response
-                if let dict = json as? [String: Any] {
-                    
-                    if let artisans = (dict["artisans"] as? [[String: Any]]) {
-                        for x in artisans  {
+                if let dict = json as? [[String: Any]] {
+                        for x in dict  {
                             self.pickerData[(x["name"]! as! String)] = (x["_id"]! as! String)
                             self.pickerArray.append(x["name"]! as! String)
                         }
-                    }
                 }
             }
             completion()
@@ -122,7 +119,6 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print( pickerArray[row])
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
     }
