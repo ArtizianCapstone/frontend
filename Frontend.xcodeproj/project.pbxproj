@@ -36,6 +36,7 @@
 		B4D47CAA21ADF569005CA50E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D47CA921ADF569005CA50E /* FirstViewController.swift */; };
 		B4D47CAF21ADF569005CA50E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D47CAD21ADF569005CA50E /* Main.storyboard */; };
 		B4D47CB121ADF56B005CA50E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4D47CB021ADF56B005CA50E /* Assets.xcassets */; };
+		B4E9D152223752AF001E01EF /* PaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E9D151223752AF001E01EF /* PaymentTableViewCell.swift */; };
 		DC0AE63821B9A1C800D8C597 /* customBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63721B9A1C800D8C597 /* customBannerCell.swift */; };
 		DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63921B9A25400D8C597 /* bannerQuote.swift */; };
 		DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */; };
@@ -80,6 +81,7 @@
 		B4D47CAE21ADF569005CA50E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4D47CB021ADF56B005CA50E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4D47CB521ADF56B005CA50E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4E9D151223752AF001E01EF /* PaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTableViewCell.swift; sourceTree = "<group>"; };
 		DC0AE63721B9A1C800D8C597 /* customBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customBannerCell.swift; sourceTree = "<group>"; };
 		DC0AE63921B9A25400D8C597 /* bannerQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerQuote.swift; sourceTree = "<group>"; };
 		DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */,
+				B4E9D151223752AF001E01EF /* PaymentTableViewCell.swift */,
 				B4018DF4222A1E57003A0FC6 /* InfoSubview.swift */,
 				B4018DF6222A1E6A003A0FC6 /* PaymentSubview.swift */,
 				B4018DF8222A1E79003A0FC6 /* ListingSubview.swift */,
@@ -334,6 +337,7 @@
 				DCFE7D6F22360DE200297298 /* TempArtisanViewController.swift in Sources */,
 				B4B9585521B6169E00B07578 /* User.swift in Sources */,
 				DCFE7D7222360E1200297298 /* MeetingTableViewCell.swift in Sources */,
+				B4E9D152223752AF001E01EF /* PaymentTableViewCell.swift in Sources */,
 				B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */,
 				3B37DBA121FA6D1500372FF0 /* OrdersViewController.swift in Sources */,
 				B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */,
