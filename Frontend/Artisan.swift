@@ -24,6 +24,13 @@ class Artisan : Codable {
         self.bio = bio
     }
     
+    init( name: String, phone_number: String, bio: String, _id: String) {
+        self.name = name
+        self.phone_number = name
+        self.bio = bio
+        self._id = _id
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case name
         case phone_number

@@ -18,8 +18,11 @@ class ArtisanTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUser(id: "5c00776e2f1dfe588f33138c")
-        
+        //getUser(id: "5c00776e2f1dfe588f33138c")
+        getArtisans {
+            self.tableView?.reloadData()
+        }
+        print("after view did load: ", artisans.count)
         
         
         self.tableView?.reloadData()
@@ -35,7 +38,10 @@ class ArtisanTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
-        getUser(id: "5c00776e2f1dfe588f33138c")
+        //getUser(id: "5c00776e2f1dfe588f33138c")
+        getArtisans() {
+            self.tableView?.reloadData()
+        }
     }
     
     @IBAction func addArtisanAction(_ sender: Any) {
@@ -106,8 +112,8 @@ class ArtisanTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if user.artisans != nil { 
-            return user.artisans.count
+        if artisans != nil {
+            return artisans.count
         } else {
             return 20
 
@@ -132,8 +138,10 @@ class ArtisanTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of ArtisanTableViewCell.")
         }
         
-        if self.user.artisans != nil {
-            let artisan = self.user.artisans[indexPath.row]
+        //if self.user.artisans != nil {
+        if self.artisans != nil {
+            //let artisan = self.user.artisans[indexPath.row]
+        let artisan = self.artisans[indexPath.row]
             cell.nameLabel.text = artisan.name
 
         } else {
@@ -237,4 +245,34 @@ class ArtisanTableViewController: UITableViewController {
             
         }.resume()
     }
+    
+    private func getArtisans(completion : @escaping () -> ()) {
+        
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/artisans").responseJSON { response in
+            if let json = response.result.value {
+                // serialized json response
+                print("GET artisans json response", json)
+                if let jsonarray = json as? [[String: Any]] {
+                    var newArtisans:[Artisan] = []
+                    for x in jsonarray {
+                        let name = x["name"] as? String ?? "no name"
+                        let _id = x["_id"] as? String ?? "no id"
+                        let phone_number = x["phone_number"] as? String ?? "no phone number"
+                        let bio = x["bio"] as? String ?? "no bio "
+                        
+                        newArtisans.append(Artisan(name: name, phone_number: phone_number, bio: bio, _id: _id))
+                    }
+                    print("count of new artisans", newArtisans.count)
+                    newArtisans = newArtisans.sorted {$0.name < $1.name }
+                    self.artisans = newArtisans
+                }
+                
+            }
+            completion()
+            
+        }
+        
+        
+    }
+    
 }
