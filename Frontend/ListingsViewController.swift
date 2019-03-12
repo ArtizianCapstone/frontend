@@ -58,7 +58,6 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         cell.priceValue.text? = "$" + listing.price.description
         cell.stockValue.text? = listing.quantity.description + ""
         cell.sellerImage.image = listing.photo
-        
         // Configure the cell...
         
         return cell
@@ -85,7 +84,6 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let defaultImage = UIImage(named: "defaultPhoto.png")
     
-        
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings").responseJSON { response in
             
         
@@ -107,7 +105,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
                         var imagerequest = x["listingImage"]
                     
                     
-                        self.listings.append(newListing)
+                    self.listings.append(newListing)
                        /*self.listings.append(Listing(name: (x["name"] as? String ?? "No Name"), artisan: (x["artisan"] as? String) ?? "No artisan" , price: (x["price"] as? Float) ?? 0.0, quantity : 0, photo: defaultImage!))*/
                     
                     
