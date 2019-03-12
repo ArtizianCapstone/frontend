@@ -83,11 +83,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     private func loadListings(completion : @escaping () -> ()) {
         
         let defaultImage = UIImage(named: "defaultPhoto.png")
-        /*
-        let photo1 = UIImage(named: "shoes1.jpg")
-        let photo2 = UIImage(named: "pants.jpg")
-        let photo3 = UIImage(named: "rugs.jpeg")
-        */
+    
         
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings").responseJSON { response in
             
