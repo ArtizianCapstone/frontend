@@ -10,6 +10,16 @@
 		3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36921B6298500DE1B5D /* LoginViewController.swift */; };
 		3B0DB36C21B7858800DE1B5D /* ArtisanFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36B21B7858800DE1B5D /* ArtisanFormViewController.swift */; };
 		3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB36D21B8514700DE1B5D /* ArtisanCreatedViewController.swift */; };
+		B302AEAD2235F0D80026F23F /* Itemperpaymentcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302AEAC2235F0D80026F23F /* Itemperpaymentcell.swift */; };
+		B302AEAF2235F35D0026F23F /* PaymentItemsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302AEAE2235F35D0026F23F /* PaymentItemsTable.swift */; };
+		B3480F0D2237555E00510A1D /* ParentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3480F0C2237555E00510A1D /* ParentTableView.swift */; };
+		B3480F0F223784D400510A1D /* ExpVCTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3480F0E223784D400510A1D /* ExpVCTestViewController.swift */; };
+		B3480F12223788C700510A1D /* ExpandableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3480F11223788C700510A1D /* ExpandableCells.swift */; };
+		B3480F182237898100510A1D /* ExpandedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3480F132237898000510A1D /* ExpandedCell.xib */; };
+		B3480F192237898100510A1D /* NormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3480F142237898000510A1D /* NormalCell.xib */; };
+		B3480F1A2237898100510A1D /* InitiallyExpandedExpandableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3480F152237898000510A1D /* InitiallyExpandedExpandableCell.xib */; };
+		B3480F1B2237898100510A1D /* ExpandableSelectableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3480F162237898000510A1D /* ExpandableSelectableCell.xib */; };
+		B3480F1C2237898100510A1D /* ExpandableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3480F172237898100510A1D /* ExpandableCell.xib */; };
 		B38CC87E221E6E2500BBE156 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC87D221E6E2500BBE156 /* PaymentViewController.swift */; };
 		B38CC884221F427400BBE156 /* TabySegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC883221F427300BBE156 /* TabySegmentedControl.swift */; };
 		B38CC886221F479600BBE156 /* PaymentHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CC885221F479600BBE156 /* PaymentHistoryVC.swift */; };
@@ -47,6 +57,16 @@
 		912974EA2A37C15395BD6760 /* Pods_Frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969B2E797BC8006122B0153 /* Pods-Frontend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frontend/Pods-Frontend.debug.xcconfig"; sourceTree = "<group>"; };
 		A9232B9C775B3F30CCA2B00B /* Pods-Frontend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frontend/Pods-Frontend.release.xcconfig"; sourceTree = "<group>"; };
+		B302AEAC2235F0D80026F23F /* Itemperpaymentcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itemperpaymentcell.swift; sourceTree = "<group>"; };
+		B302AEAE2235F35D0026F23F /* PaymentItemsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentItemsTable.swift; sourceTree = "<group>"; };
+		B3480F0C2237555E00510A1D /* ParentTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTableView.swift; sourceTree = "<group>"; };
+		B3480F0E223784D400510A1D /* ExpVCTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpVCTestViewController.swift; sourceTree = "<group>"; };
+		B3480F11223788C700510A1D /* ExpandableCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCells.swift; sourceTree = "<group>"; };
+		B3480F132237898000510A1D /* ExpandedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandedCell.xib; sourceTree = "<group>"; };
+		B3480F142237898000510A1D /* NormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalCell.xib; sourceTree = "<group>"; };
+		B3480F152237898000510A1D /* InitiallyExpandedExpandableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InitiallyExpandedExpandableCell.xib; sourceTree = "<group>"; };
+		B3480F162237898000510A1D /* ExpandableSelectableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableSelectableCell.xib; sourceTree = "<group>"; };
+		B3480F172237898100510A1D /* ExpandableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableCell.xib; sourceTree = "<group>"; };
 		B38CC87D221E6E2500BBE156 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		B38CC883221F427300BBE156 /* TabySegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabySegmentedControl.swift; sourceTree = "<group>"; };
 		B38CC885221F479600BBE156 /* PaymentHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryVC.swift; sourceTree = "<group>"; };
@@ -107,6 +127,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B3480F102237889000510A1D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B3480F172237898100510A1D /* ExpandableCell.xib */,
+				B3480F162237898000510A1D /* ExpandableSelectableCell.xib */,
+				B3480F132237898000510A1D /* ExpandedCell.xib */,
+				B3480F152237898000510A1D /* InitiallyExpandedExpandableCell.xib */,
+				B3480F142237898000510A1D /* NormalCell.xib */,
+				B3480F11223788C700510A1D /* ExpandableCells.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B4D47C9B21ADF569005CA50E = {
 			isa = PBXGroup;
 			children = (
@@ -129,11 +162,13 @@
 		B4D47CA621ADF569005CA50E /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				B3480F102237889000510A1D /* Cells */,
+				B3480F0C2237555E00510A1D /* ParentTableView.swift */,
 				B38CC889221F489F00BBE156 /* CurrentPaymentsCell.swift */,
 				B38CC883221F427300BBE156 /* TabySegmentedControl.swift */,
 				B3F460A9220CE59D00E03E50 /* Order.swift */,
-				B38CC88B221F4A1000BBE156 /* Payment.swift */,
 				B38CC88D221F4D5600BBE156 /* Item.swift */,
+				B38CC88B221F4A1000BBE156 /* Payment.swift */,
 				B4B9585221B477F600B07578 /* Artisan.swift */,
 				B4B9585421B6169E00B07578 /* User.swift */,
 				B4B9584E21B4745D00B07578 /* ArtisanTableViewCell.swift */,
@@ -141,6 +176,9 @@
 				B4B9585621B787DB00B07578 /* ArtisanDetailViewController.swift */,
 				B4D47CA721ADF569005CA50E /* AppDelegate.swift */,
 				B3F460A3220CDB3C00E03E50 /* Main.storyboard */,
+				B3480F0E223784D400510A1D /* ExpVCTestViewController.swift */,
+				B302AEAE2235F35D0026F23F /* PaymentItemsTable.swift */,
+				B302AEAC2235F0D80026F23F /* Itemperpaymentcell.swift */,
 				B38CC87D221E6E2500BBE156 /* PaymentViewController.swift */,
 				B3F460AB220CEACD00E03E50 /* BuyShippingViewController.swift */,
 				B3F460A7220CE3E800E03E50 /* OrdersViewController.swift */,
@@ -223,6 +261,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3480F1A2237898100510A1D /* InitiallyExpandedExpandableCell.xib in Resources */,
+				B3480F192237898100510A1D /* NormalCell.xib in Resources */,
+				B3480F1B2237898100510A1D /* ExpandableSelectableCell.xib in Resources */,
+				B3480F1C2237898100510A1D /* ExpandableCell.xib in Resources */,
+				B3480F182237898100510A1D /* ExpandedCell.xib in Resources */,
 				B4D47CB421ADF56B005CA50E /* LaunchScreen.storyboard in Resources */,
 				DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */,
 				B4D47CB121ADF56B005CA50E /* Assets.xcassets in Resources */,
@@ -287,16 +330,20 @@
 			files = (
 				B4B9585721B787DB00B07578 /* ArtisanDetailViewController.swift in Sources */,
 				3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */,
+				B3480F0D2237555E00510A1D /* ParentTableView.swift in Sources */,
 				B3F460AC220CEACD00E03E50 /* BuyShippingViewController.swift in Sources */,
 				B3F460A2220CCCBD00E03E50 /* OrderCell.swift in Sources */,
 				B38CC88E221F4D5600BBE156 /* Item.swift in Sources */,
 				B3F460A8220CE3E800E03E50 /* OrdersViewController.swift in Sources */,
 				B38CC888221F47BD00BBE156 /* UpcomingPaymentsVC.swift in Sources */,
+				B302AEAF2235F35D0026F23F /* PaymentItemsTable.swift in Sources */,
 				B38CC88A221F489F00BBE156 /* CurrentPaymentsCell.swift in Sources */,
 				B38CC88C221F4A1000BBE156 /* Payment.swift in Sources */,
 				DC0AE63821B9A1C800D8C597 /* customBannerCell.swift in Sources */,
 				3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */,
+				B3480F0F223784D400510A1D /* ExpVCTestViewController.swift in Sources */,
 				B38CC87E221E6E2500BBE156 /* PaymentViewController.swift in Sources */,
+				B3480F12223788C700510A1D /* ExpandableCells.swift in Sources */,
 				B3F460AA220CE59D00E03E50 /* Order.swift in Sources */,
 				DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */,
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
@@ -304,6 +351,7 @@
 				B4B9585521B6169E00B07578 /* User.swift in Sources */,
 				B38CC896221F52E100BBE156 /* CustomCurrentPaymentCell.swift in Sources */,
 				B4D47CA821ADF569005CA50E /* AppDelegate.swift in Sources */,
+				B302AEAD2235F0D80026F23F /* Itemperpaymentcell.swift in Sources */,
 				B38CC886221F479600BBE156 /* PaymentHistoryVC.swift in Sources */,
 				B38CC884221F427400BBE156 /* TabySegmentedControl.swift in Sources */,
 				B4B9584F21B4745D00B07578 /* ArtisanTableViewCell.swift in Sources */,
@@ -449,13 +497,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2MFJG54A6;
 				INFOPLIST_FILE = Frontend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Artizian.Frontend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Artizian.Frontend1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -468,13 +517,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2MFJG54A6;
 				INFOPLIST_FILE = Frontend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Artizian.Frontend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Artizian.Frontend1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

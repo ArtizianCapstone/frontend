@@ -15,6 +15,8 @@ class UpcomingPaymentsVC: UIViewController, UITableViewDataSource, UITableViewDe
     var tempTotal: Float = 0.0
     let calendar = Calendar.current
     static let formatter = DateFormatter()
+    var selectedIndexPath:IndexPath? = nil
+    var refresher: UIRefreshControl!
 
 
 
@@ -38,7 +40,7 @@ class UpcomingPaymentsVC: UIViewController, UITableViewDataSource, UITableViewDe
     
 
     
-    @IBOutlet weak var upcomingPaymentsTable: UITableView!
+    @IBOutlet weak var upcomingPaymentsTable: ParentTableView!
     //change from string to artisan id number
     let PaymentsList: [Payment] = [Payment(artisan: "Diego Rameriz", whenNextSeeing:  UpcomingPaymentsVC.randomDateMaker(), itemsBought: [
         Item(orderNum: "323 - 457 - 980", title: "table", quanity: 2, pricePer: Float(40)),
@@ -68,20 +70,35 @@ class UpcomingPaymentsVC: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
     }
     */
+   // func reloadRows(at: [IndexPath], with: UITableView.RowAnimation)
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath
+        print("selectedIndexPath is")
+        print(indexPath)
+        upcomingPaymentsTable.beginUpdates()
+        upcomingPaymentsTable.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PaymentsList.count
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (selectedIndexPath != nil && selectedIndexPath!.row == indexPath.row) {
+            return 150
+        } else {
+            return 50
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var component = calendar.dateComponents([.day,.month,.year], from: Date())
         UpcomingPaymentsVC.formatter.dateFormat = "MM/dd/yyyy"
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCurrentPaymentCell", for: indexPath) as? CurrentPaymentsCell
         // Configure the cell...
-        cell?.DateMeeting.text = UpcomingPaymentsVC.formatter.string(from:
+        cell?.ItemsArray = PaymentsList[indexPath.row].itemsCompensatedFor
+        cell?.DateShown.text = UpcomingPaymentsVC.formatter.string(from:
             PaymentsList[indexPath.row].expectedPayoutDate)
         cell?.ArtisanName.text = PaymentsList[indexPath.row].name
         cell?.AmountToPay.text = NSString(format: "%.2f",PaymentsList[indexPath.row].totalPayout) as String
@@ -90,6 +107,10 @@ class UpcomingPaymentsVC: UIViewController, UITableViewDataSource, UITableViewDe
             tempTotal += PaymentsList[indexPath.row].totalPayout
             weeklyTotal.text = NSString(format: "%.2f",tempTotal) as String
         }
+ 
+        print("in UPVC")
+        print(PaymentsList[indexPath.row].itemsCompensatedFor)
+
         return cell!
     }
     

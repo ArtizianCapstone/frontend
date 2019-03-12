@@ -23,11 +23,11 @@ class PaymentViewController: UIViewController {
 
     @IBOutlet weak var activeView: UIView!
     lazy var firstChildTabVC: UIViewController? = {
-        let firstChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "currentPaymentsID")
+        let firstChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "ExpandingTableVCID")
         return firstChildTabVC
     }()
     lazy var secondChildTabVC : UIViewController? = {
-        let secondChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "pastPaymentsID")
+        let secondChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "ExpandingTableVCID")
         
         return secondChildTabVC
     }()
