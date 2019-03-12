@@ -12,7 +12,7 @@ import Alamofire
 //home screen
 //UICollectionViewDelegateFlowLayout,
 //firstViewController
-struct Meeting : Codable {
+struct HomeMeeting : Codable {
     
     //MARK: Properties
     
@@ -35,7 +35,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     @IBOutlet weak var paymentOverviewLabel: UILabel!
     @IBOutlet weak var meetingTable: UITableView!
     
-    var meetings = [Meeting]()
+    var meetings = [HomeMeeting]()
     let cellSpacingHeight: CGFloat = 8
 
     //var meetingData = [MeetingCellData]()
@@ -91,7 +91,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/meetings").responseJSON { response in
             if let json = response.result.value {
                 // serialized json response
-                print("json from alamo fire", json)
+                print("homescreen get meetings json:", json)
                 if let jsonarray = json as? [[String: Any]] {
                     let dateFormatter = DateFormatter()
                     let calendar = Calendar.current
@@ -105,7 +105,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                         //print("artisanJSON:")
                         //print(artisanJSON!["name"]!)
                         if calendar.isDateInToday(myDate) {
-                            self.meetings.append(Meeting(artisanName: artisanJSON!["name"]! as! String, time: myDate, numItems: x["itemsExpected"] as! Int))
+                            self.meetings.append(HomeMeeting(artisanName: artisanJSON!["name"]! as! String, time: myDate, numItems: x["itemsExpected"] as! Int))
                         }
                     }
                 }

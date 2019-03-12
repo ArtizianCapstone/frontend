@@ -61,7 +61,7 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             let newListing = Listing()
             newListing.price = price
             newListing.name = item
-            newListing.artisan = artisanID ?? "None"
+            newListing.artisanId = artisanID ?? "None"
             newListing.description = description
             postListing(listing: newListing){
 

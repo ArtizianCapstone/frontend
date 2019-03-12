@@ -95,7 +95,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
                    for x in jsonarray {
                        var newListing = Listing()
                        newListing.name = x["name"] as? String ?? "No Product Name"
-                       newListing.artisan = x["artisanName"] as? String ?? "No Artisan Name"
+                       newListing.artisanName = x["artisanName"] as? String ?? "No Artisan Name"
                        newListing.price = x["price"] as? Float ?? 0.0
                        var imagerequest = x["listingImage"]
                     

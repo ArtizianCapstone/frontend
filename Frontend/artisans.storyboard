@@ -13,6 +13,7 @@
         <!--Artisans-->
         <scene sceneID="TOM-gV-eme">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZGR-9G-9xI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="UGk-o4-0QB" customClass="ArtisanTableViewController" customModule="Frontend" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x7a-af-Jig">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -58,7 +59,6 @@
                         <segue destination="dnv-BX-Bol" kind="show" identifier="addArtisanSegue" id="JcT-XU-7cr"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZGR-9G-9xI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688.8" y="354.87256371814095"/>
         </scene>
@@ -295,6 +295,7 @@
         <!--Artisan Detail View Controller-->
         <scene sceneID="jqi-K8-97S">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ng-Mj-ANk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="fm8-iJ-dGV" customClass="ArtisanDetailViewController" customModule="Frontend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vLi-xx-Uyh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -358,7 +359,6 @@
                         <outlet property="paymentSubview" destination="dmF-WT-iwF" id="bzn-c8-ViJ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1ng-Mj-ANk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2623.1999999999998" y="353.9730134932534"/>
         </scene>

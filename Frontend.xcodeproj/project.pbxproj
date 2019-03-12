@@ -45,6 +45,8 @@
 		DC0AE63A21B9A25400D8C597 /* bannerQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63921B9A25400D8C597 /* bannerQuote.swift */; };
 		DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */; };
 		DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */; };
+		DC3691DA2237958B007578F9 /* addlistings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3691D92237958B007578F9 /* addlistings.storyboard */; };
+		DCB7EBF3223798BB00BE1028 /* CustomMeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94BD7F223781AE004D2647 /* CustomMeetingCell.swift */; };
 		DCFE7D6F22360DE200297298 /* TempArtisanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */; };
 		DCFE7D7022360DE200297298 /* CreateMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */; };
 		DCFE7D7222360E1200297298 /* MeetingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */; };
@@ -60,7 +62,6 @@
 		3B37DBA021FA6D1500372FF0 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListingsViewController.swift; sourceTree = "<group>"; };
 		3B40767D21E7E5B80062931D /* listings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = listings.storyboard; sourceTree = "<group>"; };
-		3B94BD7E22377B57004D2647 /* addlistings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = addlistings.storyboard; path = /Users/zaneali/Documents/Capstone/frontend/Frontend/addlistings.storyboard; sourceTree = "<absolute>"; };
 		3B94BD7F223781AE004D2647 /* CustomMeetingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMeetingCell.swift; sourceTree = "<group>"; };
 		3B94BD81223793B3004D2647 /* Pods-Frontend.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.debug.xcconfig"; path = "Target Support Files/Pods-Frontend/Pods-Frontend.debug.xcconfig"; sourceTree = "<group>"; };
 		3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		DC0AE63921B9A25400D8C597 /* bannerQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerQuote.swift; sourceTree = "<group>"; };
 		DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fakegraph.png; sourceTree = "<group>"; };
+		DC3691D92237958B007578F9 /* addlistings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = addlistings.storyboard; sourceTree = "<group>"; };
 		DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempArtisanViewController.swift; sourceTree = "<group>"; };
 		DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeetingViewController.swift; sourceTree = "<group>"; };
 		DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				3B94BD7F223781AE004D2647 /* CustomMeetingCell.swift */,
-				3B94BD7E22377B57004D2647 /* addlistings.storyboard */,
+				DC3691D92237958B007578F9 /* addlistings.storyboard */,
 				3B122BA4221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf */,
 				3B122BA3221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf */,
 				DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */,
@@ -272,6 +274,7 @@
 				3B40767E21E7E5B80062931D /* listings.storyboard in Resources */,
 				DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */,
 				3B122BA6221F4743004932A0 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
+				DC3691DA2237958B007578F9 /* addlistings.storyboard in Resources */,
 				B4D47CB121ADF56B005CA50E /* Assets.xcassets in Resources */,
 				3BF9D862221621BC00FBE733 /* pants.jpg in Resources */,
 				3BCAF53F220CD92D00F9EEA7 /* defaultPhoto.png in Resources */,
@@ -316,7 +319,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -327,7 +330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -351,6 +354,7 @@
 				B4B9585321B477F600B07578 /* Artisan.swift in Sources */,
 				B4B9585121B477AC00B07578 /* ArtisanTableViewController.swift in Sources */,
 				3B3A6BEB21F7B29D006D301F /* AddListingsViewController.swift in Sources */,
+				DCB7EBF3223798BB00BE1028 /* CustomMeetingCell.swift in Sources */,
 				B4C1C4A222360B5900F6B003 /* Meeting.swift in Sources */,
 				3BCAF541220CE04A00F9EEA7 /* Listing.swift in Sources */,
 				B4018DF9222A1E79003A0FC6 /* ListingSubview.swift in Sources */,
