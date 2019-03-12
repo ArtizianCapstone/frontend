@@ -37,7 +37,7 @@ class InfoSubview: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        phone_number.text = artisan?.phone_number
+        phone_number.text = artisan?.phone_number
             nextMeetingBackground.backgroundColor = Constants.Colors.gray
             scheduleButton.backgroundColor = Constants.Colors.gray
         
@@ -57,7 +57,7 @@ class InfoSubview: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        phone_number.text = artisan?.phone_number
+        phone_number.text = artisan?.phone_number
         
         if artisan?.scheduledMeetings == false {
             nextMeetingBackground.backgroundColor = Constants.Colors.gray
