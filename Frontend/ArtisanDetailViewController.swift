@@ -9,23 +9,78 @@
 import UIKit
 
 class ArtisanDetailViewController: UIViewController {
+    var artisan: Artisan?
+    
     var name: String = ""
     var bio: String = ""
     var number: String = ""
     
-    @IBOutlet weak var cellNumber: UILabel!
-    @IBOutlet weak var bioField: UITextView!
+    var infoSubviewNew: InfoSubview?
+    var paymentSubviewNew: PaymentSubview?
+    var listingSubviewNew: ListingSubview?
+    
+    @IBOutlet weak var infoSubview: InfoSubview!
+    @IBOutlet weak var paymentSubview: PaymentSubview!
+    @IBOutlet weak var listingSubview: ListingSubview!
+    
+    
+    @IBAction func switchViewAction(_ sender: UISegmentedControl) {
+        infoSubviewNew!.view.isHidden = true
+        paymentSubviewNew!.view.isHidden = true
+        listingSubviewNew!.view.isHidden = true
+        
+        switch sender.selectedSegmentIndex {
+            case 0:
+                infoSubviewNew!.view.isHidden = false
+                break
+            case 1:
+                paymentSubviewNew!.view.isHidden = false
+                break
+            case 2:  
+                listingSubviewNew!.view.isHidden = false
+                break
+            default:
+                break
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = name
-        cellNumber.text = number
-        bioField.text = bio
         
-        print(name)
-        print(bio)
-        print(number)
-        // Do any additional setup after loading the view.
+        //print(name)
+        //print(bio)
+        //print(number)
+        
+        guard let listingSubviewNew1 = children[0] as? ListingSubview else {
+            fatalError("Check storyboard for missing ListingView")
+        }
+        
+        guard let paymentSubviewNew1 = children[1] as? PaymentSubview else {
+            fatalError("Check storyboard for missing PaymentSubview")
+        }
+        
+        guard let infoSubviewNew1 = children[2] as? InfoSubview else {
+            fatalError("Check storyboard for missing Infoview")
+        }
+        
+        listingSubviewNew = listingSubviewNew1
+        paymentSubviewNew = paymentSubviewNew1
+        infoSubviewNew = infoSubviewNew1
+        
+        infoSubviewNew?.artisan = self.artisan
+        infoSubviewNew?.phone_number.text = self.artisan?.phone_number
+        listingSubviewNew?.artisan = self.artisan
+    
+        infoSubviewNew?.getMeetings(artisanId: (artisan?._id)!) {
+            //reload array
+        }
+        listingSubviewNew?.getListings(artisanId: (artisan?._id)! ) {
+            self.listingSubviewNew?.myTableView.reloadData()
+        }
+        
+    
+        
     }
     
 

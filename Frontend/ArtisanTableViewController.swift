@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ArtisanTableViewController: UITableViewController {
     //MARK: Properties
@@ -18,6 +19,9 @@ class ArtisanTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getUser(id: "5c00776e2f1dfe588f33138c")
+        
+        
+        
         self.tableView?.reloadData()
         
         //loadSampleArtisans()
@@ -28,20 +32,20 @@ class ArtisanTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+    /*
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
         getUser(id: "5c00776e2f1dfe588f33138c")
     }
-  
+    */
     @IBAction func addArtisanAction(_ sender: Any) {
         print("here")
         performSegue(withIdentifier: "addArtisanSegue", sender: addArtisanButton)
 
     }
     private func getUser(id: String) {
-        let urlString = "ec2-3-83-249-93.compute-1.amazonaws.com:3000" + id
-        
+        let urlString = "http://localhost:3000/users/" + id
+        //let urlString = "http:///ec2-3-83-249-93.compute-1.amazonaws.com:3000/users/" + id
         var url = URL(string: urlString)!
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -192,7 +196,7 @@ class ArtisanTableViewController: UITableViewController {
             destVC?.bio = user.artisans[index].bio
             destVC?.name = user.artisans[index].name
             destVC?.number = user.artisans[index].phone_number
-            
+            destVC?.artisan = user.artisans[index]
         }
     }
     
@@ -207,6 +211,7 @@ class ArtisanTableViewController: UITableViewController {
         
         //Make HTTP Request
         let urlString = "http://localhost:3000/users"
+        //let urlString = "http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/users"
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in

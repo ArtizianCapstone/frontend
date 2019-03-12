@@ -1,22 +1,21 @@
-    //
-//  ArtisanTableViewCell.swift
+//
+//  PaymentTableViewCell.swift
 //  Frontend
 //
-//  Created by Vernon Chan on 12/2/18.
-//  Copyright © 2018 Artizian. All rights reserved.
+//  Created by Vernon Chan on 3/11/19.
+//  Copyright © 2019 Artizian. All rights reserved.
 //
 
 import UIKit
 
-class ArtisanTableViewCell: UITableViewCell {
-    //MARK: Properties
-    @IBOutlet weak var nameLabel: UILabel!
+class PaymentTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var paymentLabel: UILabel!
+    @IBOutlet weak var roundedBoxBackground: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
