@@ -14,7 +14,6 @@ class ArtisanCreatedViewController: UIViewController {
     @IBOutlet weak var numberField: UILabel!
     
     @IBOutlet weak var homeButton: UIButton!
-    @IBOutlet weak var viewArtisanButton: UIButton!
     @IBOutlet weak var addAnotherButton: UIButton!
     var username:String = ""
     var number:String = ""
@@ -23,6 +22,10 @@ class ArtisanCreatedViewController: UIViewController {
         super.viewDidLoad()
         nameField.text! = username
         numberField.text! = number
+        homeButton.isHidden = true
+        
+        addAnotherButton.backgroundColor = Constants.Colors.blue
+        addAnotherButton.layer.cornerRadius = Constants.RoundedButton.cornerRadius
         // Do any additional setup after loading the view.
     }
     

@@ -10,41 +10,26 @@ import UIKit
 import Alamofire
 
 class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var meetingNames : [String] = []
-    var meetingPrices : [Float] = []
-    var meetingStock : [Int] = []
-    var meetingQuantity : [String] = []
     
     var listings:[Listing] = []
     var artisan: Artisan? = nil
+    
+    @IBOutlet weak var noListingsButton: UIButton!
     
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        // Do any additional setup after loading the view.
-        /*
-        meetingNames.append( "Table Cloth")
-        meetingNames.append( "Small Rug")
-        meetingNames.append( "Small Blanket")
-        
-        meetingPrices.append( 40.0)
-        meetingPrices.append( 50.0)
-        meetingPrices.append( 30.0)
-        
-        meetingStock.append( 10)
-        meetingStock.append( 15)
-        meetingStock.append( 5)
-        
-        meetingQuantity.append( "makes 4 per meeting")
-        meetingQuantity.append( "makes 3 per meeting")
-        meetingQuantity.append( "makes 2 per meeting")*/
         myTableView.dataSource = self
         myTableView.delegate = self
         myTableView.tableFooterView = UIView()
+        
+        noListingsButton.isHidden = true
+        noListingsButton.backgroundColor = Constants.Colors.red
+        noListingsButton.layer.cornerRadius = Constants.RoundedButton.cornerRadius
+        
+        
     }
  
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -93,6 +78,9 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
                     }
                     self.listings = retrievedListings
                     print("listings count", self.listings.count)
+                    if self.listings.count == 0 {
+                        self.noListingsButton.isHidden = false
+                    }
                 }
                 //self.myTableView.reloadData()
                 completion()
