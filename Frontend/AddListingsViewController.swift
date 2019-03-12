@@ -64,7 +64,7 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             newListing.artisanId = artisanID ?? "None"
             newListing.description = description
             postListing(listing: newListing){
-
+            self.dismiss(animated: true, completion: nil)
             }
     
         }
