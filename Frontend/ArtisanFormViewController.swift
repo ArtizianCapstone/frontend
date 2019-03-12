@@ -32,6 +32,9 @@ class ArtisanFormViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        submitButton.backgroundColor = Constants.Colors.blue
+        submitButton.layer.cornerRadius = Constants.RoundedButton.cornerRadius
+        
     }
     
     @IBAction func submitAction(_ sender: Any) {

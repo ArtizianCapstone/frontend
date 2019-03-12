@@ -32,12 +32,12 @@ class ArtisanTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    /*
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
         getUser(id: "5c00776e2f1dfe588f33138c")
     }
-    */
+    
     @IBAction func addArtisanAction(_ sender: Any) {
         print("here")
         performSegue(withIdentifier: "addArtisanSegue", sender: addArtisanButton)
