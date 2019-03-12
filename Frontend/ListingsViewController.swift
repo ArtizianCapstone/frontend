@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var listings = [Listing]()
@@ -17,12 +18,13 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     
     @IBOutlet weak var factDetails: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-            loadListings {
-                 self.tableView.reloadData()
+        loadListings {
+            self.tableView.reloadData()
         }
        
         funFact.text! = "\nTip:"
@@ -55,7 +57,6 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         let listing = listings[indexPath.row]
         cell.itemName.text = listing.name
-        cell.imageView?.image = listing.photo
         cell.sellerName.text = listing.artisan
         cell.priceValue.text? = "$" + listing.price.description
         cell.stockValue.text? = listing.quantity.description + ""
@@ -85,8 +86,8 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     private func loadListings(completion : @escaping () -> ()) {
         
         let defaultImage = UIImage(named: "defaultPhoto.png")
-        
-        /*let photo1 = UIImage(named: "shoes1.jpg")
+        /*
+        let photo1 = UIImage(named: "shoes1.jpg")
         let photo2 = UIImage(named: "pants.jpg")
         let photo3 = UIImage(named: "rugs.jpeg")
         */
@@ -96,20 +97,31 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         
             if let json = response.result.value {
             // serialized json response
-    
+                
                 if let jsonarray = json as? [[String: Any]] {
                    for x in jsonarray {
-                       self.listings.append(Listing(name: (x["name"] as? String ?? "No Name"), artisan: (x["artisan"] as? String) ?? "No artisan" , price: (x["price"] as? Float) ?? 0.0, quantity : 0, photo: defaultImage!))
+                       var newListing = Listing()
+                       newListing.name = x["name"] as? String ?? "No Product Name"
+                       newListing.artisan = x["artisanName"] as? String ?? "No Artisan Name"
+                       newListing.price = x["price"] as? Float ?? 0.0
+                       var imagerequest = x["listingImage"]
+                    
+                    
+                        self.listings.append(newListing)
+                       /*self.listings.append(Listing(name: (x["name"] as? String ?? "No Name"), artisan: (x["artisan"] as? String) ?? "No artisan" , price: (x["price"] as? Float) ?? 0.0, quantity : 0, photo: defaultImage!))*/
                     
                     
              
                         // access all key / value pairs in dictionary
                     }
                 }
-                completion()
+              
+            }
+            completion()
+
         }
-    }
-    
+   
+  
     
     /*
     let listing1 = Listing(name: "Shoes", artisan: "Tom Savage", price: 42.51, quantity : 2, photo: photo1!)
