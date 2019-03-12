@@ -76,6 +76,8 @@ class ArtisanDetailViewController: UIViewController {
             //reload array
         }
         
+    
+        
     }
     
 

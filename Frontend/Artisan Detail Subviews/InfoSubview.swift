@@ -36,10 +36,17 @@ class InfoSubview: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        phone_number.text = artisan?.phone_number
-        scheduleButton.backgroundColor = Constants.Colors.gray
-        scheduleButton.layer.cornerRadius = Constants.RoundedButton.cornerRadius
         
-        nextMeetingBackground.backgroundColor = Constants.Colors.green
+        
+        if artisan?.scheduledMeetings == false {
+            nextMeetingBackground.backgroundColor = Constants.Colors.gray
+            scheduleButton.backgroundColor = Constants.Colors.red
+        } else {
+            nextMeetingBackground.backgroundColor = Constants.Colors.green
+            scheduleButton.backgroundColor = Constants.Colors.gray
+        }
+        
+        scheduleButton.layer.cornerRadius = Constants.RoundedButton.cornerRadius
         nextMeetingBackground.layer.cornerRadius = Constants.RoundedButton.cornerRadius
         
         lastMeetingBackground.backgroundColor = Constants.Colors.gray
@@ -47,6 +54,7 @@ class InfoSubview: UIViewController {
         
         meetingHistoryBackground.backgroundColor = Constants.Colors.gray
         meetingHistoryBackground.layer.cornerRadius = Constants.RoundedButton.cornerRadius
+        
         
     }
     @IBAction func scheduleButton(_ sender: Any) {
