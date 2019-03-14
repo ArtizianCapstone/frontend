@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:/Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/Base.lproj"
+      name = "Base.lproj">
+      <FileRef
+         location = "group:LaunchScreen.storyboard">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Frontend.xcodeproj">
    </FileRef>
