@@ -21,6 +21,9 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var itemDescription: UITextView!
     
+    @IBOutlet weak var listingImage: UIImageView!
+    var imagePicker = UIImagePickerController()
+    
     @IBOutlet weak var itemPrice: UITextField!
     
     @IBOutlet weak var submitButton: UIButton!
@@ -36,10 +39,18 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         
+        imagePicker.delegate = self
+        
         loadData {
            self.pickerView.reloadAllComponents()
         }
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func pickImage(_ sender: Any) {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func dismessVC(_ sender: Any) {
@@ -121,5 +132,14 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
+    }
+}
+
+extension AddListingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            listingImage.image = image
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
