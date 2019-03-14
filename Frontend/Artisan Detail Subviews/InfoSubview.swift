@@ -109,11 +109,11 @@ class InfoSubview: UIViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy,h:mm a"
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            
             dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
             print(sourceViewController.timeField.text!)
             let mergedDateFields = sourceViewController.startingDateField.text! + "," + sourceViewController.timeField.text!
-            
-            //print("merged date string: ", mergedDateFields)
+            print("merged date string: ", mergedDateFields)
             let date = dateFormatter.date(from: mergedDateFields )
             //print( "merged date: ", date)
             let numItems = Int(sourceViewController.itemsExpectedField.text ?? "0")

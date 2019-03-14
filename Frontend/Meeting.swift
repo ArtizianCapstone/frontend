@@ -36,6 +36,9 @@ class Meeting : Codable {
     func toJSON() -> Dictionary<String, AnyObject> {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        //print("date inside toJSON", self.date)
         return [
             "userID": self.userId as AnyObject,
             "artisanID": self.artisanId as AnyObject,
