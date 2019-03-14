@@ -6,4 +6,5 @@ target 'Frontend' do
   use_frameworks!
   pod 'Alamofire'
   pod 'ExpandableCell'
+  pod 'AlamofireImage'
 end
