@@ -91,13 +91,13 @@ class ExpVCTestViewController: UIViewController {
 extension ExpVCTestViewController: ExpandableDelegate {
     func expandableTableView(_ expandableTableView: ExpandableTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = expandableTableView.dequeueReusableCell(withIdentifier: parentCells[indexPath.row]) else { return UITableViewCell() }
-      /*  if cell is ExpandableCell2
+        if cell is ExpandableCell2
         {
-            cell.DateShown.text = UpcomingPaymentsVC.formatter.string(from:
-                PaymentsList[indexPath.row].expectedPayoutDate)
-            cell.MoneyOwed.text = NSString(format: "%.2f",PaymentsList[indexPath.row].totalPayout) as String
-            cell.ArtisanName.text = PaymentsList[indexPath.row].name
-        }*/
+            (cell as! ExpandableCell2).DateShown.text = UpcomingPaymentsVC.formatter.string(from:
+                ExpVCTestViewController.PaymentsList[indexPath.row].expectedPayoutDate)
+            (cell as! ExpandableCell2).MoneyOwed.text = NSString(format: "%.2f",ExpVCTestViewController.PaymentsList[indexPath.row].totalPayout) as String
+            (cell as! ExpandableCell2).ArtisanName.text = ExpVCTestViewController.PaymentsList[indexPath.row].name
+        }
         return cell
     }
 
