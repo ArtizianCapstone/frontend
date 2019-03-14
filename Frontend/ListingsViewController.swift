@@ -33,6 +33,12 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        loadListings {
+            self.tableView.reloadData()
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
