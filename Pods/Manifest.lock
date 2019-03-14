@@ -1,0 +1,16 @@
+PODS:
+  - ExpandableCell (1.2.8)
+
+DEPENDENCIES:
+  - ExpandableCell
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ExpandableCell
+
+SPEC CHECKSUMS:
+  ExpandableCell: a79824c52c1a30218aafcbfcdc42a0c3585a3b77
+
+PODFILE CHECKSUM: e321717f6030058da127872f0e044910f8006e7b
+
+COCOAPODS: 1.5.3
