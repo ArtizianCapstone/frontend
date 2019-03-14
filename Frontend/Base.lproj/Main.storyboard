@@ -788,9 +788,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a Listing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1o-Q0-Hzk">
-                                <rect key="frame" x="140" y="41" width="102" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Listing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1o-Q0-Hzk">
+                                <rect key="frame" x="140" y="36" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -865,12 +864,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KHm-f1-PyI">
-                                <rect key="frame" x="89" y="70" width="197" height="125"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basket" translatesAutoresizingMaskIntoConstraints="NO" id="KHm-f1-PyI">
+                                <rect key="frame" x="48" y="65" width="159" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="143" id="Jqs-dr-UH8"/>
+                                    <constraint firstAttribute="width" constant="159" id="q4g-Tk-gAI"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oz-7s-lQ3">
+                                <rect key="frame" x="269" y="121" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0oz-7s-lQ3" firstAttribute="top" secondItem="aaI-Ml-qdC" secondAttribute="top" constant="101" id="6qp-rL-oaF"/>
+                            <constraint firstItem="I1o-Q0-Hzk" firstAttribute="top" secondItem="aaI-Ml-qdC" secondAttribute="top" constant="16" id="DCl-T7-C6H"/>
+                            <constraint firstItem="0oz-7s-lQ3" firstAttribute="leading" secondItem="KHm-f1-PyI" secondAttribute="trailing" constant="62" id="VpL-UZ-Xuu"/>
+                            <constraint firstItem="KHm-f1-PyI" firstAttribute="top" secondItem="I1o-Q0-Hzk" secondAttribute="bottom" constant="8" id="bg3-K9-Dqk"/>
+                            <constraint firstItem="aaI-Ml-qdC" firstAttribute="trailing" secondItem="I1o-Q0-Hzk" secondAttribute="trailing" constant="133" id="ert-YL-ww5"/>
+                            <constraint firstItem="I1o-Q0-Hzk" firstAttribute="leading" secondItem="aaI-Ml-qdC" secondAttribute="leading" constant="140" id="hCh-Zp-8jV"/>
+                            <constraint firstItem="aaI-Ml-qdC" firstAttribute="trailing" secondItem="KHm-f1-PyI" secondAttribute="trailing" constant="168" id="iuc-SP-gJN"/>
+                            <constraint firstItem="KHm-f1-PyI" firstAttribute="leading" secondItem="aaI-Ml-qdC" secondAttribute="leading" constant="48" id="rvn-9P-mbK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aaI-Ml-qdC"/>
                     </view>
                     <navigationItem key="navigationItem" id="aXe-jE-kif"/>
@@ -886,7 +902,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PsU-2s-KY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-247" y="1013"/>
+            <point key="canvasLocation" x="-247.19999999999999" y="1012.4437781109445"/>
         </scene>
         <!--Artisans-->
         <scene sceneID="pIQ-Ng-O7U">
@@ -1533,12 +1549,13 @@
     </scenes>
     <resources>
         <image name="artisans" width="19.5" height="19.5"/>
+        <image name="basket" width="225" height="225"/>
         <image name="home" width="18" height="18"/>
         <image name="listings.png" width="33" height="33"/>
         <image name="payments" width="22.5" height="22.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rsK-jz-Cyw"/>
+        <segue reference="TNY-5j-cpp"/>
         <segue reference="68a-1h-Nhn"/>
         <segue reference="l0L-hd-uje"/>
     </inferredMetricsTieBreakers>
