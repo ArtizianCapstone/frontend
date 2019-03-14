@@ -44,7 +44,7 @@
                     <constraint firstItem="Y6x-gc-5Zj" firstAttribute="leading" secondItem="0E9-wZ-z0c" secondAttribute="leading" constant="15" id="WWy-L4-hKr"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.5725490196078431" green="0.6588235294117647" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.23104345800000001" green="0.59902668000000003" blue="0.98928445580000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="ArtisanName" destination="Gbc-nV-8uW" id="vmp-EF-e9X"/>
                 <outlet property="DateShown" destination="Y6x-gc-5Zj" id="FfN-8x-VzY"/>

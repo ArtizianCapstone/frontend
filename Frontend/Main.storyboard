@@ -1681,7 +1681,7 @@
             </objects>
             <point key="canvasLocation" x="3135" y="2906"/>
         </scene>
-        <!--Item-->
+        <!--Payments-->
         <scene sceneID="h3l-cc-dDM">
             <objects>
                 <viewController id="Utw-Mu-ZV1" customClass="PaymentViewController" customModule="Frontend" customModuleProvider="target" sceneMemberID="viewController">
@@ -1703,10 +1703,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8hR-05-BFr" customClass="TabySegmentedControl" customModule="Frontend" customModuleProvider="target">
-                                <rect key="frame" x="119" y="36" width="136" height="29"/>
+                                <rect key="frame" x="24" y="36" width="326" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Upcoming"/>
+                                    <segment title="Unconfirmed"/>
                                     <segment title="Past"/>
                                 </segments>
                                 <connections>
@@ -1718,7 +1719,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Jpc-7I-T0z"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="payments" selectedImage="payments" id="fhg-K9-0LD"/>
+                    <tabBarItem key="tabBarItem" title="Payments" image="payments" selectedImage="payments" id="fhg-K9-0LD"/>
                     <connections>
                         <outlet property="activeView" destination="UDS-UD-YaJ" id="5Yc-k6-30I"/>
                         <outlet property="segmentedController" destination="8hR-05-BFr" id="ork-2P-i3c"/>
@@ -1726,7 +1727,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYg-Mz-51a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="1719"/>
+            <point key="canvasLocation" x="1013.6" y="1718.5907046476764"/>
         </scene>
         <!--currentPaymentsVC-->
         <scene sceneID="o5t-FC-9Xa">
@@ -1955,7 +1956,7 @@
         <image name="payments" width="22.5" height="22.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TNY-5j-cpp"/>
+        <segue reference="rsK-jz-Cyw"/>
         <segue reference="68a-1h-Nhn"/>
         <segue reference="l0L-hd-uje"/>
     </inferredMetricsTieBreakers>
