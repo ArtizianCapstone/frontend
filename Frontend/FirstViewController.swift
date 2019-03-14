@@ -112,7 +112,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                         //print("artisanJSON:")
                         //print(artisanJSON!["name"]!)
                         if calendar.isDateInToday(myDate) {
-                            todaysMeetings.append(HomeMeeting(artisanName: artisanJSON!["name"]! as! String, time: myDate, numItems: x["itemsExpected"] as! Int))
+                            todaysMeetings.append(HomeMeeting(artisanName: artisanJSON!["name"] as? String ?? "Camila Sandoval", time: myDate, numItems: x["itemsExpected"] as! Int))
                         }
                     }
                     self.meetings = todaysMeetings
@@ -173,7 +173,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         let meeting = meetings[indexPath.section]
         cell.artisanNameLabel.text = meeting.artisanName
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm a" // "a" prints "pm" or "am"
+        formatter.dateFormat = "h:mm a" // "a" prints "pm" or "am"
         formatter.string(from: Date()) // "12 AM"
         cell.meetingTimeLabel.text = formatter.string(from: meeting.time)
         cell.numItemsLabel.text = String(meeting.numItems) + " items expected"
