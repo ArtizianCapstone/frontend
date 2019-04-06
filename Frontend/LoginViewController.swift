@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 
 class LoginViewController: UIViewController {
@@ -36,6 +37,29 @@ class LoginViewController: UIViewController {
             performSegue(withIdentifier: "loginSegue", sender: loginButton)
         }else{
             incorrectUsernameOrPass.isHidden = false;
+        }
+    }
+    
+    @IBAction func unwindRegistrationSuccess(_ sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? RegistrationViewController {
+            let newUser = User(name: sourceViewController.regUserLabel.text!, phone_number: sourceViewController.regPhoneLabel.text ?? "N/A")
+            postUser(user: newUser) {
+                //actions after post finishes
+            }
+        }
+    }
+    
+    @IBAction func unwindRegistrationCancel(_ sender: UIStoryboardSegue) {
+    }
+    
+    private func postUser(user: User, completion : @escaping () -> ()) {
+        let userJson = user.toJSON()
+        Alamofire.request( "http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/users", method: .post, parameters: userJson ).responseJSON { response in
+            if let json = response.result.value {
+                // serialized json response
+                print("json from alamo fire", json)
+                completion()
+            }
         }
     }
     /*

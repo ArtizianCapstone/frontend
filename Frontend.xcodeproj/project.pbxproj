@@ -74,10 +74,22 @@
 		DCF7D5C9223A1BA70047B4F5 /* Itemperpaymentcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7D5C0223A1BA70047B4F5 /* Itemperpaymentcell.swift */; };
 		DCF7D5CA223A1BA70047B4F5 /* CurrentPaymentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7D5C1223A1BA70047B4F5 /* CurrentPaymentsCell.swift */; };
 		DCF7D5CB223A1BA70047B4F5 /* ExpVCTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7D5C2223A1BA70047B4F5 /* ExpVCTestViewController.swift */; };
+		DCFCB4A422592FD200BC64F1 /* FrontendUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB4A322592FD200BC64F1 /* FrontendUnitTests.swift */; };
+		DCFCB4AC225935C000BC64F1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB4AB225935C000BC64F1 /* RegistrationViewController.swift */; };
 		DCFE7D6F22360DE200297298 /* TempArtisanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */; };
 		DCFE7D7022360DE200297298 /* CreateMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */; };
 		DCFE7D7222360E1200297298 /* MeetingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCFCB4A622592FD200BC64F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4D47C9C21ADF569005CA50E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4D47CA321ADF569005CA50E;
+			remoteInfo = Frontend;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3B0DB36921B6298500DE1B5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +165,10 @@
 		DCF7D5C0223A1BA70047B4F5 /* Itemperpaymentcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itemperpaymentcell.swift; sourceTree = "<group>"; };
 		DCF7D5C1223A1BA70047B4F5 /* CurrentPaymentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentPaymentsCell.swift; sourceTree = "<group>"; };
 		DCF7D5C2223A1BA70047B4F5 /* ExpVCTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpVCTestViewController.swift; sourceTree = "<group>"; };
+		DCFCB4A122592FD200BC64F1 /* FrontendUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrontendUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCFCB4A322592FD200BC64F1 /* FrontendUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendUnitTests.swift; sourceTree = "<group>"; };
+		DCFCB4A522592FD200BC64F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCFCB4AB225935C000BC64F1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempArtisanViewController.swift; sourceTree = "<group>"; };
 		DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeetingViewController.swift; sourceTree = "<group>"; };
 		DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTableViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				37205AF548954C78A9FDA793 /* Pods_Frontend.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFCB49E22592FD200BC64F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				B4D47CA621ADF569005CA50E /* Frontend */,
+				DCFCB4A222592FD200BC64F1 /* FrontendUnitTests */,
 				B4D47CA521ADF569005CA50E /* Products */,
 				7443B0D3CEB216BD2152D2B7 /* Pods */,
 				635AFB089AFD25C8E6F7EAF8 /* Frameworks */,
@@ -214,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				B4D47CA421ADF569005CA50E /* Frontend.app */,
+				DCFCB4A122592FD200BC64F1 /* FrontendUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,11 +247,10 @@
 			isa = PBXGroup;
 			children = (
 				DCC71364223A1D0E0070ED2D /* Cells */,
-				DC072445223A1C520066B79A /* Order.swift */,
 				DC072440223A1C520066B79A /* OrderCell.swift */,
 				DCAC28D8223A230600380C8C /* Base.lproj */,
 				DC072444223A1C520066B79A /* ParentTableView.swift */,
-				DC07243F223A1C520066B79A /* Payment.swift */,
+				DCFCB4AD2259438500BC64F1 /* Models */,
 				DC072442223A1C520066B79A /* PaymentHistoryVC.swift */,
 				DC072441223A1C520066B79A /* PaymentItemsTable.swift */,
 				DC072443223A1C520066B79A /* PaymentViewController.swift */,
@@ -240,7 +264,6 @@
 				DCF7D5BA223A1BA60047B4F5 /* ExpandableCell.swift */,
 				DCF7D5C2223A1BA70047B4F5 /* ExpVCTestViewController.swift */,
 				DCF7D5BB223A1BA60047B4F5 /* Home.storyboard */,
-				DCF7D5BC223A1BA60047B4F5 /* Item.swift */,
 				DCF7D5C0223A1BA70047B4F5 /* Itemperpaymentcell.swift */,
 				3B94BD7F223781AE004D2647 /* CustomMeetingCell.swift */,
 				DC3691D92237958B007578F9 /* addlistings.storyboard */,
@@ -255,7 +278,6 @@
 				B4B9585621B787DB00B07578 /* ArtisanDetailViewController.swift */,
 				B4CFFEEB221E7A2E0056171D /* Artisan Detail Subviews */,
 				3B40767D21E7E5B80062931D /* listings.storyboard */,
-				B4C1C4A122360B5900F6B003 /* Meeting.swift */,
 				3BF9D85D221607E900FBE733 /* ListingsViewController.swift */,
 				3BF9D85F221621BB00FBE733 /* pants.jpg */,
 				3BF9D860221621BB00FBE733 /* rugs.jpeg */,
@@ -263,15 +285,13 @@
 				3BCAF53C220CB8CB00F9EEA7 /* defaultPhoto.jpg */,
 				3BF9D8692216268100FBE733 /* shoes1.jpg */,
 				3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */,
-				3BCAF540220CE04A00F9EEA7 /* Listing.swift */,
 				3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */,
-				B4B9585221B477F600B07578 /* Artisan.swift */,
-				B4B9585421B6169E00B07578 /* User.swift */,
 				B4D47CA721ADF569005CA50E /* AppDelegate.swift */,
 				DCC71371223A1DEA0070ED2D /* MainRebecca.storyboard */,
 				3B37DBA021FA6D1500372FF0 /* OrdersViewController.swift */,
 				3B0DB36D21B8514700DE1B5D /* ArtisanCreatedViewController.swift */,
 				3B0DB36921B6298500DE1B5D /* LoginViewController.swift */,
+				DCFCB4AB225935C000BC64F1 /* RegistrationViewController.swift */,
 				3B0DB36B21B7858800DE1B5D /* ArtisanFormViewController.swift */,
 				DC0AE63721B9A1C800D8C597 /* customBannerCell.swift */,
 				B4D47CA921ADF569005CA50E /* FirstViewController.swift */,
@@ -309,6 +329,30 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DCFCB4A222592FD200BC64F1 /* FrontendUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCFCB4A322592FD200BC64F1 /* FrontendUnitTests.swift */,
+				DCFCB4A522592FD200BC64F1 /* Info.plist */,
+			);
+			path = FrontendUnitTests;
+			sourceTree = "<group>";
+		};
+		DCFCB4AD2259438500BC64F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DCF7D5BC223A1BA60047B4F5 /* Item.swift */,
+				B4B9585421B6169E00B07578 /* User.swift */,
+				DC072445223A1C520066B79A /* Order.swift */,
+				B4B9585221B477F600B07578 /* Artisan.swift */,
+				3BCAF540220CE04A00F9EEA7 /* Listing.swift */,
+				B4C1C4A122360B5900F6B003 /* Meeting.swift */,
+				DC07243F223A1C520066B79A /* Payment.swift */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -331,6 +375,24 @@
 			productReference = B4D47CA421ADF569005CA50E /* Frontend.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DCFCB4A022592FD200BC64F1 /* FrontendUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCFCB4AA22592FD200BC64F1 /* Build configuration list for PBXNativeTarget "FrontendUnitTests" */;
+			buildPhases = (
+				DCFCB49D22592FD200BC64F1 /* Sources */,
+				DCFCB49E22592FD200BC64F1 /* Frameworks */,
+				DCFCB49F22592FD200BC64F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCFCB4A722592FD200BC64F1 /* PBXTargetDependency */,
+			);
+			name = FrontendUnitTests;
+			productName = FrontendUnitTests;
+			productReference = DCFCB4A122592FD200BC64F1 /* FrontendUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -343,6 +405,10 @@
 				TargetAttributes = {
 					B4D47CA321ADF569005CA50E = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					DCFCB4A022592FD200BC64F1 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = B4D47CA321ADF569005CA50E;
 					};
 				};
 			};
@@ -360,6 +426,7 @@
 			projectRoot = "";
 			targets = (
 				B4D47CA321ADF569005CA50E /* Frontend */,
+				DCFCB4A022592FD200BC64F1 /* FrontendUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -393,6 +460,13 @@
 				3B94BD82223793B4004D2647 /* Pods-Frontend.debug.xcconfig in Resources */,
 				3B122BA5221F4743004932A0 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				DC784F98223AEDD4005E94DA /* default.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFCB49F22592FD200BC64F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +532,7 @@
 				DCFE7D7022360DE200297298 /* CreateMeetingViewController.swift in Sources */,
 				3BCAF53B220BD6C700F9EEA7 /* ListingsTableViewCell.swift in Sources */,
 				DC07244E223A1C520066B79A /* ParentTableView.swift in Sources */,
+				DCFCB4AC225935C000BC64F1 /* RegistrationViewController.swift in Sources */,
 				B4018DF5222A1E57003A0FC6 /* InfoSubview.swift in Sources */,
 				DCF7D5C6223A1BA70047B4F5 /* BuyShippingViewController.swift in Sources */,
 				B4018DF7222A1E6A003A0FC6 /* PaymentSubview.swift in Sources */,
@@ -502,7 +577,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCFCB49D22592FD200BC64F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFCB4A422592FD200BC64F1 /* FrontendUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCFCB4A722592FD200BC64F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4D47CA321ADF569005CA50E /* Frontend */;
+			targetProxy = DCFCB4A622592FD200BC64F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B4D47CB621ADF56B005CA50E /* Debug */ = {
@@ -665,6 +756,44 @@
 			};
 			name = Release;
 		};
+		DCFCB4A822592FD200BC64F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FrontendUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jk.FrontendUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Frontend.app/Frontend";
+			};
+			name = Debug;
+		};
+		DCFCB4A922592FD200BC64F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FrontendUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jk.FrontendUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Frontend.app/Frontend";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -682,6 +811,15 @@
 			buildConfigurations = (
 				B4D47CB921ADF56B005CA50E /* Debug */,
 				B4D47CBA21ADF56B005CA50E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCFCB4AA22592FD200BC64F1 /* Build configuration list for PBXNativeTarget "FrontendUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFCB4A822592FD200BC64F1 /* Debug */,
+				DCFCB4A922592FD200BC64F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
