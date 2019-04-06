@@ -18,7 +18,12 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var invalidRegistrationLabel: UILabel!
     
     @IBAction func Register(_ sender: Any) {
-        if isValidRegistration() {
+        let username = regUserLabel.text
+        let pass = regPasswordLabel.text
+        let conf_pass = regConfirmLabel.text
+        let phone_number = regPhoneLabel.text
+        
+        if isValidRegistration(username: username!, pass: pass!, conf_pass: conf_pass!, phone_number: phone_number ?? "N/A") {
             performSegue(withIdentifier: "registerUnwindSuccess", sender: self)
         }
         else {
@@ -26,8 +31,8 @@ class RegistrationViewController: UIViewController {
         }
     }
     
-    func isValidRegistration() -> Bool {
-        if regPasswordLabel.text != regConfirmLabel.text {
+    func isValidRegistration(username: String, pass: String, conf_pass: String, phone_number: String) -> Bool {
+        if pass != conf_pass {
             return false
         }
         else {

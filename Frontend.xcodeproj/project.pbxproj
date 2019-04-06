@@ -76,6 +76,7 @@
 		DCF7D5CB223A1BA70047B4F5 /* ExpVCTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7D5C2223A1BA70047B4F5 /* ExpVCTestViewController.swift */; };
 		DCFCB4A422592FD200BC64F1 /* FrontendUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB4A322592FD200BC64F1 /* FrontendUnitTests.swift */; };
 		DCFCB4AC225935C000BC64F1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB4AB225935C000BC64F1 /* RegistrationViewController.swift */; };
+		DCFCB4AF22594A0500BC64F1 /* RegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB4AE22594A0500BC64F1 /* RegistrationTests.swift */; };
 		DCFE7D6F22360DE200297298 /* TempArtisanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */; };
 		DCFE7D7022360DE200297298 /* CreateMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */; };
 		DCFE7D7222360E1200297298 /* MeetingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */; };
@@ -169,6 +170,7 @@
 		DCFCB4A322592FD200BC64F1 /* FrontendUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendUnitTests.swift; sourceTree = "<group>"; };
 		DCFCB4A522592FD200BC64F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCFCB4AB225935C000BC64F1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		DCFCB4AE22594A0500BC64F1 /* RegistrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTests.swift; sourceTree = "<group>"; };
 		DCFE7D6C22360DE200297298 /* TempArtisanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempArtisanViewController.swift; sourceTree = "<group>"; };
 		DCFE7D6E22360DE200297298 /* CreateMeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeetingViewController.swift; sourceTree = "<group>"; };
 		DCFE7D7122360E1200297298 /* MeetingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTableViewCell.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 			children = (
 				DCFCB4A322592FD200BC64F1 /* FrontendUnitTests.swift */,
 				DCFCB4A522592FD200BC64F1 /* Info.plist */,
+				DCFCB4AE22594A0500BC64F1 /* RegistrationTests.swift */,
 			);
 			path = FrontendUnitTests;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFCB4AF22594A0500BC64F1 /* RegistrationTests.swift in Sources */,
 				DCFCB4A422592FD200BC64F1 /* FrontendUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

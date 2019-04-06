@@ -2,10 +2,6 @@
 <Workspace
    version = "1.0">
    <Group
-      location = "container:"
-      name = "New Group">
-   </Group>
-   <Group
       location = "group:/Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/Base.lproj"
       name = "Base.lproj">
       <FileRef
