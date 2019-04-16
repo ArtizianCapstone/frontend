@@ -8,9 +8,13 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
+
 
 class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var listings = [Listing]()
+    
+    
     
     @IBOutlet weak var addListingsButton: UIButton!
     @IBOutlet weak var funFact: UITextView!
@@ -33,6 +37,12 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        loadListings {
+            self.tableView.reloadData()
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,13 +61,13 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as? ListingsTableViewCell else {
             fatalError("The dequeued cell is not an instance of ListingsTableViewCell.")
         }
-        /*
+        
         let listing = listings[indexPath.row]
         cell.itemName.text = listing.name
-        cell.sellerName.text = listing.artisan
+        cell.sellerName.text = listing.artisanName
         cell.priceValue.text? = "$" + listing.price.description
         cell.stockValue.text? = listing.quantity.description + ""
-        */
+        cell.sellerImage.image = listing.photo
         // Configure the cell...
         
         return cell
@@ -82,25 +92,34 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     private func loadListings(completion : @escaping () -> ()) {
         
-        let defaultImage = UIImage(named: "defaultPhoto.png")
+        let defaultImage = UIImage(named: "default.jpg")
     
-        
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings").responseJSON { response in
             
         
             if let json = response.result.value {
             // serialized json response
-                
                 if let jsonarray = json as? [[String: Any]] {
-                   for x in jsonarray {
-                       var newListing = Listing()
-                       newListing.name = x["name"] as? String ?? "No Product Name"
-                       newListing.artisanName = x["artisanName"] as? String ?? "No Artisan Name"
-                       newListing.price = x["price"] as? Float ?? 0.0
-                       var imagerequest = x["listingImage"]
-                    
-                    
+                   
+                    for x in jsonarray {
+                        print(x)
+                        print ("\n------\n")
+                        let artisan = x["artisan"] as? [String: Any]
+                        
+                        let newListing = Listing()
+                        newListing.name = x["name"] as? String ?? "No Product Name"
+                        newListing.artisanName = artisan?["name"] as? String ?? "No Artisan Name"
+                        newListing.price = x["price"] as? Float ?? 0.0
+
+                        newListing.photo = defaultImage
+                        if let imageDB = x["listingImage"] as? String{
+                            let imagerequest = URL(string: ("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/" + imageDB))
+                            print(imagerequest)
+                            self.getImage(url: imagerequest, listing: newListing){
+                                }
+                        }
                         self.listings.append(newListing)
+                    
                        /*self.listings.append(Listing(name: (x["name"] as? String ?? "No Name"), artisan: (x["artisan"] as? String) ?? "No artisan" , price: (x["price"] as? Float) ?? 0.0, quantity : 0, photo: defaultImage!))*/
                     
                     
@@ -113,8 +132,18 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
             completion()
 
         }
-   
-  
     }
-
+    private func getImage(url: URL?, listing: Listing, completion : @escaping () -> ()) {
+        let defaultImage = UIImage(named: "defaultPhoto.png")
+        print ("HERERERERERE")
+        Alamofire.request(url ?? URL(string: "http://www.rangerwoodperiyar.com/images/joomlart/demo/default.jpg")!, method: .get).responseImage { response in
+            guard response.result.value != nil else {
+                // Handle error
+                return
+            }
+            listing.photo = response.result.value
+        }
+        completion()
+    }
+    
 }

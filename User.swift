@@ -15,6 +15,19 @@ struct User : Codable {
     var phone_number: String!
     var artisans: [Artisan]!
     
+    init(name: String, phone_number: String) {
+        self.name = name
+        self.phone_number = phone_number
+    }
+    init() {
+    }
+    
+    func toJSON() -> Dictionary<String, AnyObject> {
+        return [
+            "name": self.name as AnyObject,
+            "phone_number": self.phone_number as AnyObject
+        ]
+    }
 }
 
 //temporary data structure which models the {{url}}/users JSON response

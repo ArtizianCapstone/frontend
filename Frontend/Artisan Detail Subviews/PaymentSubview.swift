@@ -14,7 +14,7 @@ enum ConfirmationStatus {
     case unconfirmed
 }
 
-struct Payment {
+struct TempPayment {
     var amount: Float
     var date: String
     var confirmationStatus: ConfirmationStatus
@@ -24,10 +24,10 @@ class PaymentSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var paymentTableView: UITableView!
     
-    var payments: [Payment] = []
-    var nextPayments: [Payment] = []
-    var unconfirmedPayments: [Payment] = []
-    var confirmedPayments: [Payment] = []
+    var payments: [TempPayment] = []
+    var nextPayments: [TempPayment] = []
+    var unconfirmedPayments: [TempPayment] = []
+    var confirmedPayments: [TempPayment] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +38,10 @@ class PaymentSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         
         //retrieve payments
-        payments.append(Payment(amount: 100.0, date: "1/27/2019", confirmationStatus: ConfirmationStatus.next))
-        payments.append(Payment(amount: 90.0, date: "1/20/2019", confirmationStatus: ConfirmationStatus.unconfirmed))
-        payments.append(Payment(amount: 100.0, date: "1/13/2019", confirmationStatus: ConfirmationStatus.unconfirmed))
-        payments.append(Payment(amount: 80.0, date: "1/6/2019", confirmationStatus: ConfirmationStatus.confirmed))
+        payments.append(TempPayment(amount: 100.0, date: "1/27/2019", confirmationStatus: ConfirmationStatus.next))
+        payments.append(TempPayment(amount: 90.0, date: "1/20/2019", confirmationStatus: ConfirmationStatus.unconfirmed))
+        payments.append(TempPayment(amount: 100.0, date: "1/13/2019", confirmationStatus: ConfirmationStatus.unconfirmed))
+        payments.append(TempPayment(amount: 80.0, date: "1/6/2019", confirmationStatus: ConfirmationStatus.confirmed))
         
         //sort payments by confirmation status
         for payment in payments {

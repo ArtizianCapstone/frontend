@@ -65,9 +65,9 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         banner.dataSource = self
         bannerLayout.itemSize = CGSize(width: view.frame.width, height: view.frame.height)
         
-        loadTodaysMeetings {
-            self.meetingTable.reloadData()
-        }
+        //loadTodaysMeetings {
+        //    self.meetingTable.reloadData()
+        //}
         
         totalGeneratedLabel.layer.masksToBounds = true
         totalGeneratedLabel.layer.cornerRadius=16.0;
@@ -87,11 +87,18 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         //meetings.append(Meeting(artisanName: "Sebastian Alverado", time: formatter.date(from: "2016/10/08 17:00")!, numItems: 8))
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        loadTodaysMeetings {
+            self.meetingTable.reloadData()
+        }
+    }
+    
     private func loadTodaysMeetings(completion : @escaping () -> ()) {
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/meetings").responseJSON { response in
             if let json = response.result.value {
                 // serialized json response
                 print("homescreen get meetings json:", json)
+                var todaysMeetings:[HomeMeeting] = []
                 if let jsonarray = json as? [[String: Any]] {
                     let dateFormatter = DateFormatter()
                     let calendar = Calendar.current
@@ -105,9 +112,10 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                         //print("artisanJSON:")
                         //print(artisanJSON!["name"]!)
                         if calendar.isDateInToday(myDate) {
-                            self.meetings.append(HomeMeeting(artisanName: artisanJSON!["name"]! as! String, time: myDate, numItems: x["itemsExpected"] as! Int))
+                            todaysMeetings.append(HomeMeeting(artisanName: artisanJSON!["name"] as? String ?? "Camila Sandoval", time: myDate, numItems: x["itemsExpected"] as! Int))
                         }
                     }
+                    self.meetings = todaysMeetings
                 }
                 completion()
             }
@@ -165,7 +173,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         let meeting = meetings[indexPath.section]
         cell.artisanNameLabel.text = meeting.artisanName
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm a" // "a" prints "pm" or "am"
+        formatter.dateFormat = "h:mm a" // "a" prints "pm" or "am"
         formatter.string(from: Date()) // "12 AM"
         cell.meetingTimeLabel.text = formatter.string(from: meeting.time)
         cell.numItemsLabel.text = String(meeting.numItems) + " items expected"

@@ -200,11 +200,11 @@ class ArtisanTableViewController: UITableViewController {
             let destVC = segue.destination as? ArtisanDetailViewController
             let index = (tableView.indexPathForSelectedRow?.row)!
             
-            print (user.artisans[index])
-            destVC?.bio = user.artisans[index].bio
-            destVC?.name = user.artisans[index].name
-            destVC?.number = user.artisans[index].phone_number
-            destVC?.artisan = user.artisans[index]
+            print (artisans[index])
+            destVC?.bio = artisans[index].bio
+            destVC?.name = artisans[index].name
+            destVC?.number = artisans[index].phone_number
+            destVC?.artisan = artisans[index]
         }
     }
     
