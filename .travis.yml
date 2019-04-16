@@ -1,0 +1,17 @@
+#platform and xcode
+os: osx
+language: swift
+xcode_project: Frontend.xcodeproj
+xcode_destination: platform=iOS Simulator #,OS=10.1,name=iPad Pro (9.7-inch)
+
+#reccommended LFS
+
+before_install:
+    - brew install git-lfs
+
+before_script:
+    - git lfs pull
+
+branches:
+    only:
+    - travis
