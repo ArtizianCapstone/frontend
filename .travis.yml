@@ -6,13 +6,7 @@ xcode_project: Frontend.xcodeproj
 xcode_scheme: FrontendUnitTests
 xcode_destination: platform=iOS Simulator #,OS=10.1,name=iPad Pro (9.7-inch)
 
-#reccommended LFS
-
-before_install:
-    - brew install git-lfs
-
-before_script:
-    - git lfs pull
+podfile: Podfile
 
 branches:
     only:
