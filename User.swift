@@ -11,12 +11,14 @@ import UIKit
 
 struct User : Codable {
     var name: String!
+    var password : String!
     var _id: String!
     var phone_number: String!
     var artisans: [Artisan]!
     
-    init(name: String, phone_number: String) {
+    init(name: String, password: String, phone_number: String) {
         self.name = name
+        self.password = password
         self.phone_number = phone_number
     }
     init() {
@@ -25,6 +27,7 @@ struct User : Codable {
     func toJSON() -> Dictionary<String, AnyObject> {
         return [
             "name": self.name as AnyObject,
+            "password": self.password as AnyObject,
             "phone_number": self.phone_number as AnyObject
         ]
     }
