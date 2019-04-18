@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r9l-OX-5fX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jha-FV-L4Z">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -2034,7 +2034,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWg-AX-TEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3233" y="2508"/>
+            <point key="canvasLocation" x="3167" y="2228"/>
         </scene>
         <!--ExpVC Test View Controller-->
         <scene sceneID="5rr-UY-lMK">
@@ -2118,14 +2118,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="artisans" width="26" height="26"/>
+        <image name="artisans" width="19.5" height="19.5"/>
         <image name="basket" width="225" height="225"/>
-        <image name="home" width="24" height="24"/>
-        <image name="listings.png" width="24.75" height="24.75"/>
-        <image name="payments" width="30" height="30"/>
+        <image name="home" width="18" height="18"/>
+        <image name="listings.png" width="33" height="33"/>
+        <image name="payments" width="22.5" height="22.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rsK-jz-Cyw"/>
+        <segue reference="TNY-5j-cpp"/>
         <segue reference="UZZ-bP-Jge"/>
         <segue reference="l0L-hd-uje"/>
     </inferredMetricsTieBreakers>
