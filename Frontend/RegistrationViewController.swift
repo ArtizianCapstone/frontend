@@ -26,21 +26,64 @@ class RegistrationViewController: UIViewController {
         if isValidRegistration(username: username!, pass: pass!, conf_pass: conf_pass!, phone_number: phone_number ?? "N/A") {
             performSegue(withIdentifier: "registerUnwindSuccess", sender: self)
         }
+    }
+    
+    func ShowInvalidMessage(message: String) {
+        invalidRegistrationLabel.text = message
+        invalidRegistrationLabel.isHidden = false
+
+    }
+    
+    func IsValidUsername(username: String) -> Bool {
+        if username.count > 0 && username.count < 15 {
+            return true
+        }
         else {
-            invalidRegistrationLabel.isHidden = false
+            ShowInvalidMessage(message: "Invalid Username!")
+            return false
         }
     }
     
-    func isValidRegistration(username: String, pass: String, conf_pass: String, phone_number: String) -> Bool {
+    func IsValidPassword(pass:String, conf_pass:String) -> Bool {
         if pass != conf_pass {
+            ShowInvalidMessage(message: "Passwords don't match!")
             return false
         }
-        else {
+        else if pass.count > 0 && pass.count < 18 {
             return true
+        }
+        else {
+            ShowInvalidMessage(message: "Invalid password")
+            return false
+        }
+    }
+    
+    func IsValidPhoneNumber(phone_number:String) -> Bool{
+        if(phone_number.count == 0 ) {
+            return true
+        }
+        else if phone_number.count > 9 && phone_number.count < 13, let _ = Int(phone_number) {
+            return true
+        }
+        else  {
+            ShowInvalidMessage(message: "Invalid phone number")
+            return false
+        }
+
+    }
+    
+    func isValidRegistration(username: String, pass: String, conf_pass: String, phone_number: String) -> Bool {
+        if IsValidUsername(username: username) && IsValidPassword(pass: pass, conf_pass: conf_pass) && IsValidPhoneNumber(phone_number: phone_number) {
+            return true
+        }
+        else {
+            return false
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        invalidRegistrationLabel.text = ""
+        invalidRegistrationLabel.isHidden = true
     }
 }
