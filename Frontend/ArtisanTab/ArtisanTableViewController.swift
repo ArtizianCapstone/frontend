@@ -126,8 +126,19 @@ class ArtisanTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            user.artisans.remove(at: indexPath.row)
+            let artisanToDelete = artisans[indexPath.row]
+            let url = "http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/artisans/" + artisanToDelete._id!
+            
+            self.artisans.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            
+            Alamofire.request(url, method: .delete)
+                .responseJSON { response in
+                    if let json = response.result.value{
+                        print ("json from alamofire", json)
+                    }
+            }
         }
     }
 
