@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func unwindRegistrationSuccess(_ sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? RegistrationViewController {
-            let newUser = User(name: sourceViewController.regUserLabel.text!, phone_number: sourceViewController.regPhoneLabel.text ?? "N/A")
+            let newUser = User(name: sourceViewController.regUserLabel.text!, password: sourceViewController.regPasswordLabel.text!, phone_number: sourceViewController.regPhoneLabel.text ?? "N/A")
             postUser(user: newUser) {
                 //actions after post finishes
             }
