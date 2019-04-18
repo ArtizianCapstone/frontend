@@ -23,6 +23,7 @@ class ArtisanCreatedViewController: UIViewController {
         nameField.text! = username
         numberField.text! = number
         homeButton.isHidden = true
+        self.navigationItem.setHidesBackButton(true, animated: false)
         
         addAnotherButton.backgroundColor = Constants.Colors.blue
         addAnotherButton.layer.cornerRadius = Constants.RoundedButton.cornerRadius
