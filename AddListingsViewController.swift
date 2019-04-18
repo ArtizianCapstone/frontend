@@ -62,7 +62,11 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         if (itemDescription.text! == "" || itemPrice.text! == "" || itemName.text! == ""){
             print("Forms not filled: error")
         }else{
-            let price = Float(itemPrice.text!) ?? 0
+
+            guard let price = Float(itemPrice.text!) else {
+                print("Invalid Price")
+                return
+            }
             let item  = itemName.text!
             let row = self.pickerView.selectedRow(inComponent: 0)
             let artisanName = pickerArray[row]

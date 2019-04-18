@@ -276,7 +276,7 @@ class ArtisanTableViewController: UITableViewController {
                     print("count of new artisans", newArtisans.count)
                     newArtisans = newArtisans.sorted {$0.name < $1.name }
                     self.artisans = newArtisans
-                }
+                }   
                 
             }
             completion()
