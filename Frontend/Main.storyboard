@@ -1667,13 +1667,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <segue destination="ED6-9j-UA5" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="xoi-lz-jy2"/>
+                                    <action selector="saveSchedule:" destination="sH8-lF-KZj" eventType="touchUpInside" id="3K2-b8-gYe"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1R-oc-LzN">
+                                <rect key="frame" x="16" y="20" width="343" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.14200057419308787" blue="0.020685292069269612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9Sv-bc-HpP" firstAttribute="top" secondItem="YuU-GB-0i6" secondAttribute="bottom" constant="20" id="0Dk-2U-RVG"/>
+                            <constraint firstItem="RR5-HK-YDc" firstAttribute="top" secondItem="c1R-oc-LzN" secondAttribute="bottom" constant="24" id="4nA-V4-NOT"/>
+                            <constraint firstItem="Aly-f7-XBk" firstAttribute="trailing" secondItem="c1R-oc-LzN" secondAttribute="trailing" constant="16" id="5ID-u9-cqV"/>
                             <constraint firstItem="Aly-f7-XBk" firstAttribute="trailing" secondItem="OpK-nh-SL9" secondAttribute="trailing" constant="13" id="5IW-98-8LA"/>
                             <constraint firstItem="YuU-GB-0i6" firstAttribute="leading" secondItem="Aly-f7-XBk" secondAttribute="leading" constant="16" id="6tA-qk-GR3"/>
                             <constraint firstItem="TaO-wf-kWz" firstAttribute="top" secondItem="OpK-nh-SL9" secondAttribute="bottom" constant="37" id="70F-ij-pLN"/>
@@ -1681,6 +1689,7 @@
                             <constraint firstItem="UVY-ua-3el" firstAttribute="top" secondItem="9Sv-bc-HpP" secondAttribute="bottom" constant="26" id="ABr-M0-98M"/>
                             <constraint firstItem="YuU-GB-0i6" firstAttribute="top" secondItem="KLb-ZU-LGv" secondAttribute="bottom" constant="21" id="D2M-6c-jdI"/>
                             <constraint firstItem="6n8-bT-81i" firstAttribute="top" secondItem="fl1-of-Jp7" secondAttribute="bottom" constant="35" id="FYl-aG-aK9"/>
+                            <constraint firstItem="c1R-oc-LzN" firstAttribute="leading" secondItem="Aly-f7-XBk" secondAttribute="leading" constant="16" id="FiH-5k-vrt"/>
                             <constraint firstItem="UVY-ua-3el" firstAttribute="leading" secondItem="Aly-f7-XBk" secondAttribute="leading" constant="46" id="UWw-ni-MSD"/>
                             <constraint firstItem="RR5-HK-YDc" firstAttribute="leading" secondItem="Aly-f7-XBk" secondAttribute="leading" constant="16" id="ddQ-61-xMf"/>
                             <constraint firstItem="fl1-of-Jp7" firstAttribute="top" secondItem="TaO-wf-kWz" secondAttribute="bottom" constant="36" id="fio-ne-Ph2"/>
@@ -1688,6 +1697,7 @@
                             <constraint firstItem="9Sv-bc-HpP" firstAttribute="leading" secondItem="Aly-f7-XBk" secondAttribute="leading" constant="16" id="i7e-u4-e8m"/>
                             <constraint firstItem="OpK-nh-SL9" firstAttribute="top" secondItem="Aly-f7-XBk" secondAttribute="top" constant="56" id="ju5-uz-xNA"/>
                             <constraint firstItem="Aly-f7-XBk" firstAttribute="trailing" secondItem="TaO-wf-kWz" secondAttribute="trailing" constant="13" id="o9K-g7-NL6"/>
+                            <constraint firstItem="c1R-oc-LzN" firstAttribute="top" secondItem="Aly-f7-XBk" secondAttribute="top" id="vNA-aM-gOf"/>
                             <constraint firstItem="KLb-ZU-LGv" firstAttribute="top" secondItem="RR5-HK-YDc" secondAttribute="bottom" constant="22" id="w6K-Gj-XaA"/>
                             <constraint firstItem="Aly-f7-XBk" firstAttribute="trailing" secondItem="fl1-of-Jp7" secondAttribute="trailing" constant="13" id="xtt-Fu-LaY"/>
                             <constraint firstItem="RR5-HK-YDc" firstAttribute="top" secondItem="Aly-f7-XBk" secondAttribute="top" constant="49" id="yw8-Sx-jJZ"/>
@@ -1696,15 +1706,17 @@
                     </view>
                     <connections>
                         <outlet property="frequencyField" destination="OpK-nh-SL9" id="37i-kK-S65"/>
+                        <outlet property="invalidEntryLabel" destination="c1R-oc-LzN" id="Hpg-4N-vAW"/>
                         <outlet property="itemsExpectedField" destination="6n8-bT-81i" id="Qq3-nm-czp"/>
                         <outlet property="startingDateField" destination="TaO-wf-kWz" id="Myw-UE-BrK"/>
                         <outlet property="timeField" destination="fl1-of-Jp7" id="k8w-yQ-R2x"/>
+                        <segue destination="ED6-9j-UA5" kind="unwind" identifier="createSchedule" unwindAction="unwindToThisViewWithSender:" id="pTa-eb-UT5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hq2-ry-JYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ED6-9j-UA5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4422" y="-398"/>
+            <point key="canvasLocation" x="4421.6000000000004" y="-398.50074962518744"/>
         </scene>
         <!--ShippingViewController-->
         <scene sceneID="blU-dh-B8u">

@@ -11,6 +11,7 @@ import UIKit
 
 class CreateMeetingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
+    @IBOutlet weak var invalidEntryLabel: UILabel!
     @IBOutlet weak var itemsExpectedField: UITextField!
     @IBOutlet weak var frequencyField: UITextField!
     @IBOutlet weak var startingDateField: UITextField!
@@ -23,6 +24,40 @@ class CreateMeetingViewController: UIViewController, UIPickerViewDelegate, UIPic
     var startingTimePicker = UIDatePicker()
     
     let frequency = ["Weekly", "Every 2 weeks", "Every 3 weeks", "Every 4 weeks"]
+    
+    func isStringAnInt(stringNumber: String) -> Bool {
+        
+        if let _ = Int(stringNumber) {
+            return true
+        }
+        return false
+    }
+    
+    func ValidEntry() -> Bool{
+        
+        let itemsExpected:String = itemsExpectedField.text ?? ""
+        if let numItems = Int(itemsExpected) {
+           return itemsExpected != "" && isStringAnInt(stringNumber: itemsExpected) && numItems >= 0
+        }
+        else {
+            return false
+        }
+        
+    }
+    
+    func ShowErrorMessage(message:String) {
+        invalidEntryLabel.text = message
+        invalidEntryLabel.isHidden = false
+    }
+    
+    @IBAction func saveSchedule(_ sender: Any) {
+        if ValidEntry() {
+            performSegue(withIdentifier: "createSchedule", sender: self)
+        }
+        else {
+            ShowErrorMessage(message: "Invalid items expected")
+        }
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
