@@ -30,5 +30,6 @@ struct Constants {
     struct RoundedButton {
         static let cornerRadius:CGFloat = 10
     }
+    static var userID = ""
 }
 

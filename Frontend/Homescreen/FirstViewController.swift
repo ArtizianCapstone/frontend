@@ -35,6 +35,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     @IBOutlet weak var paymentOverviewLabel: UILabel!
     @IBOutlet weak var meetingTable: UITableView!
     
+    
     var meetings = [HomeMeeting]()
     let cellSpacingHeight: CGFloat = 8
 
@@ -59,6 +60,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     @IBOutlet weak var fakeGraphHolder: UIImageView!
  
     override func viewDidLoad() {
+        print("\n" + Constants.userID + "\n")   
         super.viewDidLoad()
         //   banner.register(customBannerCell.self, forCellWithReuseIdentifier: "customCell")
         banner.delegate = self
@@ -97,7 +99,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/meetings").responseJSON { response in
             if let json = response.result.value {
                 // serialized json response
-                print("homescreen get meetings json:", json)
+ //               print("homescreen get meetings json:", json)
                 var todaysMeetings:[HomeMeeting] = []
                 if let jsonarray = json as? [[String: Any]] {
                     let dateFormatter = DateFormatter()

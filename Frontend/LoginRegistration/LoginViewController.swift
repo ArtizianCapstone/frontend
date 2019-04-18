@@ -13,8 +13,8 @@ import Alamofire
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var incorrectUsernameOrPass: UILabel!
-    var users = ["jkurtz": "5c00776e2f1dfe588f33138c",
-                 "bfoote":  "5c01b47607170f9377b207bc"]
+   // var users = ["jkurtz": "5c00776e2f1dfe588f33138c",
+    //             "bfoote":  "5c01b47607170f9377b207bc"]
     //"we will have a master password for now"]
     
 
@@ -25,21 +25,20 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     var authenticated = false
+    var userid = ""
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
     @IBAction func loginAction(_ sender: Any) {
-        print(username.text ?? "")
-        print(password.text ?? "")
-        if (users[username.text!] != nil && password.text! == "Artizian1"){
-            authenticated = true
-            performSegue(withIdentifier: "loginSegue", sender: loginButton)
-        }else{
-            incorrectUsernameOrPass.isHidden = false;
-        }
+        authenticateUsers(completion: {
+            if (self.authenticated == true) {
+                self.performSegue(withIdentifier: "loginSegue", sender: self.loginButton)
+            }else{
+                self.incorrectUsernameOrPass.isHidden = false
+            }
+        }, username: self.username.text!, password: self.password.text!)
     }
-    
     @IBAction func unwindRegistrationSuccess(_ sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? RegistrationViewController {
             let newUser = User(name: sourceViewController.regUserLabel.text!, password: sourceViewController.regPasswordLabel.text!, phone_number: sourceViewController.regPhoneLabel.text ?? "N/A")
@@ -61,6 +60,27 @@ class LoginViewController: UIViewController {
                 completion()
             }
         }
+    }
+    private func authenticateUsers(completion: @escaping () -> (), username : String, password: String){
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/users", method: .get).responseJSON{ response in
+            if let json = response.result.value{
+                let json1 = json as! [String : Any]
+                
+                let json2 = json1["users"] as! NSArray
+                for user in json2 {
+                    let user = user as! [String : Any]
+                    let uname = (user["name"] ?? "") as! String
+                    let pass = (user["password"] ?? "") as! String
+                    if ((uname == username) && (pass == password)) {
+                        Constants.userID = user["_id"] as! String
+                        self.authenticated = true
+                        break
+                    }
+                }
+                completion()
+            }
+        }
+        
     }
     /*
     // MARK: - Navigation
