@@ -111,10 +111,11 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                         let dateString = x["date"] as! String
                         let myDate = dateFormatter.date(from: dateString )!
                         let artisanJSON = x["artisan"] as? [String: Any]
+                        
                         //print("artisanJSON:")
                         //print(artisanJSON!["name"]!)
                         if calendar.isDateInToday(myDate) {
-                            todaysMeetings.append(HomeMeeting(artisanName: artisanJSON!["name"] as? String ?? "Camila Sandoval", time: myDate, numItems: x["itemsExpected"] as! Int))
+                            todaysMeetings.append(HomeMeeting(artisanName: artisanJSON!["name"] as? String ?? "Camila Sandoval", time: myDate, numItems: x["itemsExpected"] as? Int ?? 0))
                         }
                     }
                     self.meetings = todaysMeetings

@@ -79,21 +79,45 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             newListing.artisanId = artisanID ?? "None"
             newListing.description = description
             postListing(listing: newListing){
-            self.dismiss(animated: true, completion: nil)
+                print("post listing completion callback...")
+                self.dismiss(animated: true, completion: nil)
             }
     
         }
     }
    
     private func postListing(listing: Listing, completion: @escaping () -> ()) {
-        let listingJSON = listing.toJSON()
-        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings/noimage", method: .post, parameters: listingJSON ).responseJSON { response in
+        //let listingJSON = listing.toJSON()
+        /*Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings/noimage", method: .post, parameters: listingJSON ).responseJSON { response in
             if let json = response.result.value{
                 print ("json from alamofire", json)
                 completion()
             }
+        }*/
+        print("posting listing with image....")
+        let listingDict = listing.toStrDict()
+        if let imgData = listingImage.image?.jpegData(compressionQuality: 1) {
+            Alamofire.upload(
+                multipartFormData: { MultipartFormData in
+                    MultipartFormData.append(imgData, withName: "listingImage" , fileName: "image.png" , mimeType: "image/png")
+                    for(key,value) in listingDict{
+                        MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)}
+            },  to: Constants.Database.serverUrl + "listings",
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .success(let upload, _, _):
+                        upload.responseJSON { response in
+                            debugPrint("SUCCESS RESPONSE: \(response)")
+                            completion()
+                        }
+                    case .failure(let encodingError):
+                        print("listing post failure: ", encodingError)
+                    }
+            })
         }
-        
+        else {
+            print("No image found, failed to post listing")
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

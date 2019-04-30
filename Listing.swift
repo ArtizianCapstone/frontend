@@ -49,5 +49,14 @@ class Listing {
             "quantity": 0 as AnyObject
         ]
     }
+    
+    func toStrDict() -> [String : String] {
+        return ["name": self.name,
+                "description": self.description,
+                "price": "\(self.price)",
+                "artisanID": self.artisanId,
+                "userID": "5c00776e2f1dfe588f33138c",
+                "quantity": "0"]
+    }
 }
 
