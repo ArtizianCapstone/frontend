@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r9l-OX-5fX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r9l-OX-5fX">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -505,7 +505,7 @@
             <objects>
                 <viewController id="xpD-YO-nKE" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="teP-BZ-eXx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Payments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbO-wu-UbC">
@@ -727,7 +727,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next payout in 2 days" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U35-N0-oQi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listing Overview:" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U35-N0-oQi">
                                 <rect key="frame" x="15" y="316" width="160" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="8wP-SG-4q8"/>
@@ -744,7 +744,7 @@
                                     <constraint firstAttribute="height" constant="3" id="TgT-pO-iqC"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finalize payout:        $900" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEB-Xz-iLe">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active listings:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEB-Xz-iLe">
                                 <rect key="frame" x="16" y="345" width="160" height="70"/>
                                 <color key="backgroundColor" red="0.99957770109999999" green="0.90144246819999996" blue="0.87985104319999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -781,6 +781,10 @@
                                     <navigationItem title="Home" id="nEv-vt-3bV"/>
                                 </items>
                             </navigationBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="d1f-Ky-Uqs">
+                                <rect key="frame" x="78" y="362" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -815,9 +819,11 @@
                             <constraint firstItem="PXE-Y7-73G" firstAttribute="top" secondItem="C8A-M1-sOE" secondAttribute="top" constant="162" id="ilK-JL-YGD"/>
                             <constraint firstItem="aZy-5E-zAF" firstAttribute="top" secondItem="Hgh-zX-Cdg" secondAttribute="bottom" constant="16" id="jaA-cX-dTg"/>
                             <constraint firstItem="PXE-Y7-73G" firstAttribute="leading" secondItem="Hsu-W4-a2W" secondAttribute="leading" id="kK4-VQ-Pra"/>
+                            <constraint firstItem="d1f-Ky-Uqs" firstAttribute="leading" secondItem="fEB-Xz-iLe" secondAttribute="trailing" constant="-98" id="mLJ-lE-JJf"/>
                             <constraint firstAttribute="trailing" secondItem="PXE-Y7-73G" secondAttribute="trailing" id="mLi-GR-UoQ"/>
                             <constraint firstItem="U35-N0-oQi" firstAttribute="leading" secondItem="C8A-M1-sOE" secondAttribute="leading" constant="15" id="oYE-Mp-Qcr"/>
                             <constraint firstItem="MDJ-bw-hcM" firstAttribute="top" secondItem="aZy-5E-zAF" secondAttribute="bottom" constant="8" id="q9I-UX-7vh"/>
+                            <constraint firstItem="d1f-Ky-Uqs" firstAttribute="top" secondItem="fEB-Xz-iLe" secondAttribute="bottom" constant="-53" id="rWF-MX-kQh"/>
                             <constraint firstAttribute="trailing" secondItem="aZy-5E-zAF" secondAttribute="trailing" id="yMt-nR-2qs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C8A-M1-sOE"/>
@@ -826,6 +832,7 @@
                     <connections>
                         <outlet property="banner" destination="QcY-aL-2Fm" id="FFY-ed-4Bo"/>
                         <outlet property="bannerLayout" destination="0tE-nX-Eb6" id="s1A-jS-cXs"/>
+                        <outlet property="listingActivityIndicator" destination="d1f-Ky-Uqs" id="pjy-pO-IBI"/>
                         <outlet property="meetingTable" destination="6IF-zC-1dU" id="5ek-W7-6V9"/>
                         <outlet property="paymentOverviewLabel" destination="fEB-Xz-iLe" id="q97-gI-mGs"/>
                         <outlet property="shipmentOverviewLabel" destination="Hgh-zX-Cdg" id="woG-xo-32g"/>
@@ -2187,11 +2194,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="artisans" width="19.5" height="19.5"/>
+        <image name="artisans" width="26" height="26"/>
         <image name="basket" width="225" height="225"/>
-        <image name="home" width="18" height="18"/>
-        <image name="listings.png" width="33" height="33"/>
-        <image name="payments" width="22.5" height="22.5"/>
+        <image name="home" width="24" height="24"/>
+        <image name="listings.png" width="24.75" height="24.75"/>
+        <image name="payments" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rsK-jz-Cyw"/>

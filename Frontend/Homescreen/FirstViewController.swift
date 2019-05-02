@@ -38,6 +38,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     var meetings = [HomeMeeting]()
     let cellSpacingHeight: CGFloat = 8
+    var numListings: String  = "loading..."
 
     //var meetingData = [MeetingCellData]()
     let bannerQuotes = [
@@ -53,6 +54,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     ]
     
     
+    @IBOutlet weak var listingActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var welcomeMessage: UILabel!
     
     @IBOutlet weak var banner: UICollectionView!
@@ -87,12 +89,25 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         //meetings.append(Meeting(artisanName: "Camila Aguero", time: formatter.date(from: "2016/10/08 11:30")!, numItems: 10))
         //meetings.append(Meeting(artisanName: "Diego Avila", time: formatter.date(from: "2016/10/08 14:00")!, numItems: 7))
         //meetings.append(Meeting(artisanName: "Sebastian Alverado", time: formatter.date(from: "2016/10/08 17:00")!, numItems: 8))
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         loadTodaysMeetings {
             self.meetingTable.reloadData()
         }
+        paymentOverviewLabel.isHidden = true
+        listingActivityIndicator.isHidden = false
+        listingActivityIndicator.startAnimating()
+        loadListings {
+            self.paymentOverviewLabel.text = "Active listings: " + self.numListings
+            self.listingActivityIndicator.stopAnimating()
+            self.listingActivityIndicator.isHidden = true
+            self.paymentOverviewLabel.isHidden = false
+
+        }
+        
+        
     }
     
     private func loadTodaysMeetings(completion : @escaping () -> ()) {
@@ -150,6 +165,20 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         
     }
 
+    private func loadListings(completion : @escaping () -> ()) {
+        //clear listings array
+        
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings").responseJSON { response in
+            if let json = response.result.value {
+                // serialized json response
+                if let jsonarray = json as? [[String: Any]] {
+                    self.numListings = "\(jsonarray.count)"
+                }
+            }
+            completion()
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return meetings.count
     }
