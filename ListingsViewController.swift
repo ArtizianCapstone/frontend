@@ -27,9 +27,10 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         self.tableView.delegate = self
         self.tableView.dataSource = self
         loadListings {
+            self.retrieveListingImages()
             self.tableView.reloadData()
         }
-       
+        
         funFact.text! = "\nTip:"
         factDetails.text! = "\nListings with photos sell 20% more frequently"
         funFact.layer.cornerRadius = 5.0
@@ -38,9 +39,9 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadListings {
+        /*loadListings {
             self.tableView.reloadData()
-        }
+        }*/
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -72,26 +73,14 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         return cell
     }
-    
-    
-   
-   
-   
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func addListings(_ sender: Any) {
         performSegue(withIdentifier: "AddListingsSegue", sender: addListingsButton)
 
     }
     private func loadListings(completion : @escaping () -> ()) {
-        
+        //clear listings array
+        listings = []
         let defaultImage = UIImage(named: "default.jpg")
     
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings").responseJSON { response in
@@ -111,14 +100,19 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
                         newListing.artisanName = artisan?["name"] as? String ?? "No Artisan Name"
                         newListing.price = x["price"] as? Float ?? 0.0
                         newListing._id = x["_id"] as? String ?? "No product id"
+                        
 
                         newListing.photo = defaultImage
-                        if let imageDB = x["listingImage"] as? String{
+                        
+                        if let photo_url = x["listingImage"] as? String {
+                            newListing.photo_url = photo_url
+                        }
+                        /*if let imageDB = x["listingImage"] as? String{
                             let imagerequest = URL(string: ("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/" + imageDB))
                             print(imagerequest)
                             self.getImage(url: imagerequest, listing: newListing){
                                 }
-                        }
+                        }*/
                         self.listings.append(newListing)
                     
                        /*self.listings.append(Listing(name: (x["name"] as? String ?? "No Name"), artisan: (x["artisan"] as? String) ?? "No artisan" , price: (x["price"] as? Float) ?? 0.0, quantity : 0, photo: defaultImage!))*/
@@ -134,17 +128,33 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
 
         }
     }
-    private func getImage(url: URL?, listing: Listing, completion : @escaping () -> ()) {
-        let defaultImage = UIImage(named: "defaultPhoto.png")
-        print ("HERERERERERE")
-        Alamofire.request(url ?? URL(string: "http://www.rangerwoodperiyar.com/images/joomlart/demo/default.jpg")!, method: .get).responseImage { response in
+    
+    func retrieveListingImages() {
+        for (i, listing) in listings.enumerated() {
+            print("getting listing # " + "\(i)")
+            getImage( listing: listing ){
+                print("retrieved listing image #" + "\(i)")
+            }
+        }
+    }
+    
+    private func getImage( listing: Listing, completion : @escaping () -> ()) {
+        var url = "http://www.rangerwoodperiyar.com/images/joomlart/demo/default.jpg"
+        if let photo_url = listing.photo_url {
+            url = Constants.Database.serverUrl + photo_url
+            print("retrieving image with photo url: " + url)
+        }
+        Alamofire.request(URL(string: url)!, method: .get).responseImage { response in
             guard response.result.value != nil else {
-                // Handle error
+                print("error getting image, returning...")
                 return
             }
+            print("updating listing image...")
             listing.photo = response.result.value
+            self.tableView.reloadData()
         }
         completion()
+        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
