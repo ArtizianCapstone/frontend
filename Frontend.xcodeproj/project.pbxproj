@@ -395,9 +395,8 @@
 				DCAC28D7223A230600380C8C /* LaunchScreen.storyboard */,
 				DC78238F223A23EC00485EE1 /* Main.storyboard */,
 			);
-			name = Base.lproj;
-			path = /Users/jacksonkurtz/Documents/Code/School/Capstone/Artizian/frontend/frontend/Frontend/Base.lproj;
-			sourceTree = "<absolute>";
+			path = Base.lproj;
+			sourceTree = "<group>";
 		};
 		DCC71364223A1D0E0070ED2D /* Cells */ = {
 			isa = PBXGroup;
