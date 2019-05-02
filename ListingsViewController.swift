@@ -14,8 +14,6 @@ import AlamofireImage
 class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var listings = [Listing]()
     
-    
-    
     @IBOutlet weak var addListingsButton: UIButton!
     @IBOutlet weak var funFact: UITextView!
     
@@ -26,10 +24,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        loadListings {
-            self.retrieveListingImages()
-            self.tableView.reloadData()
-        }
+        
         
         funFact.text! = "\nTip:"
         factDetails.text! = "\nListings with photos sell 20% more frequently"
@@ -39,9 +34,10 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        /*loadListings {
+        loadListings {
+            self.retrieveListingImages()
             self.tableView.reloadData()
-        }*/
+        }
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -84,8 +80,6 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         let defaultImage = UIImage(named: "default.jpg")
     
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings").responseJSON { response in
-            
-        
             if let json = response.result.value {
             // serialized json response
                 if let jsonarray = json as? [[String: Any]] {
@@ -101,31 +95,18 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
                         newListing.price = x["price"] as? Float ?? 0.0
                         newListing._id = x["_id"] as? String ?? "No product id"
                         
-
                         newListing.photo = defaultImage
                         
                         if let photo_url = x["listingImage"] as? String {
                             newListing.photo_url = photo_url
                         }
-                        /*if let imageDB = x["listingImage"] as? String{
-                            let imagerequest = URL(string: ("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/" + imageDB))
-                            print(imagerequest)
-                            self.getImage(url: imagerequest, listing: newListing){
-                                }
-                        }*/
-                        self.listings.append(newListing)
-                    
-                       /*self.listings.append(Listing(name: (x["name"] as? String ?? "No Name"), artisan: (x["artisan"] as? String) ?? "No artisan" , price: (x["price"] as? Float) ?? 0.0, quantity : 0, photo: defaultImage!))*/
-                    
-                    
-             
-                        // access all key / value pairs in dictionary
+                        if( !self.listings.contains(where: { $0._id == newListing._id }) ) {
+                            self.listings.append(newListing)
+                        }
                     }
                 }
-              
             }
             completion()
-
         }
     }
     
@@ -154,7 +135,6 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
             self.tableView.reloadData()
         }
         completion()
-        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -173,5 +153,4 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
             }
         }
     }
-    
 }

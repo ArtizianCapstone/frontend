@@ -9,6 +9,27 @@
 import UIKit
 import Alamofire
 
+extension UIAlertController {
+    
+    private struct ActivityIndicatorData {
+        static var activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+    }
+    
+    func addActivityIndicator() {
+        let vc = UIViewController()
+        vc.preferredContentSize = CGSize(width: 40,height: 40)
+        ActivityIndicatorData.activityIndicator.color = UIColor.blue
+        ActivityIndicatorData.activityIndicator.startAnimating()
+        vc.view.addSubview(ActivityIndicatorData.activityIndicator)
+        self.setValue(vc, forKey: "contentViewController")
+    }
+    
+    func dismissActivityIndicator() {
+        ActivityIndicatorData.activityIndicator.stopAnimating()
+        self.dismiss(animated: false)
+    }
+}
+
 class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet weak var itemName: UITextField!
@@ -17,6 +38,8 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     @IBOutlet weak var pickerView: UIPickerView!
     var pickerData: [String : String] = [String : String]()
     var pickerArray: [String] = [String]()
+    
+    var activityGlobal: UIAlertController?
 
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var itemDescription: UITextView!
@@ -85,15 +108,25 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     
         }
     }
-   
+    
+    func displayActivityIndicatorAlert() {
+        activityGlobal = UIAlertController(title: NSLocalizedString("Uploading image", comment: ""), message: NSLocalizedString("Please wait", comment: "") + "...", preferredStyle: UIAlertController.Style.alert)
+        activityGlobal!.addActivityIndicator()
+        var topController:UIViewController = UIApplication.shared.keyWindow!.rootViewController!
+        while ((topController.presentedViewController) != nil) {
+            topController = topController.presentedViewController!
+        }
+        topController.present(activityGlobal!, animated:true, completion:nil)
+    }
+    
+    func dismissActivityIndicatorAlert() {
+        activityGlobal!.dismissActivityIndicator()
+        activityGlobal = nil
+    }
+    
     private func postListing(listing: Listing, completion: @escaping () -> ()) {
-        //let listingJSON = listing.toJSON()
-        /*Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings/noimage", method: .post, parameters: listingJSON ).responseJSON { response in
-            if let json = response.result.value{
-                print ("json from alamofire", json)
-                completion()
-            }
-        }*/
+        
+        displayActivityIndicatorAlert()
         print("posting listing with image....")
         let listingDict = listing.toStrDict()
         if let imgData = listingImage.image?.jpegData(compressionQuality: 1) {
@@ -108,6 +141,7 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
                     case .success(let upload, _, _):
                         upload.responseJSON { response in
                             debugPrint("SUCCESS RESPONSE: \(response)")
+                            self.dismissActivityIndicatorAlert()
                             completion()
                         }
                     case .failure(let encodingError):
