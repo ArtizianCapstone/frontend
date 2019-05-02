@@ -31,6 +31,7 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
     }
+    
  
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
@@ -48,6 +49,7 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.price.text = "$" + "\(rowListing.price)"
         cell.stock.text = rowListing.description
         cell.meetingQuantity.text = "\(rowListing.quantity)"
+        cell.listingImage.image = rowListing.photo
         
         return cell
     }
@@ -86,6 +88,33 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
                 completion()
             }
         }
+    }
+    
+    func retrieveListingImages() {
+        for (i, listing) in listings.enumerated() {
+            print("getting listing # " + "\(i)")
+            getImage( listing: listing ){
+                print("retrieved listing image #" + "\(i)")
+            }
+        }
+    }
+    
+    private func getImage( listing: Listing, completion : @escaping () -> ()) {
+        var url = "http://www.rangerwoodperiyar.com/images/joomlart/demo/default.jpg"
+        if let photo_url = listing.photo_url {
+            url = Constants.Database.serverUrl + photo_url
+            print("retrieving image with photo url: " + url)
+        }
+        Alamofire.request(URL(string: url)!, method: .get).responseImage { response in
+            guard response.result.value != nil else {
+                print("error getting image, returning...")
+                return
+            }
+            print("updating listing image...")
+            listing.photo = response.result.value
+            self.myTableView.reloadData()
+        }
+        completion()
     }
 
     /*

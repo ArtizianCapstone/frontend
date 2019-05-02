@@ -77,6 +77,7 @@ class ArtisanDetailViewController: UIViewController {
             //reload array
         }
         listingSubviewNew?.getListings(artisanId: (artisan?._id)! ) {
+            self.listingSubviewNew?.retrieveListingImages()
             self.listingSubviewNew?.myTableView.reloadData()
         }
         
