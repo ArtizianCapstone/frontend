@@ -73,7 +73,7 @@ class ListingSubview: UIViewController, UITableViewDelegate, UITableViewDataSour
                         let listing_quantity = x["quantity"] as? String ?? "0"
                         let listing_image = x["listingImage"] as? String ?? ""
                         //let artisanJSON = x["artisan"] as? [String: Any]
-                        retrievedListings.append(Listing( name: x["name"] as! String, artisanId: artisanId, price: x["price"] as! Float, description: x["description"] as! String, creation_date: myDate, quantity: Int(listing_quantity)!, photo_url: listing_image))
+                        retrievedListings.append(Listing( _id: x["_id"] as? String ?? "error getting id", name: x["name"] as! String, artisanId: artisanId, price: x["price"] as! Float, description: x["description"] as! String, creation_date: myDate, quantity: Int(listing_quantity)!, photo_url: listing_image))
                         //retrievedListings.append(Li( userId: "5c00776e2f1dfe588f33138c", artisanId: artisanId, date: myDate, numItemsExpected: x["itemsExpected"] as! Int))
                     }
                     self.listings = retrievedListings

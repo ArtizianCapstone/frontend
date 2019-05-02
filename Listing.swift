@@ -8,7 +8,7 @@
 import UIKit
 
 class Listing {
-    
+    var _id: String = "temp"
     var name: String = "temp"
     var artisanId: String = "temp"
     var artisanName: String = "temp"
@@ -27,7 +27,8 @@ class Listing {
         self.creation_date = Date()
     }
     
-    init(name: String, artisanId: String, price:Float, description:String, creation_date: Date, quantity:Int, photo_url:String) {
+    init(_id: String, name: String, artisanId: String, price:Float, description:String, creation_date: Date, quantity:Int, photo_url:String) {
+        self._id = _id
         self.name = name
         self.artisanId = artisanId
         self.description = description

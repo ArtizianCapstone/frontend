@@ -110,6 +110,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
                         newListing.name = x["name"] as? String ?? "No Product Name"
                         newListing.artisanName = artisan?["name"] as? String ?? "No Artisan Name"
                         newListing.price = x["price"] as? Float ?? 0.0
+                        newListing._id = x["_id"] as? String ?? "No product id"
 
                         newListing.photo = defaultImage
                         if let imageDB = x["listingImage"] as? String{
@@ -144,6 +145,23 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
             listing.photo = response.result.value
         }
         completion()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            let listingToDelete = listings[indexPath.row]
+            let url = Constants.Database.serverUrl + "listings/" + listingToDelete._id
+            
+            self.listings.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            Alamofire.request(url, method: .delete)
+                .responseJSON { response in
+                    if let json = response.result.value{
+                        print ("deleted listing return json: ", json)
+                    }
+            }
+        }
     }
     
 }
