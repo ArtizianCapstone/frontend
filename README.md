@@ -13,7 +13,7 @@ Built for artisans, the Amazon Community Helper app allows leaders to empower th
 * Install the build dependencies with the command `pod install` and then `pod update`.
     * If you encounter a build dependency issue when running the aforementioned `pod` commands, remove two files within `frontend`.
     * Making sure you are still in `frontend`, remove "Podfile.lock": `rm Podfile.lock`.
-    * Also remove the "Pods" folder: `rmdir -r Pods`.
+    * Also remove the "Pods" folder: `rm -rf Pods`.
     * Finally, install the build dependencies again with `pod install` and then `pod update`.
 ## Open and Build in Xcode
 * In the Finder app, navigate to the same path where you cloned the repo.
