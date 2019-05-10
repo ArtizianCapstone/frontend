@@ -141,6 +141,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                         }
                     }
                     self.meetings = todaysMeetings
+                    self.meetings.sort { $0.time < $1.time }
                 }
                 completion()
             }
