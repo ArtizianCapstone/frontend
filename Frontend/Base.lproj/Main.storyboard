@@ -631,13 +631,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twU-1E-Is2">
-                                                    <rect key="frame" x="187" y="11" width="383" height="27"/>
+                                                    <rect key="frame" x="187" y="11" width="158" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYP-8b-stk">
-                                                    <rect key="frame" x="187" y="36" width="383" height="24"/>
+                                                    <rect key="frame" x="187" y="36" width="158" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1495,11 +1495,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJt-13-LbR">
-                                                    <rect key="frame" x="16" y="8" width="382" height="63.5"/>
+                                                    <rect key="frame" x="16" y="8" width="343" height="63.5"/>
                                                     <color key="backgroundColor" red="0.93609607220000002" green="0.93882232899999996" blue="0.95513147119999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uP-nY-mNN">
-                                                    <rect key="frame" x="17" y="29.5" width="380" height="21"/>
+                                                    <rect key="frame" x="17" y="29.5" width="341" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="0Nk-eZ-CZD"/>
                                                     </constraints>

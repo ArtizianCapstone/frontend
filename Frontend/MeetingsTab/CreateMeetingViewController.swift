@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CreateMeetingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+class CreateMeetingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
     
     @IBOutlet weak var invalidEntryLabel: UILabel!
     @IBOutlet weak var itemsExpectedField: UITextField!
@@ -43,6 +43,16 @@ class CreateMeetingViewController: UIViewController, UIPickerViewDelegate, UIPic
             return false
         }
         
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("should change text field function is called...")
+        if textField == itemsExpectedField {
+            return true
+        }
+        else {
+           return false
+        }
     }
     
     func ShowErrorMessage(message:String) {
@@ -91,6 +101,10 @@ class CreateMeetingViewController: UIViewController, UIPickerViewDelegate, UIPic
         startingTimePicker.addTarget(self, action: #selector(CreateMeetingViewController.timeChanged(startingTimePicker:)), for: .valueChanged)
         timeField.inputView = startingTimePicker
 
+        startingDateField.delegate = self
+        frequencyField.delegate = self
+        itemsExpectedField.delegate = self
+        timeField.delegate = self
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
