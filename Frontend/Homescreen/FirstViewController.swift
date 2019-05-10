@@ -39,6 +39,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     var meetings = [HomeMeeting]()
     let cellSpacingHeight: CGFloat = 8
     var numListings: String  = "loading..."
+    var numArtisans: String = "loading..."
 
     //var meetingData = [MeetingCellData]()
     let bannerQuotes = [
@@ -54,6 +55,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     ]
     
     
+    @IBOutlet weak var artisansActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var listingActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var welcomeMessage: UILabel!
     
@@ -106,8 +108,13 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
             self.paymentOverviewLabel.isHidden = false
 
         }
-        
-        
+        loadArtisans {
+            self.shipmentOverviewLabel.text = "Number of Artisans: " + self.numArtisans
+            self.artisansActivityIndicator.stopAnimating()
+            self.artisansActivityIndicator.isHidden = true
+            self.shipmentOverviewLabel.isHidden = false
+            
+        }
     }
     
     private func loadTodaysMeetings(completion : @escaping () -> ()) {
@@ -166,13 +173,25 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
 
     private func loadListings(completion : @escaping () -> ()) {
-        //clear listings array
         
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings").responseJSON { response in
             if let json = response.result.value {
                 // serialized json response
                 if let jsonarray = json as? [[String: Any]] {
                     self.numListings = "\(jsonarray.count)"
+                }
+            }
+            completion()
+        }
+    }
+    
+    private func loadArtisans(completion : @escaping () -> ()) {
+        
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/artisans").responseJSON { response in
+            if let json = response.result.value {
+                // serialized json response
+                if let jsonarray = json as? [[String: Any]] {
+                    self.numArtisans = "\(jsonarray.count)"
                 }
             }
             completion()
