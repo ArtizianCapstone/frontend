@@ -20,6 +20,7 @@ extension Date {
 class InfoSubview: UIViewController {
 
     var artisan: Artisan? = nil
+    var meetingHistory: [Meeting]? = nil
     @IBOutlet weak var scheduleButton: UIButton!
     
     @IBOutlet weak var phone_number: UILabel!
@@ -32,6 +33,7 @@ class InfoSubview: UIViewController {
     @IBOutlet weak var lastMeetingTimeLabel: UILabel!
     @IBOutlet weak var nextMeetingDateLabel: UILabel!
     @IBOutlet weak var nextMeetingTimeLabel: UILabel!
+    @IBOutlet weak var meetingHistoryViewAllLabel: UILabel!
     
     @IBOutlet weak var bioTextView: UITextView!
     
@@ -51,11 +53,18 @@ class InfoSubview: UIViewController {
         meetingHistoryBackground.backgroundColor = Constants.Colors.gray
         meetingHistoryBackground.layer.cornerRadius = Constants.RoundedButton.cornerRadius
         
-        
+
     }
     @IBAction func scheduleButton(_ sender: Any) {
         performSegue(withIdentifier: "createMeeting", sender:   self)
     }
+    
+    @IBAction func meetingHistoryButton(_ sender: Any) {
+        if artisan?.scheduledMeetings == true {
+            performSegue(withIdentifier: "showMeetingHistory", sender: self)
+        }
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         phone_number.text = "13234762890"
@@ -63,9 +72,14 @@ class InfoSubview: UIViewController {
         if artisan?.scheduledMeetings == false {
             nextMeetingBackground.backgroundColor = Constants.Colors.gray
             scheduleButton.backgroundColor = Constants.Colors.red
+            meetingHistoryViewAllLabel.text = "none"
         } else {
             nextMeetingBackground.backgroundColor = Constants.Colors.green
             scheduleButton.backgroundColor = Constants.Colors.gray
+        }
+        
+        self.getMeetings(artisanId: (self.artisan?._id)!) {
+            //reload array
         }
     }
     
@@ -91,6 +105,12 @@ class InfoSubview: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Cancel"
         navigationItem.backBarButtonItem = backItem
+        
+        if segue.identifier == "showMeetingHistory" {
+            let destVC = segue.destination as? MeetingHistoryViewController
+            
+            destVC?.meetingHistory = meetingHistory!
+        }
     }
     
     func generateMeetings(schedule: MeetingSchedule, num: Int) -> [Meeting] {
@@ -194,9 +214,13 @@ class InfoSubview: UIViewController {
             }
         }
         
+        meetingHistory = pastMeetings
+        print("meeting bistory: ")
+        print(meetingHistory?.count)
+        
         if upcomingMeetings.isEmpty {
-            nextMeetingDateLabel.text = "None"
-            nextMeetingTimeLabel.text = ""
+            nextMeetingDateLabel.text = " "
+            nextMeetingTimeLabel.text = "none"
         }
         else {
             var nextMeeting = upcomingMeetings[0]
@@ -216,8 +240,8 @@ class InfoSubview: UIViewController {
         }
         
         if pastMeetings.isEmpty {
-            lastMeetingDateLabel.text = "None"
-            lastMeetingTimeLabel.text = ""
+            lastMeetingDateLabel.text = " "
+            lastMeetingTimeLabel.text = "none"
         }
         else {
             var lastMeeting = pastMeetings[0]
