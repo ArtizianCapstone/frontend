@@ -188,7 +188,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     private func loadArtisans(completion : @escaping () -> ()) {
         
-        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/artisans/byuser/" + Constants.userID).responseJSON { response in
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/users/" + Constants.userID + "/artisans").responseJSON { response in
             if let json = response.result.value {
                 // serialized json response
                 if let jsonarray = json as? [[String: Any]] {

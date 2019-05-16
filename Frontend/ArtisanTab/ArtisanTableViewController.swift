@@ -259,7 +259,7 @@ class ArtisanTableViewController: UITableViewController {
     
     private func getArtisans(completion : @escaping () -> ()) {
         
-        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/artisans/" + Constants.userID + "/artisans" ).responseJSON { response in
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/users/" + Constants.userID + "/artisans" ).responseJSON { response in
             if let json = response.result.value {
                 // serialized json response
                 print("GET artisans json response", json)
