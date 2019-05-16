@@ -118,7 +118,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     private func loadTodaysMeetings(completion : @escaping () -> ()) {
-        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/meetings").responseJSON { response in
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/meetings/byuser/" + Constants.userID).responseJSON { response in
             if let json = response.result.value {
                 // serialized json response
  //               print("homescreen get meetings json:", json)
@@ -175,7 +175,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
 
     private func loadListings(completion : @escaping () -> ()) {
         
-        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings").responseJSON { response in
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings/byuser/" + Constants.userID).responseJSON { response in
             if let json = response.result.value {
                 // serialized json response
                 if let jsonarray = json as? [[String: Any]] {
@@ -188,7 +188,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     private func loadArtisans(completion : @escaping () -> ()) {
         
-        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/artisans").responseJSON { response in
+        Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/artisans/byuser/" + Constants.userID).responseJSON { response in
             if let json = response.result.value {
                 // serialized json response
                 if let jsonarray = json as? [[String: Any]] {
