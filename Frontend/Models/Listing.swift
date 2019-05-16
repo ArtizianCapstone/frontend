@@ -46,7 +46,7 @@ class Listing {
             "description": self.description as AnyObject,
             "price": self.price as AnyObject,
             "artisanID": self.artisanId as AnyObject,
-            "userID": "5c00776e2f1dfe588f33138c" as AnyObject,
+            "userID": Constants.userID as AnyObject,
             "quantity": 0 as AnyObject
         ]
     }
@@ -56,7 +56,7 @@ class Listing {
                 "description": self.description,
                 "price": "\(self.price)",
                 "artisanID": self.artisanId,
-                "userID": "5c00776e2f1dfe588f33138c",
+                "userID": Constants.userID,
                 "quantity": "0"]
     }
 }

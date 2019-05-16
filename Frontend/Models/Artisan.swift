@@ -41,7 +41,7 @@ class Artisan : Codable {
     func toJSON() -> Dictionary<String, AnyObject>
     {
         return [
-            "userId": "5c00776e2f1dfe588f33138c" as AnyObject,
+            "userId": Constants.userID as AnyObject,
             "name": self.name as AnyObject,
             "bio": self.bio as AnyObject,
             "phone_number": self.phone_number as AnyObject,
