@@ -8,7 +8,8 @@
 
 import UIKit
 import Alamofire
-
+import AWSCore
+import AWSCognitoIdentityProvider
 
 class LoginViewController: UIViewController {
     
@@ -47,8 +48,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func unwindRegistrationCancel(_ sender: UIStoryboardSegue) {
+        @IBAction func unwindRegistrationCancel(_ sender: UIStoryboardSegue) {
     }
     
     private func postUser(user: User, completion : @escaping () -> ()) {
@@ -61,7 +61,10 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
     private func authenticateUsers(completion: @escaping () -> (), username : String, password: String){
+        AWSServiceConfiguration *serviceConfiguration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1 credentialsProvider:nil];
+
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/users", method: .get).responseJSON{ response in
             if let json = response.result.value{
                 let json1 = json as! [String : Any]
