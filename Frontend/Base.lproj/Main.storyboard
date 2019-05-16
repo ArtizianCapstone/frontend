@@ -1349,6 +1349,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="8JA-Yh-Zto"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="meetingHistoryButton:" destination="Xe3-WG-W4Q" eventType="touchUpInside" id="XKt-aq-6Qq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meeting history" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oX8-Ib-wUg" userLabel="meeting history">
                                 <rect key="frame" x="260" y="187" width="94.5" height="16"/>
@@ -1463,12 +1466,14 @@
                         <outlet property="lastMeetingDateLabel" destination="CuC-xg-C5E" id="gfV-3j-KSJ"/>
                         <outlet property="lastMeetingTimeLabel" destination="4fz-ar-NET" id="m22-lx-hbN"/>
                         <outlet property="meetingHistoryBackground" destination="IkU-YJ-DPx" id="eDZ-2S-30R"/>
+                        <outlet property="meetingHistoryViewAllLabel" destination="faG-AO-9nB" id="29a-Uh-ZaK"/>
                         <outlet property="nextMeetingBackground" destination="pNO-gD-Ke9" id="cus-WS-5Tn"/>
                         <outlet property="nextMeetingDateLabel" destination="Fjh-KX-HOW" id="jK4-ho-8l4"/>
                         <outlet property="nextMeetingTimeLabel" destination="Z65-eY-Qje" id="YvT-V1-vab"/>
                         <outlet property="phone_number" destination="7gw-k5-7wJ" id="QeT-kq-34T"/>
                         <outlet property="scheduleButton" destination="rFa-h2-5ZW" id="To6-5K-u8R"/>
                         <segue destination="sH8-lF-KZj" kind="show" identifier="createMeeting" id="3Pn-AY-rgI"/>
+                        <segue destination="ggH-1l-2Ml" kind="show" identifier="showMeetingHistory" id="pqm-I2-fbt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RHp-Nr-y10" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1799,6 +1804,74 @@
                 <exit id="ED6-9j-UA5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4421.6000000000004" y="-398.50074962518744"/>
+        </scene>
+        <!--Meeting History View Controller-->
+        <scene sceneID="V65-1h-1eS">
+            <objects>
+                <viewController id="ggH-1l-2Ml" customClass="MeetingHistoryViewController" customModule="Frontend" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eEC-ki-Zci">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="508"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QUp-oL-nYj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="488"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MeetingHistoryTableViewCell" id="13h-My-9qI" customClass="MeetingHistoryTableViewCell" customModule="Frontend" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="13h-My-9qI" id="3Th-9Q-55i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sV5-ME-6Qc">
+                                                    <rect key="frame" x="15" y="11.5" width="200" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="FzJ-89-9ti"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7f-jE-uvV">
+                                                    <rect key="frame" x="215" y="11.5" width="145" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="O7f-jE-uvV" firstAttribute="centerY" secondItem="3Th-9Q-55i" secondAttribute="centerY" id="7rM-Cb-9Zk"/>
+                                                <constraint firstItem="sV5-ME-6Qc" firstAttribute="leading" secondItem="3Th-9Q-55i" secondAttribute="leadingMargin" id="KWn-bA-xVR"/>
+                                                <constraint firstItem="O7f-jE-uvV" firstAttribute="trailing" secondItem="3Th-9Q-55i" secondAttribute="trailingMargin" id="SVf-Zi-Pf3"/>
+                                                <constraint firstItem="O7f-jE-uvV" firstAttribute="leading" secondItem="sV5-ME-6Qc" secondAttribute="trailing" id="fU7-G7-y54"/>
+                                                <constraint firstItem="sV5-ME-6Qc" firstAttribute="centerY" secondItem="3Th-9Q-55i" secondAttribute="centerY" id="qjG-zI-ywH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="sV5-ME-6Qc" id="tE9-CM-CMq"/>
+                                            <outlet property="itemCountLabel" destination="O7f-jE-uvV" id="7Z2-sD-Rt8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QUp-oL-nYj" firstAttribute="leading" secondItem="giJ-pu-kH8" secondAttribute="leading" id="0mi-D2-qRF"/>
+                            <constraint firstItem="QUp-oL-nYj" firstAttribute="top" secondItem="giJ-pu-kH8" secondAttribute="top" id="5n5-qC-kGA"/>
+                            <constraint firstItem="giJ-pu-kH8" firstAttribute="trailing" secondItem="QUp-oL-nYj" secondAttribute="trailing" id="bfc-cm-Ym1"/>
+                            <constraint firstItem="giJ-pu-kH8" firstAttribute="bottom" secondItem="QUp-oL-nYj" secondAttribute="bottom" id="jBH-nU-YT8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="giJ-pu-kH8"/>
+                    </view>
+                    <connections>
+                        <outlet property="meetingHistoryTableView" destination="QUp-oL-nYj" id="nSf-Lc-dHc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BX8-g8-kJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4422" y="-974"/>
         </scene>
         <!--ShippingViewController-->
         <scene sceneID="blU-dh-B8u">
@@ -2209,6 +2282,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="rsK-jz-Cyw"/>
         <segue reference="68a-1h-Nhn"/>
-        <segue reference="yCY-0r-9Xo"/>
+        <segue reference="l0L-hd-uje"/>
     </inferredMetricsTieBreakers>
 </document>
