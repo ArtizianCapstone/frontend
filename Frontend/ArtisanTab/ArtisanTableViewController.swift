@@ -15,11 +15,15 @@ class ArtisanTableViewController: UITableViewController {
     var artisans = [Artisan]()
     @IBOutlet weak var addArtisanButton: UIBarButtonItem!
     
+    @IBOutlet weak var noArtisanLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //getUser(id: "5c00776e2f1dfe588f33138c")
+        noArtisanLabel.layer.masksToBounds=true
+        noArtisanLabel.layer.cornerRadius=16
         getArtisans {
+            
             self.tableView?.reloadData()
         }
         print("after view did load: ", artisans.count)
@@ -36,12 +40,22 @@ class ArtisanTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    func loadArtisans() {
+        getArtisans() {
+            if self.artisans.count == 0 {
+                self.noArtisanLabel.isHidden = false
+            }
+            else {
+                self.noArtisanLabel.isHidden = true
+            }
+            self.tableView?.reloadData()
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
         //getUser(id: "5c00776e2f1dfe588f33138c")
-        getArtisans() {
-            self.tableView?.reloadData()
-        }
+        loadArtisans()
     }
     
     @IBAction func addArtisanAction(_ sender: Any) {
@@ -135,10 +149,9 @@ class ArtisanTableViewController: UITableViewController {
             
             Alamofire.request(url, method: .delete)
                 .responseJSON { response in
-                    if let json = response.result.value{
-                        print ("json from alamofire", json)
-                    }
+                    self.loadArtisans()
             }
+            
         }
     }
 

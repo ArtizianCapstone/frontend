@@ -1168,6 +1168,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <label key="tableFooterView" hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No artisans added to app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h1x-UB-Iyg">
+                            <rect key="frame" x="0.0" y="72" width="375" height="70"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.99957770109999999" green="0.90144246819999996" blue="0.87985104319999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtisanTableViewCell" id="ZZq-Ar-Xzx" customClass="ArtisanTableViewCell" customModule="Frontend" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -1205,12 +1213,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addArtisanButton" destination="xV0-9H-C2V" id="jU4-TQ-lkp"/>
+                        <outlet property="noArtisanLabel" destination="h1x-UB-Iyg" id="uH3-5c-PtB"/>
                         <segue destination="Jha-FV-L4Z" kind="show" identifier="addArtisanSegue" id="UZZ-bP-Jge"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2x-pb-B8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="357"/>
+            <point key="canvasLocation" x="1845.5999999999999" y="356.67166416791605"/>
         </scene>
         <!--Artisan Detail View Controller-->
         <scene sceneID="tTp-VD-0g2">
@@ -2295,7 +2304,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rsK-jz-Cyw"/>
-        <segue reference="68a-1h-Nhn"/>
+        <segue reference="UZZ-bP-Jge"/>
         <segue reference="l0L-hd-uje"/>
     </inferredMetricsTieBreakers>
 </document>
