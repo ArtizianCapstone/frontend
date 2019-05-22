@@ -790,17 +790,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No meetings scheduled today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyd-Os-4wa">
+                                <rect key="frame" x="15" y="508" width="345" height="70"/>
+                                <color key="backgroundColor" red="0.99957770109999999" green="0.90144246819999996" blue="0.87985104319999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="kZ5-Sm-OKR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="C8A-M1-sOE" firstAttribute="trailing" secondItem="6IF-zC-1dU" secondAttribute="trailing" constant="15" id="0Bx-EX-KWO"/>
                             <constraint firstItem="Nob-7p-T0X" firstAttribute="top" secondItem="opq-vQ-xDg" secondAttribute="bottom" constant="8" id="0oX-JA-zFS"/>
                             <constraint firstItem="opq-vQ-xDg" firstAttribute="leading" secondItem="Hsu-W4-a2W" secondAttribute="leading" constant="1" id="0pe-X9-BnQ"/>
+                            <constraint firstItem="dyd-Os-4wa" firstAttribute="top" secondItem="MDJ-bw-hcM" secondAttribute="bottom" constant="36" id="2Gf-zz-umQ"/>
                             <constraint firstItem="H5w-Xv-1JM" firstAttribute="trailing" secondItem="C8A-M1-sOE" secondAttribute="trailing" id="4FA-3H-q06"/>
                             <constraint firstItem="C8A-M1-sOE" firstAttribute="trailing" secondItem="Hgh-zX-Cdg" secondAttribute="trailing" constant="15" id="9T4-uZ-Eo0"/>
                             <constraint firstItem="C8A-M1-sOE" firstAttribute="trailing" secondItem="Nob-7p-T0X" secondAttribute="trailing" constant="15" id="DNN-tO-P3Y"/>
                             <constraint firstItem="MDJ-bw-hcM" firstAttribute="leading" secondItem="C8A-M1-sOE" secondAttribute="leading" constant="16" id="GaR-I9-0TT"/>
                             <constraint firstItem="U35-N0-oQi" firstAttribute="top" secondItem="opq-vQ-xDg" secondAttribute="bottom" constant="8" id="Gs6-QY-jMp"/>
+                            <constraint firstItem="C8A-M1-sOE" firstAttribute="trailing" secondItem="dyd-Os-4wa" secondAttribute="trailing" constant="15" id="Hfa-TG-Rij"/>
                             <constraint firstAttribute="trailing" secondItem="opq-vQ-xDg" secondAttribute="trailing" constant="-1" id="ILJ-vd-v24"/>
                             <constraint firstItem="aZy-5E-zAF" firstAttribute="leading" secondItem="Hsu-W4-a2W" secondAttribute="leading" id="IUE-Nf-q4t"/>
                             <constraint firstItem="p1J-Ik-kO1" firstAttribute="leading" secondItem="C8A-M1-sOE" secondAttribute="leading" constant="16" id="LsK-X7-lXf"/>
@@ -815,6 +827,7 @@
                             <constraint firstItem="6IF-zC-1dU" firstAttribute="bottom" secondItem="C8A-M1-sOE" secondAttribute="bottom" constant="1" id="Saw-lQ-y8a"/>
                             <constraint firstItem="H5w-Xv-1JM" firstAttribute="trailing" secondItem="C8A-M1-sOE" secondAttribute="trailing" id="Sbd-Za-lZQ"/>
                             <constraint firstItem="fEB-Xz-iLe" firstAttribute="top" secondItem="U35-N0-oQi" secondAttribute="bottom" constant="13" id="Z1F-mK-h6D"/>
+                            <constraint firstItem="dyd-Os-4wa" firstAttribute="leading" secondItem="C8A-M1-sOE" secondAttribute="leading" constant="15" id="cYs-Ca-u1u"/>
                             <constraint firstItem="H5w-Xv-1JM" firstAttribute="top" secondItem="Hsu-W4-a2W" secondAttribute="top" id="dHM-0e-xLc"/>
                             <constraint firstItem="C8A-M1-sOE" firstAttribute="trailing" secondItem="p1J-Ik-kO1" secondAttribute="trailing" constant="14" id="dtt-Au-Vnv"/>
                             <constraint firstItem="fEB-Xz-iLe" firstAttribute="leading" secondItem="C8A-M1-sOE" secondAttribute="leading" constant="16" id="fhV-sf-xwg"/>
@@ -840,6 +853,7 @@
                         <outlet property="bannerLayout" destination="0tE-nX-Eb6" id="s1A-jS-cXs"/>
                         <outlet property="listingActivityIndicator" destination="d1f-Ky-Uqs" id="pjy-pO-IBI"/>
                         <outlet property="meetingTable" destination="6IF-zC-1dU" id="5ek-W7-6V9"/>
+                        <outlet property="noMeetingsLabel" destination="dyd-Os-4wa" id="VMQ-B0-WDs"/>
                         <outlet property="paymentOverviewLabel" destination="fEB-Xz-iLe" id="q97-gI-mGs"/>
                         <outlet property="shipmentOverviewLabel" destination="Hgh-zX-Cdg" id="woG-xo-32g"/>
                         <outlet property="totalGeneratedLabel" destination="p1J-Ik-kO1" id="wCg-4H-OhT"/>

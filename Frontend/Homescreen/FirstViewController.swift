@@ -34,6 +34,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     @IBOutlet weak var shipmentOverviewLabel: UILabel!
     @IBOutlet weak var paymentOverviewLabel: UILabel!
     @IBOutlet weak var meetingTable: UITableView!
+    @IBOutlet weak var noMeetingsLabel: UILabel!
     
     
     var meetings = [HomeMeeting]()
@@ -91,11 +92,20 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         //meetings.append(Meeting(artisanName: "Camila Aguero", time: formatter.date(from: "2016/10/08 11:30")!, numItems: 10))
         //meetings.append(Meeting(artisanName: "Diego Avila", time: formatter.date(from: "2016/10/08 14:00")!, numItems: 7))
         //meetings.append(Meeting(artisanName: "Sebastian Alverado", time: formatter.date(from: "2016/10/08 17:00")!, numItems: 8))
+        noMeetingsLabel.layer.masksToBounds = true
+        noMeetingsLabel.layer.cornerRadius=16.0
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         loadTodaysMeetings {
+            print("get meetings completion callback: " + "\(self.meetings.count)")
+            if self.meetings.count == 0 {
+                self.noMeetingsLabel.isHidden = false
+            }
+            else {
+                self.noMeetingsLabel.isHidden = true
+            }
             self.meetingTable.reloadData()
         }
         paymentOverviewLabel.isHidden = true

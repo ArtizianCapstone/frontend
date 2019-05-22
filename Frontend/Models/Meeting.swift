@@ -38,7 +38,7 @@ class Meeting : Codable {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         return [
-            "userID": self.userId as AnyObject,
+            "userID": Constants.userID as AnyObject,
             "artisanID": self.artisanId as AnyObject,
             "date": dateFormatter.string(from: self.date) as AnyObject,
             "itemsExpected": self.numItemsExpected as AnyObject
