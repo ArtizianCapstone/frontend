@@ -36,6 +36,11 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     @IBOutlet weak var meetingTable: UITableView!
     @IBOutlet weak var noMeetingsLabel: UILabel!
     
+    @IBAction func logout(_ sender: Any) {
+        print("trying to logout")
+        Constants.userID = ""
+        performSegue(withIdentifier: "logout", sender: sender)
+    }
     
     var meetings = [HomeMeeting]()
     let cellSpacingHeight: CGFloat = 8
