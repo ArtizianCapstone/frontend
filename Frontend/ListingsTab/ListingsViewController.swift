@@ -12,12 +12,14 @@ import AlamofireImage
 
 
 class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    
     var listings = [Listing]()
+    var selectedListing = Listing()
+  
     
     @IBOutlet weak var addListingsButton: UIButton!
     @IBOutlet weak var funFact: UITextView!
-    
-    
+    @IBOutlet weak var ListingsLabel: UILabel!
     @IBOutlet weak var factDetails: UITextView!
     
     override func viewDidLoad() {
@@ -25,7 +27,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        
+        self.ListingsLabel.sizeToFit()
         funFact.text! = "\nTip:"
         factDetails.text! = "\nListings with photos sell 20% more frequently"
         funFact.layer.cornerRadius = 5.0
@@ -51,6 +53,18 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
         return 1
     }
 
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row: \(indexPath.row)")
+        print(listings[indexPath.row].toStrDict())
+        //let vc = DetailedListingViewController(nibName: "DetailedListingViewController", bundle: nil)
+        //print("Here")
+        //vc.loaded_listing = listings[indexPath.row]
+        setSelectedListing(listing: listings[indexPath.row]) {}
+        performSegue(withIdentifier: "detailedListingSegue", sender: addListingsButton)
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "ListingsTableViewCell"
@@ -71,9 +85,10 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
 
     @IBAction func addListings(_ sender: Any) {
-        performSegue(withIdentifier: "AddListingsSegue", sender: addListingsButton)
+        performSegue(withIdentifier: "detailedListingSegue", sender: addListingsButton)
 
     }
+        
     private func loadListings(completion : @escaping () -> ()) {
         //clear listings array
         listings = []
@@ -94,7 +109,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
                         newListing.artisanName = artisan?["name"] as? String ?? "No Artisan Name"
                         newListing.price = x["price"] as? Float ?? 0.0
                         newListing._id = x["_id"] as? String ?? "No product id"
-                        
+                        newListing.description = x["description"] as? String ?? ""
                         newListing.photo = defaultImage
                         
                         if let photo_url = x["listingImage"] as? String {
@@ -153,4 +168,18 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let vc = segue.destination as? DetailedListingViewController
+        {
+            vc.loaded_listing = self.selectedListing
+        }
+    }
+    
+    private func setSelectedListing(listing: Listing, completion : @escaping () -> ()) {
+        self.selectedListing = listing
+        completion()
+    }
+    
 }
