@@ -2414,6 +2414,7 @@
         <image name="payments" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="xrN-b2-xhy"/>
         <segue reference="TNY-5j-cpp"/>
         <segue reference="68a-1h-Nhn"/>
         <segue reference="l0L-hd-uje"/>

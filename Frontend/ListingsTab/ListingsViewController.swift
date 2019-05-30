@@ -85,7 +85,7 @@ class ListingsViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
 
     @IBAction func addListings(_ sender: Any) {
-        performSegue(withIdentifier: "detailedListingSegue", sender: addListingsButton)
+        performSegue(withIdentifier: "AddListingsSegue", sender: addListingsButton)
 
     }
         
