@@ -86,7 +86,7 @@ class AddListingsViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             print("Forms not filled: error")
         }else{
 
-            guard let price = Float(String(format: "%.2f", itemPrice.text!)) else {
+            guard let price = Float(itemPrice.text!) else {
                 print("Invalid Price")
                 return
             }
