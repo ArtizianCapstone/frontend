@@ -65,7 +65,7 @@ class InfoSubview: UIViewController {
         }
     }
     
-    
+  /*
     override func viewDidAppear(_ animated: Bool) {
         phone_number.text = "13234762890"
         
@@ -78,9 +78,19 @@ class InfoSubview: UIViewController {
             scheduleButton.backgroundColor = Constants.Colors.gray
         }
         
+        
+        MeetingRetriever.getMeetingsForArtisan(artisanId: (self.artisan?._id)!, controller: self)
+        /*
         self.getMeetings(artisanId: (self.artisan?._id)!) {
             //reload array
-        }
+        }*/
+    }*/
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        MeetingRetriever.getMeetingsForArtisan(artisanId: (self.artisan?._id)!, controller: self)
+  
     }
     
     func hide() {
@@ -144,9 +154,11 @@ class InfoSubview: UIViewController {
             for meeting in newMeetings {
                 postMeetings(meeting: meeting) {
                     // call another get meetings right here
-                    self.getMeetings(artisanId: (self.artisan?._id)!) {
+                    MeetingRetriever.getMeetingsForArtisan(artisanId: (self.artisan?._id)!, controller: self)
+
+                    /*self.getMeetings(artisanId: (self.artisan?._id)!) {
                         //reload array
-                    }
+                    }*/
                 }
                 print(meeting.date)
             }
@@ -164,7 +176,7 @@ class InfoSubview: UIViewController {
             }
         }
     }
-    
+   /*
     func getMeetings(artisanId: String, completion : @escaping () -> ()) {
         let url = "http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/meetings/5c00776e2f1dfe588f33138c/" + artisanId
         Alamofire.request(url).responseJSON { response in
@@ -195,7 +207,7 @@ class InfoSubview: UIViewController {
                 completion()
             }
         }
-    }
+    }*/
     
     //updates display of future and past meeting based on recent get request
     func updateMeetingDisplay(meetings: [Meeting]) {
@@ -204,6 +216,11 @@ class InfoSubview: UIViewController {
         var upcomingMeetings:[Meeting] = []
         var pastMeetings:[Meeting] = []
 
+        if meetings.isEmpty == false{
+            self.artisan?.scheduledMeetings = true
+            self.scheduleButton.setTitle("Update meeting schedule", for: .normal)
+        }
+        
         //meetings dates into future and past meetings
         for meeting in meetings {
             if meeting.date < currentDate {

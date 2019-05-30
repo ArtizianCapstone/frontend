@@ -72,10 +72,13 @@ class ArtisanDetailViewController: UIViewController {
         infoSubviewNew?.bioTextView.text = self.artisan?.bio
         infoSubviewNew?.phone_number.text = self.artisan?.phone_number
         listingSubviewNew?.artisan = self.artisan
-    
+       
+        MeetingRetriever.getMeetingsForArtisan(artisanId: (self.artisan?._id)!, controller: self)
+
+        /*
         infoSubviewNew?.getMeetings(artisanId: (artisan?._id)!) {
             //reload array
-        }
+        }*/
         listingSubviewNew?.getListings(artisanId: (artisan?._id)! ) {
             self.listingSubviewNew?.retrieveListingImages()
             self.listingSubviewNew?.myTableView.reloadData()

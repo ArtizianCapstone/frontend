@@ -58,6 +58,7 @@
 		DC0AE63C21B9A27D00D8C597 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */; };
 		DC0AE63E21B9A5DE00D8C597 /* fakegraph.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */; };
 		DC3691DA2237958B007578F9 /* addlistings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3691D92237958B007578F9 /* addlistings.storyboard */; };
+		DC50E9742297BA2A00D5CBF8 /* MeetingRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC50E9732297BA2A00D5CBF8 /* MeetingRetriever.swift */; };
 		DC782390223A23EC00485EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC78238F223A23EC00485EE1 /* Main.storyboard */; };
 		DC784F98223AEDD4005E94DA /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC784F97223AEDD4005E94DA /* default.jpg */; };
 		DCB7EBF3223798BB00BE1028 /* CustomMeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94BD7F223781AE004D2647 /* CustomMeetingCell.swift */; };
@@ -155,6 +156,7 @@
 		DC0AE63B21B9A27D00D8C597 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		DC0AE63D21B9A5DE00D8C597 /* fakegraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fakegraph.png; path = "Frontend/Images:Fonts/fakegraph.png"; sourceTree = "<group>"; };
 		DC3691D92237958B007578F9 /* addlistings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = addlistings.storyboard; sourceTree = "<group>"; };
+		DC50E9732297BA2A00D5CBF8 /* MeetingRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRetriever.swift; sourceTree = "<group>"; };
 		DC78238F223A23EC00485EE1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DC784F97223AEDD4005E94DA /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = default.jpg; path = "Frontend/Images:Fonts/default.jpg"; sourceTree = SOURCE_ROOT; };
 		DCAC28D7223A230600380C8C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				B4D47CA721ADF569005CA50E /* AppDelegate.swift */,
 				DC0AE63721B9A1C800D8C597 /* customBannerCell.swift */,
 				3B37DBA021FA6D1500372FF0 /* OrdersViewController.swift */,
+				DC50E9732297BA2A00D5CBF8 /* MeetingRetriever.swift */,
 			);
 			path = "Other Files";
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				DC07244D223A1C520066B79A /* PaymentViewController.swift in Sources */,
 				3B0DB36A21B6298600DE1B5D /* LoginViewController.swift in Sources */,
 				B41F409622336DDF00C293C4 /* Constants.swift in Sources */,
+				DC50E9742297BA2A00D5CBF8 /* MeetingRetriever.swift in Sources */,
 				DC0AE63821B9A1C800D8C597 /* customBannerCell.swift in Sources */,
 				3BF9D85E221607E900FBE733 /* ListingsViewController.swift in Sources */,
 				3B0DB36E21B8514700DE1B5D /* ArtisanCreatedViewController.swift in Sources */,
