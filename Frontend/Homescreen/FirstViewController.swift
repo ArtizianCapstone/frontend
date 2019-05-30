@@ -44,9 +44,12 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     var meetings = [HomeMeeting]()
     let cellSpacingHeight: CGFloat = 8
-    var numListings: String  = "loading..."
-    var numArtisans: String = "loading..."
+    //var numListings: String  = "loading..."
+    //var numArtisans: String = "loading..."
 
+    var numListings: String  = "0"
+    var numArtisans: String = "0"
+    
     //var meetingData = [MeetingCellData]()
     let bannerQuotes = [
         bannerQuote(message: "Artisans make up the core of the community", textColor: UIColor.white, backgroundColor: UIColor(patternImage: UIImage(named: "stockImage1.jpg")!)),
@@ -121,7 +124,6 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
             self.listingActivityIndicator.stopAnimating()
             self.listingActivityIndicator.isHidden = true
             self.paymentOverviewLabel.isHidden = false
-
         }
         loadArtisans {
             self.shipmentOverviewLabel.text = "Number of Artisans: " + self.numArtisans
