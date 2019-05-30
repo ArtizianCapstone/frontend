@@ -16,4 +16,4 @@ DerivedData
 .idea/
 *.hmap
 xcuserdata/*
-Pods/*
+Pods
