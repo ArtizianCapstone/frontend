@@ -55,7 +55,7 @@ class Listing {
         return ["name": self.name,
                 "description": self.description,
                 "price": "\(self.price)",
-                "artisanName": self.artisanName,
+                "artisanID": self.artisanId,
                 "userID": Constants.userID,
                 "quantity": "0"]
     }

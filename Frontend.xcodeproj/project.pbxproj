@@ -61,6 +61,7 @@
 		DC50E9742297BA2A00D5CBF8 /* MeetingRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC50E9732297BA2A00D5CBF8 /* MeetingRetriever.swift */; };
 		DC782390223A23EC00485EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC78238F223A23EC00485EE1 /* Main.storyboard */; };
 		DC784F98223AEDD4005E94DA /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC784F97223AEDD4005E94DA /* default.jpg */; };
+		DCAFDB2822A0540E00A1783D /* DetailedListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFDB2722A0540E00A1783D /* DetailedListingViewController.swift */; };
 		DCB7EBF3223798BB00BE1028 /* CustomMeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94BD7F223781AE004D2647 /* CustomMeetingCell.swift */; };
 		DCC7136B223A1D0E0070ED2D /* ExpandableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC71365223A1D0E0070ED2D /* ExpandableCells.swift */; };
 		DCC7136C223A1D0E0070ED2D /* NormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC71366223A1D0E0070ED2D /* NormalCell.xib */; };
@@ -160,6 +161,7 @@
 		DC78238F223A23EC00485EE1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DC784F97223AEDD4005E94DA /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = default.jpg; path = "Frontend/Images:Fonts/default.jpg"; sourceTree = SOURCE_ROOT; };
 		DCAC28D7223A230600380C8C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCAFDB2722A0540E00A1783D /* DetailedListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedListingViewController.swift; sourceTree = "<group>"; };
 		DCC71365223A1D0E0070ED2D /* ExpandableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableCells.swift; sourceTree = "<group>"; };
 		DCC71366223A1D0E0070ED2D /* NormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalCell.xib; sourceTree = "<group>"; };
 		DCC71367223A1D0E0070ED2D /* ExpandedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandedCell.xib; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		3B60D08F226813B900DA084E /* ListingsTab */ = {
 			isa = PBXGroup;
 			children = (
+				DCAFDB2722A0540E00A1783D /* DetailedListingViewController.swift */,
 				3BCAF53A220BD6C700F9EEA7 /* ListingsTableViewCell.swift */,
 				3BF9D85D221607E900FBE733 /* ListingsViewController.swift */,
 				3B3A6BEA21F7B29D006D301F /* AddListingsViewController.swift */,
@@ -627,6 +630,7 @@
 				3BCAF53B220BD6C700F9EEA7 /* ListingsTableViewCell.swift in Sources */,
 				DC07244E223A1C520066B79A /* ParentTableView.swift in Sources */,
 				DCFCB4AC225935C000BC64F1 /* RegistrationViewController.swift in Sources */,
+				DCAFDB2822A0540E00A1783D /* DetailedListingViewController.swift in Sources */,
 				B4018DF5222A1E57003A0FC6 /* InfoSubview.swift in Sources */,
 				DCF7D5C6223A1BA70047B4F5 /* BuyShippingViewController.swift in Sources */,
 				B4018DF7222A1E6A003A0FC6 /* PaymentSubview.swift in Sources */,
