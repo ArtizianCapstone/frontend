@@ -84,6 +84,10 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         //    self.meetingTable.reloadData()
         //}
         
+        if Constants.userID == "5c00776e2f1dfe588f33138c"{
+            totalGeneratedLabel.text = "This week you've raised $670 for your commmunity! Keep up the good work."
+        }
+        
         totalGeneratedLabel.layer.masksToBounds = true
         totalGeneratedLabel.layer.cornerRadius=16.0;
         paymentOverviewLabel.layer.masksToBounds = true
@@ -160,6 +164,9 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                     self.meetings = todaysMeetings
                     self.meetings.sort { $0.time < $1.time }
                 }
+                else {
+                    self.meetings = []
+                }
                 completion()
             }
         }
@@ -195,8 +202,12 @@ class FirstViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         Alamofire.request("http://ec2-3-83-249-93.compute-1.amazonaws.com:3000/listings/byuser/" + Constants.userID).responseJSON { response in
             if let json = response.result.value {
                 // serialized json response
+                print("listings json response: ", json)
                 if let jsonarray = json as? [[String: Any]] {
                     self.numListings = "\(jsonarray.count)"
+                }
+                else{
+                    self.numListings = "0"
                 }
             }
             completion()

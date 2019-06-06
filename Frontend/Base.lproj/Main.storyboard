@@ -717,7 +717,7 @@
                                     <constraint firstAttribute="height" constant="3" id="fwF-hO-goO"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week you've raised $780 for your commmunity! Keep up the good work." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1J-Ik-kO1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week you've raised $0 for your commmunity." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1J-Ik-kO1">
                                 <rect key="frame" x="16" y="201" width="345" height="77"/>
                                 <color key="backgroundColor" red="0.93499714140000001" green="1" blue="0.99638801809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -2414,7 +2414,6 @@
         <image name="payments" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xrN-b2-xhy"/>
         <segue reference="TNY-5j-cpp"/>
         <segue reference="68a-1h-Nhn"/>
         <segue reference="l0L-hd-uje"/>
