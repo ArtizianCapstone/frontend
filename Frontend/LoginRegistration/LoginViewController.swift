@@ -8,6 +8,10 @@
 
 import UIKit
 import Alamofire
+import Foundation
+import var CommonCrypto.CC_MD5_DIGEST_LENGTH
+import func CommonCrypto.CC_MD5
+import typealias CommonCrypto.CC_LONG
 //import AWSCore
 //import AWSCognitoIdentityProvider
 
@@ -42,7 +46,10 @@ class LoginViewController: UIViewController {
     }
     @IBAction func unwindRegistrationSuccess(_ sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? RegistrationViewController {
-            let newUser = User(name: sourceViewController.regUserLabel.text!, password: sourceViewController.regPasswordLabel.text!, phone_number: sourceViewController.regPhoneLabel.text ?? "N/A")
+            let passMD5 = MD5(string: sourceViewController.regPasswordLabel.text!)
+            let pass =  passMD5.map { String(format: "%02hhx", $0) }.joined()
+            
+            let newUser = User(name: sourceViewController.regUserLabel.text!, password: pass, phone_number: sourceViewController.regPhoneLabel.text ?? "N/A")
             postUser(user: newUser) {
                 //actions after post finishes
             }
@@ -74,6 +81,9 @@ class LoginViewController: UIViewController {
                     let user = user as! [String : Any]
                     let uname = (user["name"] ?? "") as! String
                     let pass = (user["password"] ?? "") as! String
+                    let passMD5 = self.MD5(string: password)
+                    let password =  passMD5.map { String(format: "%02hhx", $0) }.joined()
+                    
                     if ((uname == username) && (pass == password)) {
                         Constants.userID = user["_id"] as! String
                         self.authenticated = true
@@ -83,7 +93,22 @@ class LoginViewController: UIViewController {
                 completion()
             }
         }
+    }
+    func MD5(string: String) -> Data {
+        let length = Int(CC_MD5_DIGEST_LENGTH)
+        let messageData = string.data(using:.utf8)!
+        var digestData = Data(count: length)
         
+        _ = digestData.withUnsafeMutableBytes { digestBytes -> UInt8 in
+            messageData.withUnsafeBytes { messageBytes -> UInt8 in
+                if let messageBytesBaseAddress = messageBytes.baseAddress, let digestBytesBlindMemory = digestBytes.bindMemory(to: UInt8.self).baseAddress {
+                    let messageLength = CC_LONG(messageData.count)
+                    CC_MD5(messageBytesBaseAddress, messageLength, digestBytesBlindMemory)
+                }
+                return 0
+            }
+        }
+        return digestData
     }
     /*
     // MARK: - Navigation

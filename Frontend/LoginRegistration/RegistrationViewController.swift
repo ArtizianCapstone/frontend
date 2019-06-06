@@ -19,11 +19,11 @@ class RegistrationViewController: UIViewController {
     
     @IBAction func Register(_ sender: Any) {
         let username = regUserLabel.text
-        let pass = regPasswordLabel.text
-        let conf_pass = regConfirmLabel.text
+        let pass = regPasswordLabel.text!
+        let conf_pass = regConfirmLabel.text!
         let phone_number = regPhoneLabel.text
         
-        if isValidRegistration(username: username!, pass: pass!, conf_pass: conf_pass!, phone_number: phone_number ?? "N/A") {
+        if isValidRegistration(username: username!, pass: pass, conf_pass: conf_pass, phone_number: phone_number ?? "N/A") {
             performSegue(withIdentifier: "registerUnwindSuccess", sender: self)
         }
     }
@@ -86,4 +86,8 @@ class RegistrationViewController: UIViewController {
         invalidRegistrationLabel.text = ""
         invalidRegistrationLabel.isHidden = true
     }
+    /*taken from https://stackoverflow.com/questions/32163848/how-can-i-convert-a-string-to-an-md5-hash-in-ios-using-swift
+    */
+    
+
 }
