@@ -24,3 +24,9 @@ Built for artisans, the Amazon Community Helper app allows leaders to empower th
     * Locate the build target on screen. It is listed at the top left of the screen, to the right of the Play button.
     * If it says “Generic iOS Device", click on that text and choose any of the options listed under “iOS Simulator”. We recommend iPhone 8 or XR.
 * Build the project to the iOS Simulator by pressing the Play button.
+
+
+## Backend
+* The app automatically communicates with an instance of the backend server in the cloud, so there is no need to setup the backend.
+* The address of the server and all enpoints of communication are described in the following document: https://docs.google.com/document/d/1dqcJuTkCzLRrfR-D0sRlp4ifWav07gMHxETH4UHoQbc/edit?usp=sharing
+* Here is a link to the backend github repo: https://github.com/ArtizianCapstone/backend
